@@ -9,7 +9,7 @@
     :root { --primary: #0056b3; --bg: #f4f6f9; }
     body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; flex-direction: column; min-height: 100vh; }
     
-    /* Header personalizzato */
+    /* Header personalizzato con Logo */
     header { background: rgb(182, 255, 183); color: #333; padding: 1.2rem 1rem; text-align: center; border-bottom: 2px solid #eef2f7; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
     .header-logo { max-width: 140px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
     header h1 { margin: 0; font-size: 1.2rem; color: var(--primary); }
@@ -24,43 +24,6 @@
     .tab-content.active { display: block; }
     
     .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 16px; }
-    
-    /* STILI LITURGIA IN STILE CARTA / AVANA CON FONT GARAMOND */
-    .liturgia-box { 
-      font-family: 'Garamond', 'Georgia', serif; 
-      background-color: #fdfbf7; 
-      color: #111111; 
-      padding: 18px;
-      border-radius: 8px;
-      border: 1px solid #e8e2d5;
-      line-height: 1.65; 
-      font-size: 1.15rem; 
-    }
-    
-    .liturgia-header-info { 
-      background: #f4efe6; 
-      padding: 14px; 
-      border-radius: 6px; 
-      margin-bottom: 20px; 
-      border-left: 4px solid #8b4513; 
-    }
-    .liturgia-data { font-size: 1.25rem; font-weight: bold; color: #2c1a0e; }
-
-    .liturgia-sezione { margin-bottom: 24px; border-bottom: 1px solid #e8e2d5; padding-bottom: 16px; }
-    .liturgia-sezione:last-child { border-bottom: none; }
-
-    .liturgia-titolo-sezione { 
-      color: #8b4513; 
-      font-size: 1.3rem; 
-      font-weight: bold; 
-      margin-top: 10px; 
-      margin-bottom: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .liturgia-riferimento { font-size: 1rem; color: #555; font-style: italic; margin-bottom: 10px; font-weight: bold; }
-    .liturgia-testo { font-size: 1.15rem; white-space: pre-line; color: #000000; }
-    .loading { text-align: center; color: #666; padding: 20px; font-style: italic; }
     
     /* Stili Canti e Controlli */
     .canti-controls { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -88,37 +51,20 @@
     .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
     .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
 
-    /* Modal Stato del Sistema e Log API */
+    /* Modal Stato del Sistema */
     .status-modal {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.5); z-index: 100; justify-content: center; align-items: center;
     }
     .status-modal.active { display: flex; }
     .status-card { 
-      background: white; padding: 20px; border-radius: 12px; max-width: 550px; width: 92%; 
-      max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+      background: white; padding: 20px; border-radius: 12px; max-width: 450px; width: 92%; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
     }
-    .status-body { overflow-y: auto; flex: 1; margin-top: 10px; padding-right: 4px; }
     .status-item { margin-bottom: 12px; font-size: 0.9rem; }
     .status-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
     .badge-ok { background: #d4edda; color: #155724; }
     .badge-err { background: #f8d7da; color: #721c24; }
-    .badge-wait { background: #fff3cd; color: #856404; }
-    
-    /* Console Log API Raw Viewer */
-    .api-log-viewer {
-      background: #1e1e1e;
-      color: #00ff66;
-      font-family: monospace;
-      font-size: 0.8rem;
-      padding: 12px;
-      border-radius: 6px;
-      white-space: pre-wrap;
-      word-break: break-all;
-      max-height: 250px;
-      overflow-y: auto;
-      border: 1px solid #333;
-    }
 
     /* Footer / Crediti */
     footer { text-align: center; padding: 16px; background: white; font-size: 0.85rem; color: #666; border-top: 1px solid #eee; margin-top: auto; }
@@ -143,12 +89,12 @@
     <section id="liturgia" class="tab-content active">
       <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
-          <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno</span>
-          <span style="font-size:0.8rem; color:#666;">Evangelizo v2</span>
+          <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno (CEI)</span>
         </div>
         
-        <div id="liturgiaContent" class="liturgia-box">
-          <div class="loading">Caricamento delle letture in corso...</div>
+        <!-- Widget Almanacco Ufficiale Chiesa Cattolica Italiana -->
+        <div id="liturgiaContent">
+          <script src='https://widgets.chiesacattolica.it/widget-almanacco-v2/widget.php?mods=402593&font=8&colors=1' async></script>
         </div>
       </div>
     </section>
@@ -168,32 +114,23 @@
     </section>
   </main>
 
-  <!-- MODAL STATI E LOGS API RAW -->
+  <!-- MODAL STATI -->
   <div id="statusModal" class="status-modal">
     <div class="status-card">
-      <h3 style="margin:0; color:var(--primary);">Stato Applicazione & API Logs</h3>
+      <h3 style="margin:0; color:var(--primary);">Stato Applicazione</h3>
       
-      <div class="status-body">
+      <div style="margin-top: 14px;">
         <div class="status-item">
           <strong>PWA Offline:</strong> 
-          <span id="logOffline" class="status-badge badge-wait">Verifica...</span>
-        </div>
-        <div class="status-item">
-          <strong>Evangelizo API Status:</strong> 
-          <span id="logLiturgia" class="status-badge badge-wait">In attesa...</span>
+          <span id="logOffline" class="status-badge">Verifica...</span>
         </div>
         <div class="status-item">
           <strong>Connessione Rete:</strong> 
           <span id="logOnline" class="status-badge">...</span>
         </div>
-
-        <hr style="border:0; border-top:1px solid #eee; margin: 12px 0;">
-        
-        <div style="font-weight:bold; font-size:0.85rem; margin-bottom:6px; color:#444;">Dati Grezzi API (Raw Response):</div>
-        <div id="apiRawOutput" class="api-log-viewer">In attesa della prima chiamata API...</div>
       </div>
 
-      <button onclick="toggleModal(false)" style="margin-top: 14px; background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight:bold;">Chiudi Log</button>
+      <button onclick="toggleModal(false)" style="margin-top: 14px; background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight:bold;">Chiudi</button>
     </div>
   </div>
 
@@ -213,112 +150,6 @@
 
     function toggleModal(show) {
       document.getElementById('statusModal').classList.toggle('active', show);
-    }
-
-    // Variabile globale per conservare i log grezzi della chiamata API
-    let rawApiLog = {};
-
-    // Pulizia completa di trafiletti, copyright e riorganizzazione perfetta degli a capo
-    function cleanLiturgyText(text) {
-      if (!text) return '';
-      return text
-        // 1. Rimuove copyright CEI e frasi promozionali/email
-        .replace(/Copyright\s*@?\s*Conferenza\s*Episcopale\s*Italiana.*$/gmi, '')
-        .replace(/Copyright\s*.*CEI.*/gmi, '')
-        .replace(/Per ricevere il Vangelo ogni mattina.*$/gmi, '')
-        .replace(/vangelodelgiorno\.org/gmi, '')
-        .replace(/iscrivetevi\s*:\s*/gmi, '')
-        // 2. Normalizza le interlinee e rimuove spazi vuoti multipli
-        .replace(/\r\n/g, '\n')              // Converte i ritorni a capo Windows
-        .replace(/[ \t]+/g, ' ')             // Riduce spazi e tabulazioni doppie a uno spazio singolo
-        .replace(/\n\s*\n\s*\n+/g, '\n\n')   // Riduce 3 o più a capo consecutivi a soli 2 a capo (un solo spazio vuoto tra paragrafi)
-        .trim();                             // Elimina spazi/a capo a inizio e fine testo
-    }
-
-    async function fetchLiturgiaEvangelizo() {
-      const container = document.getElementById('liturgiaContent');
-      const logLiturgia = document.getElementById('logLiturgia');
-      const apiRawOutput = document.getElementById('apiRawOutput');
-
-      try {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, '0');
-        const day = String(now.getDate()).padStart(2, '0');
-        const dateStr = `${year}${month}${day}`;
-
-        const baseUrl = 'https://feed.evangelizo.org/v2/reader.php';
-        
-        const getEvangelizoText = async (type, content = '') => {
-          let url = `${baseUrl}?date=${dateStr}&lang=IT&type=${type}`;
-          if (content) url += `&content=${content}`;
-          const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
-          if (!res.ok) return '';
-          const rawText = await res.text();
-          const key = content ? `${type}_${content}` : type;
-          rawApiLog[key] = rawText;
-          return cleanLiturgyText(rawText);
-        };
-
-        // Richiediamo Info Header + Prima Lettura
-        const [liturgicTitle, feast, saintRaw, firstReading, firstReadingTitle] = await Promise.all([
-          getEvangelizoText('liturgic_t'),
-          getEvangelizoText('feast'),
-          getEvangelizoText('saint'),
-          getEvangelizoText('reading', 'FR'),
-          getEvangelizoText('reading_lt', 'FR')
-        ]);
-
-        apiRawOutput.textContent = JSON.stringify(rawApiLog, null, 2);
-
-        // Formattazione data (es. Martedì 4 agosto 2026)
-        const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-        const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
-
-        // Estrazione del primo santo pulito
-        let primoSanto = saintRaw;
-        if (primoSanto) {
-          primoSanto = primoSanto.split(/[\n,;\u2013\u2014-]/)[0].trim();
-        }
-
-        const tempoLiturgico = liturgicTitle || feast || 'Feria del Tempo Ordinario';
-
-        // 1. SCHEDA DI INTESTAZIONE (Data, Tempo, Santo del giorno)
-        let parsedHtml = `
-          <div class="liturgia-header-info">
-            <div class="liturgia-data">📅 ${dataHeader}</div>
-            <div class="liturgia-santo" style="margin-top: 8px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${tempoLiturgico}</div>
-            <div class="liturgia-santo" style="margin-top: 6px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${primoSanto || 'Santi del giorno'}</div>
-          </div>
-        `;
-
-        // 2. BLOCCO SEPARATO PER LA PRIMA LETTURA
-        if (firstReading && firstReading.trim().length > 0) {
-          parsedHtml += `
-            <div class="liturgia-sezione" style="margin-top: 24px; padding-top: 8px;">
-              <div class="liturgia-titolo-sezione">PRIMA LETTURA</div>
-              ${firstReadingTitle ? `<div class="liturgia-riferimento" style="margin-top: 4px;">${firstReadingTitle}</div>` : ''}
-              <div class="liturgia-testo" style="margin-top: 14px;">${firstReading}</div>
-              <div style="margin-top: 16px; font-weight: bold; color: #8b4513;">Parola di Dio</div>
-            </div>`;
-        }
-
-        container.innerHTML = parsedHtml;
-        logLiturgia.className = 'status-badge badge-ok';
-        logLiturgia.textContent = 'Evangelizo v2 OK';
-
-      } catch (err) {
-        console.error(err);
-        logLiturgia.className = 'status-badge badge-err';
-        logLiturgia.textContent = 'Errore Evangelizo';
-        apiRawOutput.textContent = `[ERRORE CHIAMATA API]:\n${err.message}`;
-        container.innerHTML = `
-          <div style="text-align:center; padding: 15px;">
-            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare la liturgia di oggi.</p>
-            <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica la connessione internet del dispositivo.</p>
-          </div>
-        `;
-      }
     }
 
     // Render Canti
@@ -386,7 +217,6 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      fetchLiturgiaEvangelizo();
       filterSongs();
       checkStatus();
     });
