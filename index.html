@@ -260,7 +260,7 @@
           return cleanLiturgyText(rawText);
         };
 
-        // Richiediamo Info Header + Prima Lettura (testo e titolo lungo)
+        // Richiediamo Info Header + Prima Lettura
         const [liturgicTitle, feast, saintRaw, firstReading, firstReadingTitle] = await Promise.all([
           getEvangelizoText('liturgic_t'),
           getEvangelizoText('feast'),
@@ -271,11 +271,11 @@
 
         apiRawOutput.textContent = JSON.stringify(rawApiLog, null, 2);
 
-        // Data (es. Martedì 4 agosto 2026)
+        // Formattazione data (es. Martedì 4 agosto 2026)
         const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
         const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
 
-        // Primo Santo
+        // Estrazione del primo santo pulito
         let primoSanto = saintRaw;
         if (primoSanto) {
           primoSanto = primoSanto.split(/[\n,;\u2013\u2014-]/)[0].trim();
@@ -283,22 +283,22 @@
 
         const tempoLiturgico = liturgicTitle || feast || 'Feria del Tempo Ordinario';
 
-        // Costruzione HTML Header
+        // 1. SCHEDA DI INTESTAZIONE (Data, Tempo, Santo del giorno)
         let parsedHtml = `
           <div class="liturgia-header-info">
             <div class="liturgia-data">📅 ${dataHeader}</div>
             <div class="liturgia-santo" style="margin-top: 8px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${tempoLiturgico}</div>
-            ${primoSanto ? `<div class="liturgia-santo" style="margin-top: 6px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${primoSanto}</div>` : ''}
+            <div class="liturgia-santo" style="margin-top: 6px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${primoSanto || 'Santi del giorno'}</div>
           </div>
         `;
 
-        // Sezione PRIMA LETTURA
+        // 2. BLOCCO SEPARATO PER LA PRIMA LETTURA
         if (firstReading && firstReading.trim().length > 0) {
           parsedHtml += `
-            <div class="liturgia-sezione">
+            <div class="liturgia-sezione" style="margin-top: 24px; padding-top: 8px;">
               <div class="liturgia-titolo-sezione">PRIMA LETTURA</div>
-              ${firstReadingTitle ? `<div class="liturgia-riferimento">${firstReadingTitle}</div>` : ''}
-              <div class="liturgia-testo" style="margin-top: 12px;">${firstReading}</div>
+              ${firstReadingTitle ? `<div class="liturgia-riferimento" style="margin-top: 4px;">${firstReadingTitle}</div>` : ''}
+              <div class="liturgia-testo" style="margin-top: 14px;">${firstReading}</div>
               <div style="margin-top: 16px; font-weight: bold; color: #8b4513;">Parola di Dio</div>
             </div>`;
         }
