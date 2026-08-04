@@ -25,25 +25,59 @@
     
     .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 16px; }
     
-    /* STILI TIPOGRAFICI PER LA LITURGIA (Leggibilità Ottimizzata) */
-    .liturgia-box { line-height: 1.75; font-size: 1.05rem; color: #1a1a1a; }
-    .liturgia-header-info { background: #eef5fc; padding: 16px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
-    .liturgia-data { font-size: 1.15rem; font-weight: bold; color: var(--primary); margin-bottom: 4px; }
-    .liturgia-santo { font-size: 1rem; font-weight: 600; color: #2c3e50; }
+    /* STILI LITURGIA IN STILE CARTA / AVANA CON FONT GARAMOND */
+    .liturgia-box { 
+      font-family: 'Garamond', 'Georgia', serif; 
+      background-color: #fdfbf7; /* Avana chiaro tipo carta */
+      color: #111111; /* Nero netto */
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #e8e2d5;
+      line-height: 1.65; 
+      font-size: 1.15rem; 
+    }
     
-    .liturgia-sezione { margin-bottom: 24px; border-bottom: 1px solid #f0f0f0; padding-bottom: 16px; }
+    .liturgia-header-info { 
+      background: #f4efe6; 
+      padding: 14px; 
+      border-radius: 6px; 
+      margin-bottom: 20px; 
+      border-left: 4px solid #8b4513; 
+    }
+    .liturgia-data { 
+      font-size: 1.25rem; 
+      font-weight: bold; 
+      color: #2c1a0e; 
+    }
+
+    .liturgia-sezione { 
+      margin-bottom: 24px; 
+      border-bottom: 1px solid #e8e2d5; 
+      padding-bottom: 16px; 
+    }
     .liturgia-sezione:last-child { border-bottom: none; }
-    
+
     .liturgia-titolo-sezione { 
-      color: var(--primary); 
-      font-size: 1.2rem; 
-      font-weight: 800; 
-      margin-top: 14px; 
-      margin-bottom: 8px; 
-      text-transform: uppercase; 
+      color: #8b4513; /* Colore cuoio/tonalità sacra per i titoli */
+      font-size: 1.3rem; 
+      font-weight: bold; 
+      margin-top: 10px; 
+      margin-bottom: 2px;
+      text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .liturgia-testo { font-size: 1.05rem; white-space: pre-line; color: #2b2b2b; }
+    .liturgia-riferimento { 
+      font-size: 1rem; 
+      color: #555; 
+      font-style: italic; 
+      margin-bottom: 10px; 
+      font-weight: bold;
+    }
+    .liturgia-testo { 
+      font-size: 1.15rem; 
+      white-space: pre-line; 
+      color: #000000; 
+    }
     .loading { text-align: center; color: #666; padding: 20px; font-style: italic; }
     
     /* Stili Canti e Controlli */
@@ -178,23 +212,20 @@
       document.getElementById('statusModal').classList.toggle('active', show);
     }
 
-   // Caricamento completo: Santo del giorno, Tempo/Festa, Prima Lettura, Salmo, Seconda Lettura e Vangelo via Evangelizo Reader v2
+   // Caricamento completo con riferimenti ai brani e stile avana/garamond
     async function fetchLiturgiaEvangelizo() {
       const container = document.getElementById('liturgiaContent');
       const logLiturgia = document.getElementById('logLiturgia');
 
       try {
-        // Data di oggi in formato YYYYMMDD
         const now = new Date();
         const year = now.getFullYear();
         const month = String(now.getMonth() + 1).padStart(2, '0');
         const day = String(now.getDate()).padStart(2, '0');
         const dateStr = `${year}${month}${day}`;
 
-        // Base URL Evangelizo v2
         const baseUrl = 'https://feed.evangelizo.org/v2/reader.php';
         
-        // Helper per fare fetch del testo per ciascun parametro
         const getEvangelizoText = async (type, content = '') => {
           let url = `${baseUrl}?date=${dateStr}&lang=IT&type=${type}`;
           if (content) url += `&content=${content}`;
@@ -204,26 +235,35 @@
           return await res.text();
         };
 
-        // Eseguiamo tutte le richieste in parallelo (Letture + Santo + Tempo/Festa)
-        const [liturgicTitle, feast, saint, firstReading, psalm, secondReading, gospel] = await Promise.all([
+        // Scarichiamo sia i testi sia i titoli lunghi (con i riferimenti) per ogni brano
+        const [
+          liturgicTitle, feast, saint, 
+          firstReading, firstReadingTitle,
+          psalm, psalmTitle,
+          secondReading, secondReadingTitle,
+          gospel, gospelTitle
+        ] = await Promise.all([
           getEvangelizoText('liturgic_t'),
           getEvangelizoText('feast'),
           getEvangelizoText('saint'),
           getEvangelizoText('reading', 'FR'),
+          getEvangelizoText('reading_lt', 'FR'),
           getEvangelizoText('reading', 'PS'),
+          getEvangelizoText('reading_lt', 'PS'),
           getEvangelizoText('reading', 'SR'),
-          getEvangelizoText('reading', 'GSP')
+          getEvangelizoText('reading_lt', 'SR'),
+          getEvangelizoText('reading', 'GSP'),
+          getEvangelizoText('reading_lt', 'GSP')
         ]);
 
         const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-        // Capitalizziamo il giorno della settimana
         const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
 
         let parsedHtml = `
           <div class="liturgia-header-info">
             <div class="liturgia-data">📅 ${dataHeader}</div>
-            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: var(--primary);">✝️ <b>Tempo / Liturgia:</b> ${liturgicTitle || feast}</div>` : ''}
-            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #555;">😇 <b>Santo del giorno:</b> ${saint}</div>` : ''}
+            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${liturgicTitle || feast}</div>` : ''}
+            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${saint}</div>` : ''}
           </div>
         `;
 
@@ -232,6 +272,7 @@
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Prima Lettura</div>
+              ${firstReadingTitle ? `<div class="liturgia-riferimento">${firstReadingTitle}</div>` : ''}
               <div class="liturgia-testo">${firstReading}</div>
             </div>`;
         }
@@ -241,15 +282,17 @@
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Salmo Responsoriale</div>
+              ${psalmTitle ? `<div class="liturgia-riferimento">${psalmTitle}</div>` : ''}
               <div class="liturgia-testo">${psalm}</div>
             </div>`;
         }
 
-        // Seconda Lettura (SR) - Se presente
+        // Seconda Lettura (SR) - Nascosta se vuota o non presente
         if (secondReading && secondReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Seconda Lettura</div>
+              ${secondReadingTitle ? `<div class="liturgia-riferimento">${secondReadingTitle}</div>` : ''}
               <div class="liturgia-testo">${secondReading}</div>
             </div>`;
         }
@@ -259,6 +302,7 @@
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Vangelo</div>
+              ${gospelTitle ? `<div class="liturgia-riferimento">${gospelTitle}</div>` : ''}
               <div class="liturgia-testo">${gospel}</div>
             </div>`;
         }
