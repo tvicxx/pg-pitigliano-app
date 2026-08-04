@@ -9,7 +9,7 @@
     :root { --primary: #0056b3; --bg: #f4f6f9; }
     body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; flex-direction: column; min-height: 100vh; }
     
-    /* Header personalizzato con Logo */
+    /* Header personalizzato */
     header { background: rgb(182, 255, 183); color: #333; padding: 1.2rem 1rem; text-align: center; border-bottom: 2px solid #eef2f7; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
     .header-logo { max-width: 140px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
     header h1 { margin: 0; font-size: 1.2rem; color: var(--primary); }
@@ -25,9 +25,25 @@
     
     .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 16px; }
     
-    /* Stili Liturgia */
-    .liturgia-box { line-height: 1.6; font-size: 0.98rem; }
-    .liturgia-box h1, .liturgia-box h2, .liturgia-box h3 { color: var(--primary); margin-top: 1rem; }
+    /* STILI TIPOGRAFICI PER LA LITURGIA (Leggibilità Ottimizzata) */
+    .liturgia-box { line-height: 1.75; font-size: 1.05rem; color: #1a1a1a; }
+    .liturgia-header-info { background: #eef5fc; padding: 16px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid var(--primary); }
+    .liturgia-data { font-size: 1.15rem; font-weight: bold; color: var(--primary); margin-bottom: 4px; }
+    .liturgia-santo { font-size: 1rem; font-weight: 600; color: #2c3e50; }
+    
+    .liturgia-sezione { margin-bottom: 24px; border-bottom: 1px solid #f0f0f0; padding-bottom: 16px; }
+    .liturgia-sezione:last-child { border-bottom: none; }
+    
+    .liturgia-titolo-sezione { 
+      color: var(--primary); 
+      font-size: 1.2rem; 
+      font-weight: 800; 
+      margin-top: 14px; 
+      margin-bottom: 8px; 
+      text-transform: uppercase; 
+      letter-spacing: 0.5px;
+    }
+    .liturgia-testo { font-size: 1.05rem; white-space: pre-line; color: #2b2b2b; }
     .loading { text-align: center; color: #666; padding: 20px; font-style: italic; }
     
     /* Stili Canti e Controlli */
@@ -58,9 +74,9 @@
       pointer-events: none;
     }
 
-    .song-title { font-weight: bold; color: var(--primary); font-size: 1.1rem; margin-bottom: 4px; }
+    .song-title { font-weight: bold; color: var(--primary); font-size: 1.15rem; margin-bottom: 4px; }
     .song-category { font-size: 0.8rem; background: #e9ecef; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
-    .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; line-height: 1.5; color: #444; }
+    .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
     .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
 
     /* Modal Stato del Sistema */
@@ -98,13 +114,13 @@
     <!-- TAB LITURGIA -->
     <section id="liturgia" class="tab-content active">
       <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
-          <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno (CEI)</span>
-          <a href="https://www.chiesacattolica.it/liturgia-del-giorno/" target="_blank" style="font-size:0.8rem; color:var(--primary); text-decoration:none;">Sito Ufficiale ↗</a>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+          <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno</span>
+          <a href="https://www.laparola.it/romano/liturgia-della-parola/" target="_blank" style="font-size:0.8rem; color:var(--primary); text-decoration:none;">LaParola.it ↗</a>
         </div>
         
         <div id="liturgiaContent" class="liturgia-box">
-          <div class="loading">Caricamento della liturgia in corso...</div>
+          <div class="loading">Scaricamento della Liturgia da LaParola.it in corso...</div>
         </div>
       </div>
     </section>
@@ -133,7 +149,7 @@
         <span id="logOffline" class="status-badge badge-wait">Verifica in corso...</span>
       </div>
       <div class="status-item">
-        <strong>Liturgia CEI:</strong> 
+        <strong>Fonte Liturgia:</strong> 
         <span id="logLiturgia" class="status-badge badge-wait">In attesa...</span>
       </div>
       <div class="status-item">
@@ -162,40 +178,58 @@
       document.getElementById('statusModal').classList.toggle('active', show);
     }
 
-    // Carica la Liturgia CEI
-    async function fetchLiturgiaCEI() {
+    // Caricamento completo della Liturgia (Letture, Salmo e Vangelo) via API Evangelizo
+    async function fetchLiturgiaEvangelizo() {
       const container = document.getElementById('liturgiaContent');
       const logLiturgia = document.getElementById('logLiturgia');
-      const targetUrl = 'https://www.chiesacattolica.it/liturgia-del-giorno/';
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
 
       try {
-        const response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error('Errore di connessione');
-        const data = await response.json();
+        // Data di oggi nel formato YYYYMMDD
+        const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
         
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data.contents, 'text/html');
-        const mainContent = doc.querySelector('.entry-content') || doc.querySelector('article') || doc.querySelector('.content');
+        // Endpoint completo con tipo 'all' per includere l'intero lezionario
+        const apiUrl = `https://api.evangelizo.org/v1/liturgy/IT/readings?date=${today}&type=all`;
+        
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Errore di connessione API');
+        
+        const json = await response.json();
+        const readings = json.data.readings;
+        const dateHuman = json.data.date_human || 'Liturgia del Giorno';
+        const titleLiturgy = json.data.liturgical_title || '';
 
-        if (mainContent) {
-          mainContent.querySelectorAll('script, style, iframe').forEach(el => el.remove());
-          container.innerHTML = mainContent.innerHTML;
-          logLiturgia.className = 'status-badge badge-ok';
-          logLiturgia.textContent = 'Caricata con successo';
-        } else {
-          throw new Error('Struttura pagina non trovata');
-        }
+        let parsedHtml = `
+          <div class="liturgia-header-info">
+            <div class="liturgia-data">${dateHuman}</div>
+            ${titleLiturgy ? `<div class="liturgia-santo">${titleLiturgy}</div>` : ''}
+          </div>
+        `;
+
+        // Scorre ed impagina ogni blocco (Prima Lettura, Salmo, Seconda Lettura, Vangelo)
+        readings.forEach(item => {
+          parsedHtml += `
+            <div class="liturgia-sezione">
+              <div class="liturgia-titolo-sezione">${item.title}</div>
+              ${item.source ? `<div style="font-size:0.9rem; color:#666; font-style:italic; margin-bottom:10px;">${item.source}</div>` : ''}
+              <div class="liturgia-testo">${item.text}</div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = parsedHtml;
+        logLiturgia.className = 'status-badge badge-ok';
+        logLiturgia.textContent = 'Evangelizo API OK';
+
       } catch (err) {
         console.error(err);
         logLiturgia.className = 'status-badge badge-err';
-        logLiturgia.textContent = 'Non disponibile / Errore';
+        logLiturgia.textContent = 'Errore API';
         container.innerHTML = `
           <div style="text-align:center; padding: 15px;">
-            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile mostrare il riquadro integrato.</p>
-            <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica la tua connessione internet.</p>
-            <a href="https://www.chiesacattolica.it/liturgia-del-giorno/" target="_blank" style="background:var(--primary); color:white; padding:10px 16px; border-radius:6px; text-decoration:none; display:inline-block; font-size:0.9rem;">
-              Apri Liturgia su ChiesaCattolica.it
+            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare la liturgia del giorno.</p>
+            <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica che il dispositivo sia connesso a Internet.</p>
+            <a href="https://www.evangelizo.org/" target="_blank" style="background:var(--primary); color:white; padding:10px 16px; border-radius:6px; text-decoration:none; display:inline-block; font-size:0.9rem;">
+              Apri Evangelizo.org ↗
             </a>
           </div>
         `;
@@ -240,7 +274,7 @@
       renderSongs(filtered);
     }
 
-    // Verifica stato Offline / ServiceWorker
+    // Verifica stato Offline
     function checkStatus() {
       const logOffline = document.getElementById('logOffline');
       const logOnline = document.getElementById('logOnline');
@@ -267,7 +301,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      fetchLiturgiaCEI();
+      fetchLiturgiaEvangelizo(); // <-- Chiamata alla nuova API
       filterSongs();
       checkStatus();
     });
