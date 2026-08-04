@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastorale Giovanile - Liturgia e Canti</title>
-
-  <!-- Favicon per Browser PC/Android -->
+  
+  <!-- Favicon e Icone PWA -->
   <link rel="icon" type="image/png" href="logo.png">
-
-  <!-- Icona specifica per iPhone/iPad (iOS Home Screen) -->
   <link rel="apple-touch-icon" href="logo.png">
-
-  <!-- Manifest per Android PWA -->
   <link rel="manifest" href="manifest.json">
+  
   <style>
     :root { --primary: #0056b3; --bg: #f4f6f9; }
     body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; flex-direction: column; min-height: 100vh; }
@@ -35,7 +32,50 @@
     
     /* Stili Canti e Controlli */
     .canti-controls { display: flex; gap: 8px; margin-bottom: 16px; }
-    input[type="search"] { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+    
+    /* Contenitore per barra di ricerca con pulsante X integrato */
+    .search-wrapper {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .search-wrapper input[type="search"] {
+      width: 100%;
+      padding: 12px 36px 12px 12px; /* Spazio a destra per la X */
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+    /* Nasconde la X nativa del browser per usare la nostra personalizzata */
+    .search-wrapper input[type="search"]::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    
+    /* Pulsante X per cancellare la ricerca */
+    .clear-search-btn {
+      position: absolute;
+      right: 10px;
+      background: #ccc;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      display: none; /* Nascosto di default */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+    }
+    .clear-search-btn:hover { background: #999; }
+
     .sort-wrapper { position: relative; display: flex; align-items: center; }
     .sort-select { 
       padding: 12px 14px; 
@@ -102,7 +142,7 @@
         
         <!-- Widget Almanacco Ufficiale Chiesa Cattolica Italiana -->
         <div id="liturgiaContent">
-          <script src='https://widgets.chiesacattolica.it/widget-almanacco-v2/widget.php?mods=402593&font=16&colors=1' async></script>
+          <script src='https://widgets.chiesacattolica.it/widget-almanacco-v2/widget.php?mods=402593&font=8&colors=1' async></script>
         </div>
       </div>
     </section>
@@ -110,7 +150,10 @@
     <!-- TAB CANTI -->
     <section id="canti" class="tab-content">
       <div class="canti-controls">
-        <input type="search" id="searchInput" placeholder="Cerca titolo o testo del canto..." oninput="filterSongs()">
+        <div class="search-wrapper">
+          <input type="search" id="searchInput" placeholder="Cerca titolo o testo del canto..." oninput="filterSongs()">
+          <button id="clearSearchBtn" class="clear-search-btn" onclick="clearSearch()" aria-label="Cancella ricerca">✕</button>
+        </div>
         <div class="sort-wrapper">
           <select id="sortOrder" class="sort-select" onchange="filterSongs()" aria-label="Ordinamento canti">
             <option value="az">🔤 A-Z</option>
@@ -181,8 +224,13 @@
     }
 
     function filterSongs() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
+      const searchInput = document.getElementById('searchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const query = searchInput.value.toLowerCase();
       const sortOrder = document.getElementById('sortOrder').value;
+
+      // Mostra la "X" solo se c'è del testo nel campo di ricerca
+      clearBtn.style.display = query.length > 0 ? 'flex' : 'none';
 
       let filtered = canti.filter(c => 
         c.titolo.toLowerCase().includes(query) || 
@@ -196,6 +244,14 @@
       });
 
       renderSongs(filtered);
+    }
+
+    // Funzione per cancellare il testo di ricerca al click sulla X
+    function clearSearch() {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.value = '';
+      filterSongs();
+      searchInput.focus();
     }
 
     // Verifica stato Offline
