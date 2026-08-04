@@ -30,8 +30,34 @@
     .liturgia-box h1, .liturgia-box h2, .liturgia-box h3 { color: var(--primary); margin-top: 1rem; }
     .loading { text-align: center; color: #666; padding: 20px; font-style: italic; }
     
-    /* Stili Canti */
-    input[type="search"] { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; margin-bottom: 16px; font-size: 1rem; }
+    /* Stili Canti e Controlli */
+    .canti-controls { display: flex; gap: 8px; margin-bottom: 16px; }
+    input[type="search"] { flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+    .sort-wrapper { position: relative; display: flex; align-items: center; }
+    .sort-select { 
+      padding: 12px 14px; 
+      border: 1px solid #ccc; 
+      border-radius: 8px; 
+      background: white; 
+      color: var(--primary); 
+      font-weight: bold; 
+      font-size: 0.95rem; 
+      cursor: pointer; 
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 32px;
+    }
+    .sort-wrapper::after {
+      content: '▼';
+      font-size: 0.7rem;
+      color: var(--primary);
+      position: absolute;
+      right: 12px;
+      pointer-events: none;
+    }
+
     .song-title { font-weight: bold; color: var(--primary); font-size: 1.1rem; margin-bottom: 4px; }
     .song-category { font-size: 0.8rem; background: #e9ecef; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
     .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; line-height: 1.5; color: #444; }
@@ -72,7 +98,15 @@
 
     <!-- TAB CANTI -->
     <section id="canti" class="tab-content">
-      <input type="search" id="searchInput" placeholder="Cerca titolo o testo del canto..." oninput="filterSongs()">
+      <div class="canti-controls">
+        <input type="search" id="searchInput" placeholder="Cerca titolo o testo del canto..." oninput="filterSongs()">
+        <div class="sort-wrapper">
+          <select id="sortOrder" class="sort-select" onchange="filterSongs()" aria-label="Ordinamento canti">
+            <option value="az">🔤 A-Z</option>
+            <option value="za">🔤 Z-A</option>
+          </select>
+        </div>
+      </div>
       <div id="songsContainer"></div>
     </section>
   </main>
@@ -148,16 +182,31 @@
 
     function filterSongs() {
       const query = document.getElementById('searchInput').value.toLowerCase();
-      const filtered = canti.filter(c => 
+      const sortOrder = document.getElementById('sortOrder').value;
+
+      // Filtra i canti per ricerca
+      let filtered = canti.filter(c => 
         c.titolo.toLowerCase().includes(query) || 
         c.testo.toLowerCase().includes(query)
       );
+
+      // Ordina i canti in base alla selezione del menù
+      filtered.sort((a, b) => {
+        const titleA = a.titolo.toLowerCase();
+        const titleB = b.titolo.toLowerCase();
+        if (sortOrder === 'az') {
+          return titleA.localeCompare(titleB, 'it');
+        } else {
+          return titleB.localeCompare(titleA, 'it');
+        }
+      });
+
       renderSongs(filtered);
     }
 
     window.addEventListener('DOMContentLoaded', () => {
       fetchLiturgiaCEI();
-      renderSongs(canti);
+      filterSongs(); // Ordina ed effettua il primo render automatico
     });
   </script>
 </body>
