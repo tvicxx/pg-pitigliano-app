@@ -252,83 +252,54 @@
         const getEvangelizoText = async (type, content = '') => {
           let url = `${baseUrl}?date=${dateStr}&lang=IT&type=${type}`;
           if (content) url += `&content=${content}`;
-          
           const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
           if (!res.ok) return '';
           const rawText = await res.text();
-          
           const key = content ? `${type}_${content}` : type;
           rawApiLog[key] = rawText;
-          
           return cleanLiturgyText(rawText);
         };
 
-        const [
-          liturgicTitle, feast, saint, 
-          firstReading, firstReadingTitle,
-          psalm, psalmTitle,
-          secondReading, secondReadingTitle,
-          gospel, gospelTitle
-        ] = await Promise.all([
+        // Richiediamo Info Header + Prima Lettura (testo e titolo lungo)
+        const [liturgicTitle, feast, saintRaw, firstReading, firstReadingTitle] = await Promise.all([
           getEvangelizoText('liturgic_t'),
           getEvangelizoText('feast'),
           getEvangelizoText('saint'),
           getEvangelizoText('reading', 'FR'),
-          getEvangelizoText('reading_lt', 'FR'),
-          getEvangelizoText('reading', 'PS'),
-          getEvangelizoText('reading_lt', 'PS'),
-          getEvangelizoText('reading', 'SR'),
-          getEvangelizoText('reading_lt', 'SR'),
-          getEvangelizoText('reading', 'GSP'),
-          getEvangelizoText('reading_lt', 'GSP')
+          getEvangelizoText('reading_lt', 'FR')
         ]);
 
         apiRawOutput.textContent = JSON.stringify(rawApiLog, null, 2);
 
+        // Data (es. Martedì 4 agosto 2026)
         const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
         const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
 
+        // Primo Santo
+        let primoSanto = saintRaw;
+        if (primoSanto) {
+          primoSanto = primoSanto.split(/[\n,;\u2013\u2014-]/)[0].trim();
+        }
+
+        const tempoLiturgico = liturgicTitle || feast || 'Feria del Tempo Ordinario';
+
+        // Costruzione HTML Header
         let parsedHtml = `
           <div class="liturgia-header-info">
             <div class="liturgia-data">📅 ${dataHeader}</div>
-            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${cleanLiturgyText(liturgicTitle || feast)}</div>` : ''}
-            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${cleanLiturgyText(saint)}</div>` : ''}
+            <div class="liturgia-santo" style="margin-top: 8px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${tempoLiturgico}</div>
+            ${primoSanto ? `<div class="liturgia-santo" style="margin-top: 6px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${primoSanto}</div>` : ''}
           </div>
         `;
 
+        // Sezione PRIMA LETTURA
         if (firstReading && firstReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
-              <div class="liturgia-titolo-sezione">Prima Lettura</div>
-              ${firstReadingTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(firstReadingTitle)}</div>` : ''}
-              <div class="liturgia-testo">${firstReading}</div>
-            </div>`;
-        }
-
-        if (psalm && psalm.trim().length > 0) {
-          parsedHtml += `
-            <div class="liturgia-sezione">
-              <div class="liturgia-titolo-sezione">Salmo Responsoriale</div>
-              ${psalmTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(psalmTitle)}</div>` : ''}
-              <div class="liturgia-testo">${psalm}</div>
-            </div>`;
-        }
-
-        if (secondReading && secondReading.trim().length > 0) {
-          parsedHtml += `
-            <div class="liturgia-sezione">
-              <div class="liturgia-titolo-sezione">Seconda Lettura</div>
-              ${secondReadingTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(secondReadingTitle)}</div>` : ''}
-              <div class="liturgia-testo">${secondReading}</div>
-            </div>`;
-        }
-
-        if (gospel && gospel.trim().length > 0) {
-          parsedHtml += `
-            <div class="liturgia-sezione">
-              <div class="liturgia-titolo-sezione">Vangelo</div>
-              ${gospelTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(gospelTitle)}</div>` : ''}
-              <div class="liturgia-testo">${gospel}</div>
+              <div class="liturgia-titolo-sezione">PRIMA LETTURA</div>
+              ${firstReadingTitle ? `<div class="liturgia-riferimento">${firstReadingTitle}</div>` : ''}
+              <div class="liturgia-testo" style="margin-top: 12px;">${firstReading}</div>
+              <div style="margin-top: 16px; font-weight: bold; color: #8b4513;">Parola di Dio</div>
             </div>`;
         }
 
@@ -343,7 +314,7 @@
         apiRawOutput.textContent = `[ERRORE CHIAMATA API]:\n${err.message}`;
         container.innerHTML = `
           <div style="text-align:center; padding: 15px;">
-            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare le letture di oggi.</p>
+            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare la liturgia di oggi.</p>
             <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica la connessione internet del dispositivo.</p>
           </div>
         `;
