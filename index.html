@@ -218,20 +218,21 @@
     // Variabile globale per conservare i log grezzi della chiamata API
     let rawApiLog = {};
 
-    // Funzione di pulizia per rimuovere copyright, promo e trafiletti di testo non necessari
+    // Pulizia completa di trafiletti, copyright e riorganizzazione perfetta degli a capo
     function cleanLiturgyText(text) {
       if (!text) return '';
       return text
-        // Rimuove la dicitura Copyright CEI (con o senza date/parentesi)
+        // 1. Rimuove copyright CEI e frasi promozionali/email
         .replace(/Copyright\s*@?\s*Conferenza\s*Episcopale\s*Italiana.*$/gmi, '')
         .replace(/Copyright\s*.*CEI.*/gmi, '')
-        // Rimuove l'invito all'iscrizione via e-mail e il link a vangelodelgiorno.org
         .replace(/Per ricevere il Vangelo ogni mattina.*$/gmi, '')
         .replace(/vangelodelgiorno\.org/gmi, '')
         .replace(/iscrivetevi\s*:\s*/gmi, '')
-        // Pulizia di righe vuote e spazi multipli residui
-        .replace(/\n\s*\n\s*\n/g, '\n\n')
-        .trim();
+        // 2. Normalizza le interlinee e rimuove spazi vuoti multipli
+        .replace(/\r\n/g, '\n')              // Converte i ritorni a capo Windows
+        .replace(/[ \t]+/g, ' ')             // Riduce spazi e tabulazioni doppie a uno spazio singolo
+        .replace(/\n\s*\n\s*\n+/g, '\n\n')   // Riduce 3 o più a capo consecutivi a soli 2 a capo (un solo spazio vuoto tra paragrafi)
+        .trim();                             // Elimina spazi/a capo a inizio e fine testo
     }
 
     async function fetchLiturgiaEvangelizo() {
@@ -256,15 +257,12 @@
           if (!res.ok) return '';
           const rawText = await res.text();
           
-          // Salviamo il testo grezzo nella modal per il debug
           const key = content ? `${type}_${content}` : type;
           rawApiLog[key] = rawText;
           
-          // Restituiamo il testo perfettamente pulito senza trafiletti
           return cleanLiturgyText(rawText);
         };
 
-        // Chiamate in parallelo
         const [
           liturgicTitle, feast, saint, 
           firstReading, firstReadingTitle,
@@ -285,7 +283,6 @@
           getEvangelizoText('reading_lt', 'GSP')
         ]);
 
-        // Mostra il JSON dei log nella modal
         apiRawOutput.textContent = JSON.stringify(rawApiLog, null, 2);
 
         const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
@@ -294,47 +291,43 @@
         let parsedHtml = `
           <div class="liturgia-header-info">
             <div class="liturgia-data">📅 ${dataHeader}</div>
-            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${liturgicTitle || feast}</div>` : ''}
-            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${saint}</div>` : ''}
+            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: #8b4513;">✝️ <b>Tempo / Liturgia:</b> ${cleanLiturgyText(liturgicTitle || feast)}</div>` : ''}
+            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #4a3b32;">😇 <b>Santo del giorno:</b> ${cleanLiturgyText(saint)}</div>` : ''}
           </div>
         `;
 
-        // Prima Lettura (FR)
         if (firstReading && firstReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Prima Lettura</div>
-              ${firstReadingTitle ? `<div class="liturgia-riferimento">${firstReadingTitle}</div>` : ''}
+              ${firstReadingTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(firstReadingTitle)}</div>` : ''}
               <div class="liturgia-testo">${firstReading}</div>
             </div>`;
         }
 
-        // Salmo Responsoriale (PS)
         if (psalm && psalm.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Salmo Responsoriale</div>
-              ${psalmTitle ? `<div class="liturgia-riferimento">${psalmTitle}</div>` : ''}
+              ${psalmTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(psalmTitle)}</div>` : ''}
               <div class="liturgia-testo">${psalm}</div>
             </div>`;
         }
 
-        // Seconda Lettura (SR) - Nascosta se vuota
         if (secondReading && secondReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Seconda Lettura</div>
-              ${secondReadingTitle ? `<div class="liturgia-riferimento">${secondReadingTitle}</div>` : ''}
+              ${secondReadingTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(secondReadingTitle)}</div>` : ''}
               <div class="liturgia-testo">${secondReading}</div>
             </div>`;
         }
 
-        // Vangelo (GSP)
         if (gospel && gospel.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
               <div class="liturgia-titolo-sezione">Vangelo</div>
-              ${gospelTitle ? `<div class="liturgia-riferimento">${gospelTitle}</div>` : ''}
+              ${gospelTitle ? `<div class="liturgia-riferimento">${cleanLiturgyText(gospelTitle)}</div>` : ''}
               <div class="liturgia-testo">${gospel}</div>
             </div>`;
         }
