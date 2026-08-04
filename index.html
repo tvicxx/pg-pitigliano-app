@@ -28,9 +28,9 @@
     /* STILI LITURGIA IN STILE CARTA / AVANA CON FONT GARAMOND */
     .liturgia-box { 
       font-family: 'Garamond', 'Georgia', serif; 
-      background-color: #fdfbf7; /* Avana chiaro tipo carta */
-      color: #111111; /* Nero netto */
-      padding: 16px;
+      background-color: #fdfbf7; 
+      color: #111111; 
+      padding: 18px;
       border-radius: 8px;
       border: 1px solid #e8e2d5;
       line-height: 1.65; 
@@ -44,21 +44,13 @@
       margin-bottom: 20px; 
       border-left: 4px solid #8b4513; 
     }
-    .liturgia-data { 
-      font-size: 1.25rem; 
-      font-weight: bold; 
-      color: #2c1a0e; 
-    }
+    .liturgia-data { font-size: 1.25rem; font-weight: bold; color: #2c1a0e; }
 
-    .liturgia-sezione { 
-      margin-bottom: 24px; 
-      border-bottom: 1px solid #e8e2d5; 
-      padding-bottom: 16px; 
-    }
+    .liturgia-sezione { margin-bottom: 24px; border-bottom: 1px solid #e8e2d5; padding-bottom: 16px; }
     .liturgia-sezione:last-child { border-bottom: none; }
 
     .liturgia-titolo-sezione { 
-      color: #8b4513; /* Colore cuoio/tonalità sacra per i titoli */
+      color: #8b4513; 
       font-size: 1.3rem; 
       font-weight: bold; 
       margin-top: 10px; 
@@ -66,18 +58,8 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .liturgia-riferimento { 
-      font-size: 1rem; 
-      color: #555; 
-      font-style: italic; 
-      margin-bottom: 10px; 
-      font-weight: bold;
-    }
-    .liturgia-testo { 
-      font-size: 1.15rem; 
-      white-space: pre-line; 
-      color: #000000; 
-    }
+    .liturgia-riferimento { font-size: 1rem; color: #555; font-style: italic; margin-bottom: 10px; font-weight: bold; }
+    .liturgia-testo { font-size: 1.15rem; white-space: pre-line; color: #000000; }
     .loading { text-align: center; color: #666; padding: 20px; font-style: italic; }
     
     /* Stili Canti e Controlli */
@@ -99,32 +81,44 @@
       appearance: none;
       padding-right: 32px;
     }
-    .sort-wrapper::after {
-      content: '▼';
-      font-size: 0.7rem;
-      color: var(--primary);
-      position: absolute;
-      right: 12px;
-      pointer-events: none;
-    }
+    .sort-wrapper::after { content: '▼'; font-size: 0.7rem; color: var(--primary); position: absolute; right: 12px; pointer-events: none; }
 
     .song-title { font-weight: bold; color: var(--primary); font-size: 1.15rem; margin-bottom: 4px; }
     .song-category { font-size: 0.8rem; background: #e9ecef; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
     .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
     .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
 
-    /* Modal Stato del Sistema */
+    /* Modal Stato del Sistema e Log API */
     .status-modal {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.5); z-index: 100; justify-content: center; align-items: center;
     }
     .status-modal.active { display: flex; }
-    .status-card { background: white; padding: 24px; border-radius: 12px; max-width: 450px; width: 90%; }
+    .status-card { 
+      background: white; padding: 20px; border-radius: 12px; max-width: 550px; width: 92%; 
+      max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    }
+    .status-body { overflow-y: auto; flex: 1; margin-top: 10px; padding-right: 4px; }
     .status-item { margin-bottom: 12px; font-size: 0.9rem; }
     .status-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
     .badge-ok { background: #d4edda; color: #155724; }
     .badge-err { background: #f8d7da; color: #721c24; }
     .badge-wait { background: #fff3cd; color: #856404; }
+    
+    /* Console Log API Raw Viewer */
+    .api-log-viewer {
+      background: #1e1e1e;
+      color: #00ff66;
+      font-family: monospace;
+      font-size: 0.8rem;
+      padding: 12px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 250px;
+      overflow-y: auto;
+      border: 1px solid #333;
+    }
 
     /* Footer / Crediti */
     footer { text-align: center; padding: 16px; background: white; font-size: 0.85rem; color: #666; border-top: 1px solid #eee; margin-top: auto; }
@@ -150,11 +144,11 @@
       <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
           <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno</span>
-          <a href="https://www.laparola.it/romano/liturgia-della-parola/" target="_blank" style="font-size:0.8rem; color:var(--primary); text-decoration:none;">LaParola.it ↗</a>
+          <span style="font-size:0.8rem; color:#666;">Evangelizo v2</span>
         </div>
         
         <div id="liturgiaContent" class="liturgia-box">
-          <div class="loading">Scaricamento della Liturgia da LaParola.it in corso...</div>
+          <div class="loading">Caricamento delle letture in corso...</div>
         </div>
       </div>
     </section>
@@ -174,23 +168,32 @@
     </section>
   </main>
 
-  <!-- MODAL STATI E LOGS -->
+  <!-- MODAL STATI E LOGS API RAW -->
   <div id="statusModal" class="status-modal">
     <div class="status-card">
-      <h3 style="margin-top:0; color:var(--primary);">Stato Applicazione & Logs</h3>
-      <div class="status-item">
-        <strong>PWA Offline:</strong> 
-        <span id="logOffline" class="status-badge badge-wait">Verifica in corso...</span>
+      <h3 style="margin:0; color:var(--primary);">Stato Applicazione & API Logs</h3>
+      
+      <div class="status-body">
+        <div class="status-item">
+          <strong>PWA Offline:</strong> 
+          <span id="logOffline" class="status-badge badge-wait">Verifica...</span>
+        </div>
+        <div class="status-item">
+          <strong>Evangelizo API Status:</strong> 
+          <span id="logLiturgia" class="status-badge badge-wait">In attesa...</span>
+        </div>
+        <div class="status-item">
+          <strong>Connessione Rete:</strong> 
+          <span id="logOnline" class="status-badge">...</span>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #eee; margin: 12px 0;">
+        
+        <div style="font-weight:bold; font-size:0.85rem; margin-bottom:6px; color:#444;">Dati Grezzi API (Raw Response):</div>
+        <div id="apiRawOutput" class="api-log-viewer">In attesa della prima chiamata API...</div>
       </div>
-      <div class="status-item">
-        <strong>Fonte Liturgia:</strong> 
-        <span id="logLiturgia" class="status-badge badge-wait">In attesa...</span>
-      </div>
-      <div class="status-item">
-        <strong>Connessione Rete:</strong> 
-        <span id="logOnline" class="status-badge">...</span>
-      </div>
-      <button onclick="toggleModal(false)" style="margin-top: 16px; background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;">Chiudi</button>
+
+      <button onclick="toggleModal(false)" style="margin-top: 14px; background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight:bold;">Chiudi Log</button>
     </div>
   </div>
 
@@ -212,10 +215,29 @@
       document.getElementById('statusModal').classList.toggle('active', show);
     }
 
-   // Caricamento completo con riferimenti ai brani e stile avana/garamond
+    // Variabile globale per conservare i log grezzi della chiamata API
+    let rawApiLog = {};
+
+    // Funzione di pulizia per rimuovere copyright, promo e trafiletti di testo non necessari
+    function cleanLiturgyText(text) {
+      if (!text) return '';
+      return text
+        // Rimuove la dicitura Copyright CEI (con o senza date/parentesi)
+        .replace(/Copyright\s*@?\s*Conferenza\s*Episcopale\s*Italiana.*$/gmi, '')
+        .replace(/Copyright\s*.*CEI.*/gmi, '')
+        // Rimuove l'invito all'iscrizione via e-mail e il link a vangelodelgiorno.org
+        .replace(/Per ricevere il Vangelo ogni mattina.*$/gmi, '')
+        .replace(/vangelodelgiorno\.org/gmi, '')
+        .replace(/iscrivetevi\s*:\s*/gmi, '')
+        // Pulizia di righe vuote e spazi multipli residui
+        .replace(/\n\s*\n\s*\n/g, '\n\n')
+        .trim();
+    }
+
     async function fetchLiturgiaEvangelizo() {
       const container = document.getElementById('liturgiaContent');
       const logLiturgia = document.getElementById('logLiturgia');
+      const apiRawOutput = document.getElementById('apiRawOutput');
 
       try {
         const now = new Date();
@@ -232,10 +254,17 @@
           
           const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
           if (!res.ok) return '';
-          return await res.text();
+          const rawText = await res.text();
+          
+          // Salviamo il testo grezzo nella modal per il debug
+          const key = content ? `${type}_${content}` : type;
+          rawApiLog[key] = rawText;
+          
+          // Restituiamo il testo perfettamente pulito senza trafiletti
+          return cleanLiturgyText(rawText);
         };
 
-        // Scarichiamo sia i testi sia i titoli lunghi (con i riferimenti) per ogni brano
+        // Chiamate in parallelo
         const [
           liturgicTitle, feast, saint, 
           firstReading, firstReadingTitle,
@@ -255,6 +284,9 @@
           getEvangelizoText('reading', 'GSP'),
           getEvangelizoText('reading_lt', 'GSP')
         ]);
+
+        // Mostra il JSON dei log nella modal
+        apiRawOutput.textContent = JSON.stringify(rawApiLog, null, 2);
 
         const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
         const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
@@ -287,7 +319,7 @@
             </div>`;
         }
 
-        // Seconda Lettura (SR) - Nascosta se vuota o non presente
+        // Seconda Lettura (SR) - Nascosta se vuota
         if (secondReading && secondReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
@@ -315,6 +347,7 @@
         console.error(err);
         logLiturgia.className = 'status-badge badge-err';
         logLiturgia.textContent = 'Errore Evangelizo';
+        apiRawOutput.textContent = `[ERRORE CHIAMATA API]:\n${err.message}`;
         container.innerHTML = `
           <div style="text-align:center; padding: 15px;">
             <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare le letture di oggi.</p>
@@ -389,7 +422,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      fetchLiturgiaEvangelizo(); // <-- Chiamata alla nuova API
+      fetchLiturgiaEvangelizo();
       filterSongs();
       checkStatus();
     });
