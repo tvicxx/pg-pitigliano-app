@@ -74,7 +74,7 @@ const canti = [
   {
     titolo: "Emmanuel",
     categoria: "Ingresso / Finale",
-    testo: ""
+    testo: "Dall'orizzonte una grande luce viaggia nella storia\nE lungo gli anni ha vinto il buio facendosi memoria\nE illuminando la nostra vita, chiaro ci rivela\nChe non si vive se non si cerca la verità\n\nUn grande dono che Dio ci ha fatto è Cristo, il suo figlio\nL'umanità è rinnovata, è in lui salvata\nÈ vero uomo, è vero Dio, è il pane della vita\nChe ad ogni uomo, ai suoi fratelli ridonerà\n\n<b>RIT: Siamo qui\nSotto la stessa luce\nSotto la sua croce\nCantando ad una voce\nÈ l'Emmanuel\nEmmanuel, Emmanuel\nÈ l'Emmanuel, l'Emmanuel</b>\n\nLa morte è uccisa, la vita ha vinto, è Pasqua in tutto il mondo\nUn vento soffia in ogni uomo lo Spirito fecondo\nChe porta avanti nella storia la Chiesa, sua sposa\nSotto lo sguardo di Maria, comunità\n\nNoi debitori del passato, di secoli di storia\nDi vite date per amore, di santi che han creduto\nDi uomini che ad alta quota insegnano a volare\nDi chi la storia sa cambiare, come Gesù <b>RIT.</b>"
   },
   {
     titolo: "Jubilate Deo",

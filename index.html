@@ -208,6 +208,15 @@
       fetchLiturgiaCEI();
       filterSongs(); // Ordina ed effettua il primo render automatico
     });
+
+    // Registrazione Service Worker per supporto Offline e Cache locale
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('App pronta per l\'uso offline!'))
+          .catch((err) => console.error('Errore registrazione Service Worker:', err));
+      });
+    }
   </script>
 </body>
 </html>
