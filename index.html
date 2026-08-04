@@ -178,59 +178,103 @@
       document.getElementById('statusModal').classList.toggle('active', show);
     }
 
-    // Caricamento completo della Liturgia (Letture, Salmo e Vangelo) via API Evangelizo
+   // Caricamento completo: Santo del giorno, Tempo/Festa, Prima Lettura, Salmo, Seconda Lettura e Vangelo via Evangelizo Reader v2
     async function fetchLiturgiaEvangelizo() {
       const container = document.getElementById('liturgiaContent');
       const logLiturgia = document.getElementById('logLiturgia');
 
       try {
-        // Data di oggi nel formato YYYYMMDD
-        const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        // Data di oggi in formato YYYYMMDD
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const dateStr = `${year}${month}${day}`;
+
+        // Base URL Evangelizo v2
+        const baseUrl = 'https://feed.evangelizo.org/v2/reader.php';
         
-        // Endpoint completo con tipo 'all' per includere l'intero lezionario
-        const apiUrl = `https://api.evangelizo.org/v1/liturgy/IT/readings?date=${today}&type=all`;
-        
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('Errore di connessione API');
-        
-        const json = await response.json();
-        const readings = json.data.readings;
-        const dateHuman = json.data.date_human || 'Liturgia del Giorno';
-        const titleLiturgy = json.data.liturgical_title || '';
+        // Helper per fare fetch del testo per ciascun parametro
+        const getEvangelizoText = async (type, content = '') => {
+          let url = `${baseUrl}?date=${dateStr}&lang=IT&type=${type}`;
+          if (content) url += `&content=${content}`;
+          
+          const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+          if (!res.ok) return '';
+          return await res.text();
+        };
+
+        // Eseguiamo tutte le richieste in parallelo (Letture + Santo + Tempo/Festa)
+        const [liturgicTitle, feast, saint, firstReading, psalm, secondReading, gospel] = await Promise.all([
+          getEvangelizoText('liturgic_t'),
+          getEvangelizoText('feast'),
+          getEvangelizoText('saint'),
+          getEvangelizoText('reading', 'FR'),
+          getEvangelizoText('reading', 'PS'),
+          getEvangelizoText('reading', 'SR'),
+          getEvangelizoText('reading', 'GSP')
+        ]);
+
+        const dataFormattata = now.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        // Capitalizziamo il giorno della settimana
+        const dataHeader = dataFormattata.charAt(0).toUpperCase() + dataFormattata.slice(1);
 
         let parsedHtml = `
           <div class="liturgia-header-info">
-            <div class="liturgia-data">${dateHuman}</div>
-            ${titleLiturgy ? `<div class="liturgia-santo">${titleLiturgy}</div>` : ''}
+            <div class="liturgia-data">📅 ${dataHeader}</div>
+            ${liturgicTitle || feast ? `<div class="liturgia-santo" style="margin-top: 6px; color: var(--primary);">✝️ <b>Tempo / Liturgia:</b> ${liturgicTitle || feast}</div>` : ''}
+            ${saint ? `<div class="liturgia-santo" style="margin-top: 4px; color: #555;">😇 <b>Santo del giorno:</b> ${saint}</div>` : ''}
           </div>
         `;
 
-        // Scorre ed impagina ogni blocco (Prima Lettura, Salmo, Seconda Lettura, Vangelo)
-        readings.forEach(item => {
+        // Prima Lettura (FR)
+        if (firstReading && firstReading.trim().length > 0) {
           parsedHtml += `
             <div class="liturgia-sezione">
-              <div class="liturgia-titolo-sezione">${item.title}</div>
-              ${item.source ? `<div style="font-size:0.9rem; color:#666; font-style:italic; margin-bottom:10px;">${item.source}</div>` : ''}
-              <div class="liturgia-testo">${item.text}</div>
-            </div>
-          `;
-        });
+              <div class="liturgia-titolo-sezione">Prima Lettura</div>
+              <div class="liturgia-testo">${firstReading}</div>
+            </div>`;
+        }
+
+        // Salmo Responsoriale (PS)
+        if (psalm && psalm.trim().length > 0) {
+          parsedHtml += `
+            <div class="liturgia-sezione">
+              <div class="liturgia-titolo-sezione">Salmo Responsoriale</div>
+              <div class="liturgia-testo">${psalm}</div>
+            </div>`;
+        }
+
+        // Seconda Lettura (SR) - Se presente
+        if (secondReading && secondReading.trim().length > 0) {
+          parsedHtml += `
+            <div class="liturgia-sezione">
+              <div class="liturgia-titolo-sezione">Seconda Lettura</div>
+              <div class="liturgia-testo">${secondReading}</div>
+            </div>`;
+        }
+
+        // Vangelo (GSP)
+        if (gospel && gospel.trim().length > 0) {
+          parsedHtml += `
+            <div class="liturgia-sezione">
+              <div class="liturgia-titolo-sezione">Vangelo</div>
+              <div class="liturgia-testo">${gospel}</div>
+            </div>`;
+        }
 
         container.innerHTML = parsedHtml;
         logLiturgia.className = 'status-badge badge-ok';
-        logLiturgia.textContent = 'Evangelizo API OK';
+        logLiturgia.textContent = 'Evangelizo v2 OK';
 
       } catch (err) {
         console.error(err);
         logLiturgia.className = 'status-badge badge-err';
-        logLiturgia.textContent = 'Errore API';
+        logLiturgia.textContent = 'Errore Evangelizo';
         container.innerHTML = `
           <div style="text-align:center; padding: 15px;">
-            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare la liturgia del giorno.</p>
-            <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica che il dispositivo sia connesso a Internet.</p>
-            <a href="https://www.evangelizo.org/" target="_blank" style="background:var(--primary); color:white; padding:10px 16px; border-radius:6px; text-decoration:none; display:inline-block; font-size:0.9rem;">
-              Apri Evangelizo.org ↗
-            </a>
+            <p style="color:#d9534f; font-weight:bold; margin-bottom:5px;">Impossibile caricare le letture di oggi.</p>
+            <p style="font-size:0.85rem; color:#666; margin-bottom:15px;">Verifica la connessione internet del dispositivo.</p>
           </div>
         `;
       }
