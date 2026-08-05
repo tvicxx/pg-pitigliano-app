@@ -100,5 +100,45 @@ const canti = [
     titolo: "Resta qui con noi",
     categoria: "Ingresso / Finale",
     testo: "Le ombre si distendono\nscende ormai la sera\ne s'allontanano dietro i monti\ni riflessi di un giorno che non finirà\ndi un giorno che ora correrà sempre\nperché sappiamo che una nuova vita\nda qui è partita e mai più si fermerà\n\n<b>RIT: Resta qui con noi il sole scende già\nresta qui con noi Signore è sera ormai\nResta qui con noi il sole scende già\nse Tu sei fra noi la notte non verrà</b>\n\n"
+  },
+  {
+    titolo: "Ave Maria",
+    categoria: "Ingresso / Finale",
+    testo: "<b>RIT: Ave Maria, Ave.\nAve Maria, Ave</b>\n\nDonna del'attesa e Madre di speranza, ora pro nobis\nDonna del sorriso e Madre del silenzio, ora pro nobis\nDonna di frontiera e Madre dell'ardore, ora pro nobis\nDonna del riposo e Madre del sentiero, ora pro nobis <b>RIT.</b>\n\nDonna del deserto e Madre del respiro, ora pro nobis\n\Donna della sera e Madre del Ricordo, ora pro nobis\nDonna del presente e Madre del ritorno, ora pro nobis\nDonna della terra e Madre dell'amore, ora pro nobis <b>RIT.</b>"
+  },
+  {
+    titolo: "Ecco quel che abbiamo",
+    categoria: "Offertorio / Comunione",
+    testo: "<b>Ecco quel che abbiamo, nulla ci appartiene ormai\nEcco i frutti della terra che tu moltiplicherai\nEcco queste mani: puoi usarle, se lo vuoi,\nper dividere nel mondo il pane che tu hai dato a noi</b>\n\nSolo una goccia hai messo fra le mani mie\nsolo una goccia che Tu ora chiedi a me.\nUna goccia che in mano a Te,\nuna pioggia diventerà\ne la terra feconderà <b>RIT.</b>\n\nLe nostre gocce, pioggia tra le mani tue,\nsaranno linfa di una nuova civiltà;\ne la terra preparerà\nla festa del pane che\nogni uomo condividerà <b>RIT.</b>\n\nSulle strade il vento, da lontano porterà\nil profumo del frumento, che tutti avvolgerà.\nE sarà l'amore che\nil raccolto spartirà\ne il miracolo del pane in terra si ripeterà <b>RIT.</b>"
+  },
+  {
+    titolo: "Te al centro del mio cuore",
+    categoria: "Offertorio / Comunione",
+    testo: "Ho bisogno di incontrarti nel mio cuore\nDi trovare Te di stare insieme a Te.\nUnico riferimento del mi andare.\nUnica ragione Tu, unico sostegno Tu.\nAl centro del mio cuore ci sei solo Tu.\n\n<b>RIT: Tutto ruota intorno a Te, in funzione di Te\nE poi non importa il \"come\" il \"dove\" il \"se\".</b>\n\nAnche il cielo gira intorno e non ha pace\nMa c'è un punto fermo è quella stella là.\nLa stella polare è fissa ed è da sola\nLa stella polare Tu, la stella sicura Tu.\nAl centro del mio cuore ci sei solo Tu. <b>RIT.</b>\n\nChe Tu splenda sempre al centro del mio cuore\nIl significato allora sarai Tu\nQuello che farò sarà soltanto amore\nUnico sostegno Tu, la stella polare Tu\nAl centro del mio cuore ci sei solo tu. <b>RIT.</b>"
+  },
+  {
+    titolo: "Dove è odio",
+    categoria: "Offertorio / Comunione",
+    testo: "Dov'è odio fa ch'io porti amore,\ndov'è offesa ch'io porti il perdono,\ndov'è discordia ch'io porti l'unione,\ndov'è il dubbio fa' ch'io porti Te.\n\nE la verità dov'è l'errore,\nla speranza per chi è disperato;\nse perdonerai chi ti ha fatto del male\nanche te il signor perdonerà.\n\nDov'è la tristezza porti gioia\ndove son le tenebre la luce\no maestro fa' ch'io non cerchi\ndi essere amato, quanto di amare;\nè morendo che poi si vivrà di vita eterna\nfammi strumento del tuo amore"
+  },
+  {
+    titolo: "Sono qui a lodarti",
+    categoria: "Ingresso / Finale",
+    testo: "Luce del mondo nel buio\ndel cuore vieni ed illuminami,\ntu mia sola speranza di vita\nresta per sempre con me\n\n<b>RIT: Sono quì a lodarti, quì per adorarti,\nquì per dirti che tu sei il mio Dio\ne solo tu sei Santo, sei meraviglioso,\ndegno e glorioso sei per me.</b>\n\nRe della storia e Re della gloria\nsei sceso in terra fra noi,\ncon umiltà il tuo trono hai lasciato\nper dimostrarci il tuo amor. <b>RIT.</b>\n\nIo mai saprò quanto ti costò\nlì sulla croce morir per me\nIo mai saprò quanto ti costò\nlì sulla croce morir per me\nIo mai saprò quanto ti costò\nlì sulla croce morir per me\nIo mai saprò quanto ti costò\nlì sulla croce morir per me <b>RIT.</b>"
+  },
+  {
+    titolo: "Mi basta la tua grazia",
+    categoria : "Ingresso / Finale",
+    testo: "Quando sono debole, allora sono forte\nperché, tu sei la mia forza.\nQuando sono triste è in te che trovo gioia\nperché, tu sei la mia gioia\nGesù io confido in te, Gesù\nmi basta la tua grazia.\n\n<b>RIT: Sei la mia forza, la mia salvezza,\nsei la mia pace, sicuro rifugio.\nNella tua grazia voglio restare,\nsanto Signore, sempre con te.</b>\n\nQuando sono povero, allora sono ricco\nperché, sei la mia ricchezza.\nQuando son malato è in te che trovo vita\nperché, tu sei guarigione.\nGesù io confido in te, Gesù,\nmi basta la tua grazia. <b>RIT. (2v)</b>\n\nQuando sono debole, allora sono forte\nperché, tu sei la mia forza..."
+  },
+  {
+    titolo: "Re di gloria",
+    categoria: "Ingresso / Finale",
+    testo: "Ho incontrato te, Gesù,\ne ogni cosa in me è cambiata,\ntutta la mia vita ora ti appartiene\ntutto il mio passato io lo affido a te,\nGesù, Re di gloria, mio Signor.\nTutto in te riposa, la mia mente,\nil mio cuore, trovo pace in te Signor\ntu mi dai la gioia.\nVoglio stare insieme a te,\nnon lasciarti mai,\nGesù, Re di gloria, mio Signor.\n\n<b>RIT: Dal tuo amore chi mi separerà,\nsulla croce hai dato la vita per me,\nUna corona di gloria mi darai\nquando un giorno ti vedrò.</b>\n\nTutto in te riposa, la mia mente,\nil mio cuore, trovo pace in te Signor,\ntu mi dai la gioiavera.\nVoglio stare insieme a te,\nnon lasciarti mai,\nGesù, Re di gloria, mio Signor. <b>RIT.</b>"
+  },
+  {
+    titolo: "Magnificat",
+    categoria: "Ingrsso / Finale",
+    testo: "Dio ha fatto in me cose grandi.\nLui che guarda l'umile servo\ne disperde i superbi nell'orgoglio del cuore.\n\n<b>RIT: L'animma mia, esulta in Dio mio salvatore\nL'animma mia, esulta in Dio mio salvatore\nLa sua salvezza canterò</b>\n\nLui, onnipotente e Santo.\nLui abbatte i grandi dai troni\nE solleva dal fango\nIl suo umile servo. <b>RIT.</b>\n\nLui, misericordia infinita.\nLui che rende povero il ricco\ne ricolma di beni\nchi si affida al suo amore. <b>RIT.</b>\n\nLui, amore sempre fedele.\nLui guida il suo servo Israele\ne ricorda il suo patto\nstabilito per sempre. <b>RIT.</b>"
   }
 ];
