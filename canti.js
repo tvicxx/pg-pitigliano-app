@@ -140,5 +140,16 @@ const canti = [
     titolo: "Magnificat",
     categoria: "Ingrsso / Finale",
     testo: "Dio ha fatto in me cose grandi.\nLui che guarda l'umile servo\ne disperde i superbi nell'orgoglio del cuore.\n\n<b>RIT: L'animma mia, esulta in Dio mio salvatore\nL'animma mia, esulta in Dio mio salvatore\nLa sua salvezza canterò</b>\n\nLui, onnipotente e Santo.\nLui abbatte i grandi dai troni\nE solleva dal fango\nIl suo umile servo. <b>RIT.</b>\n\nLui, misericordia infinita.\nLui che rende povero il ricco\ne ricolma di beni\nchi si affida al suo amore. <b>RIT.</b>\n\nLui, amore sempre fedele.\nLui guida il suo servo Israele\ne ricorda il suo patto\nstabilito per sempre. <b>RIT.</b>"
+  },
+  {
+    titolo: "Credo in unum Deum",
+    categoria: "Credo",
+    testo:"Credo in unum Deum,\nPatrem omnipoténtem,\nFactorem cæli et terræ,\nvisibílium ómnium et invisibilium.\nEt in unum Dóminum Iesum Christum,\nFilium Dei unigénitum\net ex Patre natum ante ómnia sǽcula:\nDeum de Deo, Lumen de Lúmine,\nDeum verum de Deo vero,\ngénitum, non factum,\nconsubstantiálem Patri:\nper quem ómnia facta sunt;\nqui propter nos hómines\net propter nostram salútem,\ndescéndit de cælis,\net incarnátus est de Spíritu Sancto\nex Maria Víirgine et homo factus est,\ncrucifíxus étiam pro nobis sub Póntio Piláto,\npassus et sepúltus est,\net resurréxit tértia die secúndum Scriptúras,\net ascéndit in cælum,\nsedet ad déxteram Patris,\net íterum ventúrus est cum glória,\niudicáre vivos et mórtuos,\ncuius regni non erit finis.\nCredo in Spíritum Sanctum,\nDominum et vivificántem,\nqui ex Patre Filióque procédit,\nqui cum Patre et Fílio simul adorátur et conglorificátur,\nqui locútus est per prophétas.\nEt unam sanctam cathólicam\net apostólicam Ecclésiam.\nConfíteor unum Baptísma\nin remissiónem peccatórum.\nEt exspécto resurrectiónem mortuórum,\net vitam ventúri sæculi.\nAmen."
+  },
+  {
+    titolo: "Gloria in excélsis Deo",
+    categoria: "Gloria",
+    testo:"Glória in excélsis Deo\n<b>et in terra pax homínibus bonæ voluntátis.</b>\nLaudámus te,\n<b>benedícimus te,</b>\nadorámus te,\n<b>glorificámus te,</b>\ngrátias ágimus tibi propter magnam glóriam tuam,\n<b>Dómine Deus, Rex cæléstis,\nDeus Pater omnípotens.</b>\nDómine Fili Unigénite, Jesu Christe,\n<b>Dómine Deus, Agnus Dei, Fílius Patris,</b>\nqui tollis peccáta mundi, miserére nobis;\n<b>qui tollis peccáta mundi, súscipe deprecatiónem nostram.</b>\nQui sedes ad déxteram Patris, miserére nobis.\n<b>Quóniam tu solus Sanctus,</b>\ntu solus Dóminus,\n<b>tu solus Altíssimus, Jesu Christe,</b>\ncum Sancto Spíritu: in glória Dei Patris.\nAmen."
   }
 ];
+
