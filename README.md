@@ -12,7 +12,7 @@
 
 **PG Pitigliano App** è una webapp nata originariamente per le attività, gli incontri e le celebrazioni della **Pastorale Giovanile della Diocesi di Pitigliano-Sovana-Orbetello**.
 
-L'idea alla base del progetto risponde a un'esigenza concreta e condivisa da animatori, cori e comunità: **avere un aggregatore unico, moderno e facilmente accessibile per tutti i canti di chiesa**. Spesso testi, accordi e spartiti sono frammentati tra fogli volanti, canzonieri cartacei ormai datati o file sparsi su diverse piattaforme. Questa applicazione nasce per centralizzare il repertorio e renderlo immediatamente fruibile da qualsiasi dispositivo (smartphone, tablet, PC).
+L'idea alla base del progetto risponde a un'esigenza concreta e condivisa da educatori, cori e comunità: **avere un aggregatore unico, moderno e facilmente accessibile per tutti i canti di chiesa**. Spesso testi, accordi e spartiti sono frammentati tra fogli volanti, canzonieri cartacei ormai datati o file sparsi su diverse piattaforme. Questa applicazione nasce per centralizzare il repertorio e renderlo immediatamente fruibile da qualsiasi dispositivo (smartphone, tablet, PC).
 
 ---
 
@@ -65,7 +65,7 @@ La webapp è accessibile pubblicamente via browser al seguente indirizzo:
 
 ## 🤝 Come Contribuire
 
-Il progetto è aperto alla collaborazione di animatori, musicisti, giovani e chiunque voglia dare una mano:
+Il progetto è aperto alla collaborazione di educatori, musicisti, giovani e chiunque voglia dare una mano:
 1. **Segnalazione correzioni o aggiunta canti:** Apri una [Issue](https://github.com/tvicxx/pg-pitigliano-app/issues) o contatta il referente del progetto.
 2. **Sviluppo software:** Fai un fork del repository, crea un branch con la tua feature (`git checkout -b feature/nuova-funzione`) e invia una Pull Request.
 
