@@ -150,6 +150,11 @@ const canti = [
     titolo: "Gloria in excélsis Deo",
     categoria: "Gloria",
     testo:"Glória in excélsis Deo\n<b>et in terra pax homínibus bonæ voluntátis.</b>\nLaudámus te,\n<b>benedícimus te,</b>\nadorámus te,\n<b>glorificámus te,</b>\ngrátias ágimus tibi propter magnam glóriam tuam,\n<b>Dómine Deus, Rex cæléstis,\nDeus Pater omnípotens.</b>\nDómine Fili Unigénite, Jesu Christe,\n<b>Dómine Deus, Agnus Dei, Fílius Patris,</b>\nqui tollis peccáta mundi, miserére nobis;\n<b>qui tollis peccáta mundi, súscipe deprecatiónem nostram.</b>\nQui sedes ad déxteram Patris, miserére nobis.\n<b>Quóniam tu solus Sanctus,</b>\ntu solus Dóminus,\n<b>tu solus Altíssimus, Jesu Christe,</b>\ncum Sancto Spíritu: in glória Dei Patris.\nAmen."
+  },
+  {
+    titolo: "Servire è regnare",
+    categotia: "Offertorio / Comunione",
+    testo: "Guardiamo a te che sei\nMaestro e Signore:\nchinato a terra stai,\nci mostri che l'amore\nè cingersi il grembiule,\nsapersi inginocchiare,\nc'insegni che amare è servire.\n\n<b>RIT: Fa' che impariamo, Signore, da Te,\nche il più grande è chi più sa servire,\nchi s'abbassa e chi sa piegare,\nperché grande è soltanto l'amore.</b>\n\nE ti vediamo poi,\nMaestro e Signore,\nche lavi i piedi a noi\nche siamo tue creature\ne cinto del grembiule,\nche è il manto tuo regale,\nci insegni che servire è regnare. <b>RIT.</b>"
   }
 ];
 
