@@ -99,6 +99,21 @@
     .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
     .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
 
+    /* Liturgia del giorno */
+    .lit-date { font-size: 0.85rem; color: #666; margin: 0 0 2px 0; }
+    .lit-day { font-size: 1.1rem; font-weight: bold; color: #222; margin: 0 0 16px 0; }
+    .lit-mass { font-size: 1.05rem; color: #222; border-bottom: 2px solid var(--primary); padding-bottom: 4px; margin: 28px 0 16px 0; }
+    .lit-section { margin-bottom: 22px; }
+    .lit-section h3 { font-size: 1rem; color: var(--primary); margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.03em; }
+    .lit-sub { font-style: italic; color: #555; margin: 0 0 8px 0; font-size: 0.95rem; }
+    .lit-ref { font-size: 0.85rem; color: #666; font-weight: 600; margin: 0 0 8px 0; }
+    .lit-body p { margin: 0 0 12px 0; line-height: 1.6; font-size: 1rem; }
+    .lit-body .rosso { color: #b3261e; }
+    .lit-source { font-size: 0.8rem; color: #888; border-top: 1px solid #eee; padding-top: 10px; margin-top: 8px; }
+    .lit-source a { color: var(--primary); }
+    .lit-msg { color: #666; text-align: center; margin: 12px 0; }
+    .lit-msg a { color: var(--primary); font-weight: bold; }
+
     /* Modal Stato del Sistema */
     .status-modal {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -140,9 +155,9 @@
           <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno (CEI)</span>
         </div>
         
-        <!-- Widget Almanacco Ufficiale Chiesa Cattolica Italiana -->
+        <!-- Messa del giorno: generata ogni notte da liturgia.json (vedi scripts/fetch_liturgia.py) -->
         <div id="liturgiaContent">
-          <script src='https://widgets.chiesacattolica.it/widget-almanacco-v2/widget.php?mods=402593&font=8&colors=1' async></script>
+          <p class="lit-msg">Caricamento della liturgia…</p>
         </div>
       </div>
     </section>
@@ -202,6 +217,72 @@
     function toggleModal(show) {
       document.getElementById('statusModal').classList.toggle('active', show);
     }
+
+    // ---- Liturgia del giorno ----
+    // I testi arrivano da liturgia.json, che GitHub Actions rigenera ogni notte
+    // scaricando la "Messa del Giorno" da chiesacattolica.it (scripts/fetch_liturgia.py).
+    const CEI_URL = 'https://www.chiesacattolica.it/liturgia-del-giorno/';
+    let liturgiaKey = null;
+
+    function escapeHtml(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function localDateKey() {
+      const d = new Date();
+      return d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0');
+    }
+
+    function liturgiaFallback(key, motivo) {
+      return `<p class="lit-msg">${motivo}<br><br>
+        <a href="${CEI_URL}?data-liturgia=${key}" target="_blank" rel="noopener">Apri la liturgia di oggi su chiesacattolica.it</a></p>`;
+    }
+
+    function renderLiturgia(day, key) {
+      // sezioni[].html è già ripulito dallo script (solo p, br, strong, em, span.rosso)
+      const renderSection = s => `
+        <div class="lit-section">
+          ${s.titolo ? `<h3>${escapeHtml(s.titolo)}</h3>` : ''}
+          ${s.sottotitolo ? `<p class="lit-sub">${escapeHtml(s.sottotitolo)}</p>` : ''}
+          ${s.versetto ? `<p class="lit-ref">${escapeHtml(s.versetto)}</p>` : ''}
+          <div class="lit-body">${s.html}</div>
+        </div>`;
+      // di solito una sola messa; il 2 novembre ce ne sono tre, ognuna col suo titolo
+      const masses = day.messe.map(m => `
+        ${m.titolo ? `<h2 class="lit-mass">${escapeHtml(m.titolo)}</h2>` : ''}
+        ${m.sezioni.map(renderSection).join('')}`).join('');
+      return `
+        <p class="lit-date">${escapeHtml(day.dataLabel)}</p>
+        <p class="lit-day">${escapeHtml(day.giorno)}</p>
+        ${masses}
+        <p class="lit-source">Fonte: <a href="${CEI_URL}?data-liturgia=${key}" target="_blank" rel="noopener">chiesacattolica.it</a> (Conferenza Episcopale Italiana)</p>`;
+    }
+
+    async function loadLiturgia() {
+      const box = document.getElementById('liturgiaContent');
+      const key = localDateKey();
+      liturgiaKey = key;
+      try {
+        const res = await fetch('liturgia.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const day = data.giorni && data.giorni[key];
+        box.innerHTML = day
+          ? renderLiturgia(day, key)
+          : liturgiaFallback(key, 'La liturgia di oggi non è ancora disponibile nell\'app.');
+      } catch (err) {
+        // errore HTTP (es. file non ancora generato) ≠ nessuna connessione
+        const httpError = String(err.message).startsWith('HTTP');
+        box.innerHTML = liturgiaFallback(key, httpError
+          ? 'La liturgia di oggi non è ancora disponibile nell\'app.'
+          : 'Impossibile caricare la liturgia (sei offline?).');
+      }
+    }
+
+    // Se l'app resta aperta oltre la mezzanotte, al ritorno mostra il giorno nuovo
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && liturgiaKey && localDateKey() !== liturgiaKey) loadLiturgia();
+    });
 
     // Render Canti
     function renderSongs(list) {
@@ -281,6 +362,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      loadLiturgia();
       filterSongs();
       checkStatus();
     });

@@ -54,6 +54,17 @@ La webapp è accessibile pubblicamente via browser al seguente indirizzo:
 
 ---
 
+## 📖 Liturgia del giorno automatica
+
+La scheda **Liturgia del Giorno** mostra la Messa del giorno (letture, salmo, Vangelo e preghiere) presa dal sito ufficiale della CEI, [chiesacattolica.it](https://www.chiesacattolica.it/liturgia-del-giorno/).
+
+- Ogni notte il workflow `.github/workflows/aggiorna-liturgia.yml` esegue `scripts/fetch_liturgia.py`, che scarica i prossimi 7 giorni e li salva in `liturgia.json`.
+- La webapp legge solo `liturgia.json` (nessuna API esterna a runtime) e, grazie al service worker, lo tiene anche per l'uso offline.
+- Per aggiornare subito: scheda **Actions** → *Aggiorna liturgia del giorno* → **Run workflow**.
+- Per provarlo in locale: `python3 scripts/fetch_liturgia.py` (richiede solo Python 3.9+).
+
+---
+
 ## 🗺️ Roadmap & Sviluppi Futuri
 
 - [ ] **Modalità Offline (PWA):** Consultazione del canzoniere anche in chiese o luoghi con scarsa connettività.
