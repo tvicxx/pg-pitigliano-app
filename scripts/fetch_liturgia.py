@@ -64,16 +64,6 @@ class TreeBuilder(HTMLParser):
         self.cur = self.root
 
     def handle_starttag(self, tag, attrs):
-        if tag == "p":
-            # Come i browser (HTML5): un <p> chiude un <p> ancora aperto.
-            # La CEI scrive "<p><p>testo</p><p>altro</p></p>": senza questa regola
-            # i paragrafi risultano annidati e il testo viene incollato senza andare a capo.
-            node = self.cur
-            while node is not self.root and node.tag not in ("div", "section", "article", "body", "td", "li"):
-                if node.tag == "p":
-                    self.cur = node.parent
-                    break
-                node = node.parent
         node = Node(tag, dict(attrs), self.cur)
         self.cur.children.append(node)
         if tag not in VOID_TAGS:
@@ -134,6 +124,10 @@ def render_inline(node):
     inner = "".join(render_inline(c) for c in node.children)
     if not inner.strip():
         return inner
+    # La CEI scrive "<p><p><strong>R. …</strong></p><p>strofe…</p></p>": il paragrafo annidato
+    # che contiene solo il grassetto (l'antifona del salmo) deve andare a capo prima del testo.
+    if node.tag == "p" and inner.startswith("<strong>") and inner.endswith("</strong>"):
+        return inner + "<br>"
     if node.tag in ("strong", "b"):
         return f"<strong>{inner}</strong>"
     if node.tag in ("em", "i"):
