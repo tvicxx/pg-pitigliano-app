@@ -2,7 +2,7 @@ name: Aggiorna liturgia del giorno
 
 on:
   schedule:
-    - cron: "30 3 * * *"   # 03:30 UTC = 04:30 (inverno) / 05:30 (estate) in Italia
+    - cron: "30 3 * * 3"   # ogni mercoledì 03:30 UTC = 04:30 (inverno) / 05:30 (estate) in Italia
   workflow_dispatch:        # permette di lanciarlo a mano dalla scheda "Actions"
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Scarica la messa del giorno dalla CEI
-        run: python3 scripts/fetch_liturgia.py
+        run: python3 scripts/fetch_liturgia.py --days 14
 
       - name: Salva liturgia.json se è cambiato
         run: |

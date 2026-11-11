@@ -3,11 +3,11 @@
 Scarica la "Messa del Giorno" dal sito ufficiale della CEI (chiesacattolica.it)
 e la salva in liturgia.json, che la webapp legge senza chiamare servizi esterni.
 
-Uso tipico (lo lancia GitHub Actions ogni notte):
+Uso tipico (lo lancia GitHub Actions ogni mercoledì):
     python3 scripts/fetch_liturgia.py
 
 Opzioni utili:
-    --days N              quanti giorni scaricare a partire da oggi (default 7)
+    --days N              quanti giorni scaricare a partire da oggi (default 14)
     --out FILE            file di destinazione (default liturgia.json nella root)
     --html-file F --date YYYYMMDD
                           analizza una pagina salvata in locale (per i test)
@@ -290,7 +290,7 @@ def load_existing(path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--days", type=int, default=7)
+    ap.add_argument("--days", type=int, default=14)
     ap.add_argument("--out", default=str(Path(__file__).resolve().parent.parent / "liturgia.json"))
     ap.add_argument("--html-file")
     ap.add_argument("--date", help="YYYYMMDD, solo con --html-file")

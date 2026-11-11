@@ -102,7 +102,24 @@
     /* Liturgia del giorno */
     .lit-date { font-size: 0.85rem; color: #666; margin: 0 0 2px 0; }
     .lit-day { font-size: 1.1rem; font-weight: bold; color: #222; margin: 0 0 16px 0; }
-    .lit-mass { font-size: 1.05rem; color: #222; border-bottom: 2px solid var(--primary); padding-bottom: 4px; margin: 28px 0 16px 0; }
+    [hidden] { display: none !important; }
+    .lit-picker { margin-bottom: 18px; }
+    .lit-picker label { display: block; font-size: 0.8rem; font-weight: 600; color: #666; margin-bottom: 4px; }
+
+    /* Fila di riquadri dei giorni, scorrevole in orizzontale */
+    .lit-days { position: relative; display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 -2px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    .lit-day-tile { position: relative; flex: 0 0 auto; width: 66px; height: 66px; padding: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; border: 1px solid #d5dbe3; border-radius: 12px; background: white; color: #666; font-family: inherit; cursor: pointer; scroll-snap-align: center; -webkit-tap-highlight-color: transparent; }
+    .lit-day-tile .wd, .lit-day-tile .mo { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; }
+    .lit-day-tile .num { font-size: 1.45rem; font-weight: 700; line-height: 1.1; color: #222; }
+    .lit-day-tile.today::after { content: ''; position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
+    .lit-day-tile.selected { background: var(--primary); border-color: var(--primary); color: rgba(255,255,255,0.85); }
+    .lit-day-tile.selected .num { color: white; }
+    .lit-day-tile.selected.today::after { background: white; }
+    .lit-day-tile:focus-visible { outline: 3px solid #8ab4f8; outline-offset: 2px; }
+    .lit-select { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #ccc; border-radius: 8px; background: white; color: var(--primary); font-weight: bold; font-size: 1rem; font-family: inherit; cursor: pointer; }
+    .lit-mass-row { margin-top: 10px; }
+    .lit-notice { background: #fff8e1; border: 1px solid #ffe08a; color: #6b5200; padding: 10px 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 14px; line-height: 1.4; }
+    .lit-notice a { color: #6b5200; font-weight: bold; }
     .lit-section { margin-bottom: 22px; }
     .lit-section h3 { font-size: 1rem; color: var(--primary); margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.03em; }
     .lit-sub { font-style: italic; color: #555; margin: 0 0 8px 0; font-size: 0.95rem; }
@@ -155,7 +172,15 @@
           <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno (CEI)</span>
         </div>
         
-        <!-- Messa del giorno: generata ogni notte da liturgia.json (vedi scripts/fetch_liturgia.py) -->
+        <!-- Selettore: elenca i giorni presenti in liturgia.json (vedi scripts/fetch_liturgia.py) -->
+        <div id="liturgiaPicker" class="lit-picker" hidden>
+          <div id="litDays" class="lit-days" role="group" aria-label="Scegli il giorno"></div>
+          <div id="litMassRow" class="lit-mass-row" hidden>
+            <label for="litMass">Messa</label>
+            <select id="litMass" class="lit-select" onchange="selectLiturgiaMass(this.value)"></select>
+          </div>
+        </div>
+
         <div id="liturgiaContent">
           <p class="lit-msg">Caricamento della liturgia…</p>
         </div>
@@ -212,6 +237,8 @@
       document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
       btn.classList.add('active');
+      // una scheda nascosta perde lo scorrimento: ricentra il giorno scelto
+      if (tabId === 'liturgia') centerSelectedDay(false);
     }
 
     function toggleModal(show) {
@@ -219,10 +246,17 @@
     }
 
     // ---- Liturgia del giorno ----
-    // I testi arrivano da liturgia.json, che GitHub Actions rigenera ogni notte
+    // I testi arrivano da liturgia.json, che GitHub Actions rigenera ogni settimana
     // scaricando la "Messa del Giorno" da chiesacattolica.it (scripts/fetch_liturgia.py).
     const CEI_URL = 'https://www.chiesacattolica.it/liturgia-del-giorno/';
-    let liturgiaKey = null;
+    let liturgiaDays = null;   // giorni validi di liturgia.json, per chiave YYYYMMDD
+    let liturgiaToday = null;  // chiave di "oggi" al momento del caricamento
+    let liturgiaSel = null;    // giorno mostrato
+    let liturgiaMass = 0;      // messa mostrata (indice in day.messe)
+
+    const dayFormatter = new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+    const weekdayShort = new Intl.DateTimeFormat('it-IT', { weekday: 'short' });
+    const monthShort = new Intl.DateTimeFormat('it-IT', { month: 'short' });
 
     function escapeHtml(s) {
       return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -238,6 +272,24 @@
         <a href="${CEI_URL}?data-liturgia=${key}" target="_blank" rel="noopener">Apri la liturgia di oggi su chiesacattolica.it</a></p>`;
     }
 
+    // "20261111" → data locale
+    function keyDate(key) {
+      return new Date(+key.slice(0, 4), +key.slice(4, 6) - 1, +key.slice(6, 8));
+    }
+
+    // "20261111" → "Mercoledì 11 novembre"
+    function keyLabel(key) {
+      const s = dayFormatter.format(keyDate(key));
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    // Giorno da mostrare all'apertura: oggi; se manca, il più vicino disponibile
+    // (il prossimo, altrimenti l'ultimo). `keys` è ordinato.
+    function defaultLiturgiaKey(keys, today) {
+      if (keys.includes(today)) return today;
+      return keys.find(k => k > today) || keys[keys.length - 1];
+    }
+
     function renderLiturgia(day, key) {
       // sezioni[].html è già ripulito dallo script (solo p, br, strong, em, span.rosso)
       const renderSection = s => `
@@ -247,33 +299,100 @@
           ${s.versetto ? `<p class="lit-ref">${escapeHtml(s.versetto)}</p>` : ''}
           <div class="lit-body">${s.html}</div>
         </div>`;
-      // di solito una sola messa; il 2 novembre ce ne sono tre, ognuna col suo titolo
-      const masses = day.messe.map(m => `
-        ${m.titolo ? `<h2 class="lit-mass">${escapeHtml(m.titolo)}</h2>` : ''}
-        ${m.sezioni.map(renderSection).join('')}`).join('');
+      // una messa alla volta: se ce n'è più di una si sceglie dal menu "Messa"
+      const mass = day.messe[liturgiaMass] || day.messe[0];
       return `
         <p class="lit-date">${escapeHtml(day.dataLabel)}</p>
         <p class="lit-day">${escapeHtml(day.giorno)}</p>
-        ${masses}
+        ${mass.sezioni.map(renderSection).join('')}
         <p class="lit-source">Fonte: <a href="${CEI_URL}?data-liturgia=${key}" target="_blank" rel="noopener">chiesacattolica.it</a> (Conferenza Episcopale Italiana)</p>`;
+    }
+
+    // Una fila di riquadri (giorno della settimana, numero, mese), uno per ogni giorno di liturgia.json
+    function renderLiturgiaPicker() {
+      const keys = Object.keys(liturgiaDays).sort();
+      document.getElementById('litDays').innerHTML = keys.map(k => {
+        const d = keyDate(k);
+        const isToday = k === liturgiaToday;
+        const label = keyLabel(k) + (isToday ? ' (oggi)' : '');
+        return `<button type="button" class="lit-day-tile${isToday ? ' today' : ''}" data-key="${k}" aria-label="${escapeHtml(label)}" onclick="selectLiturgiaDay('${k}')">
+          <span class="wd">${escapeHtml(weekdayShort.format(d))}</span>
+          <span class="num">${d.getDate()}</span>
+          <span class="mo">${escapeHtml(monthShort.format(d))}</span>
+        </button>`;
+      }).join('');
+      document.getElementById('liturgiaPicker').hidden = false;
+    }
+
+    // Porta il riquadro selezionato al centro della fila
+    function centerSelectedDay(smooth) {
+      const strip = document.getElementById('litDays');
+      const tile = strip && strip.querySelector('.lit-day-tile.selected');
+      if (!tile || !strip.clientWidth) return; // scheda nascosta: ci pensa switchTab
+      strip.scrollTo({ left: tile.offsetLeft - (strip.clientWidth - tile.offsetWidth) / 2, behavior: smooth ? 'smooth' : 'auto' });
+    }
+
+    // Mostra il giorno/messa selezionati e aggiorna riquadri e menu della messa
+    function renderLiturgiaDay(smooth) {
+      const day = liturgiaDays[liturgiaSel];
+      const masses = day.messe;
+      document.querySelectorAll('#litDays .lit-day-tile').forEach(t => {
+        const on = t.dataset.key === liturgiaSel;
+        t.classList.toggle('selected', on);
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      centerSelectedDay(smooth);
+
+      const massSel = document.getElementById('litMass');
+      massSel.innerHTML = masses.map((m, i) =>
+        `<option value="${i}">${escapeHtml(m.titolo || day.giorno)}</option>`).join('');
+      massSel.value = String(liturgiaMass);
+      document.getElementById('litMassRow').hidden = masses.length < 2;
+
+      // se oggi non è nei dati, lo si dice (con il link alla fonte) sopra il giorno mostrato
+      const notice = liturgiaDays[liturgiaToday] ? '' : `
+        <p class="lit-notice">La liturgia di oggi non è ancora disponibile nell'app.
+          <a href="${CEI_URL}?data-liturgia=${liturgiaToday}" target="_blank" rel="noopener">Aprila su chiesacattolica.it</a></p>`;
+      document.getElementById('liturgiaContent').innerHTML = notice + renderLiturgia(day, liturgiaSel);
+    }
+
+    function selectLiturgiaDay(key) {
+      if (!liturgiaDays || !liturgiaDays[key]) return;
+      liturgiaSel = key;
+      liturgiaMass = 0;
+      renderLiturgiaDay(true);
+    }
+
+    function selectLiturgiaMass(i) {
+      liturgiaMass = Number(i) || 0;
+      renderLiturgiaDay(false);
     }
 
     async function loadLiturgia() {
       const box = document.getElementById('liturgiaContent');
-      const key = localDateKey();
-      liturgiaKey = key;
+      const today = localDateKey();
+      liturgiaToday = today;
       try {
         const res = await fetch('liturgia.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
-        const day = data.giorni && data.giorni[key];
-        box.innerHTML = day
-          ? renderLiturgia(day, key)
-          : liturgiaFallback(key, 'La liturgia di oggi non è ancora disponibile nell\'app.');
+        const all = data.giorni || {};
+        // teniamo solo i giorni ben formati
+        liturgiaDays = {};
+        Object.keys(all).sort().forEach(k => {
+          if (/^\d{8}$/.test(k) && all[k] && Array.isArray(all[k].messe) && all[k].messe.length) liturgiaDays[k] = all[k];
+        });
+        const keys = Object.keys(liturgiaDays);
+        if (!keys.length) throw new Error('HTTP nessun giorno');
+        liturgiaSel = defaultLiturgiaKey(keys, today);
+        liturgiaMass = 0;
+        renderLiturgiaPicker();
+        renderLiturgiaDay();
       } catch (err) {
-        // errore HTTP (es. file non ancora generato) ≠ nessuna connessione
+        // errore HTTP / dati mancanti ≠ nessuna connessione
+        document.getElementById('liturgiaPicker').hidden = true;
         const httpError = String(err.message).startsWith('HTTP');
-        box.innerHTML = liturgiaFallback(key, httpError
+        box.innerHTML = liturgiaFallback(today, httpError
           ? 'La liturgia di oggi non è ancora disponibile nell\'app.'
           : 'Impossibile caricare la liturgia (sei offline?).');
       }
@@ -281,7 +400,7 @@
 
     // Se l'app resta aperta oltre la mezzanotte, al ritorno mostra il giorno nuovo
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && liturgiaKey && localDateKey() !== liturgiaKey) loadLiturgia();
+      if (!document.hidden && liturgiaToday && localDateKey() !== liturgiaToday) loadLiturgia();
     });
 
     // Render Canti

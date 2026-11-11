@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pg-app-v2';
+const CACHE_NAME = 'pg-app-v3';
 // Elenco di tutti i file da salvare nella memoria del telefono
 const ASSETS = [
   './',
