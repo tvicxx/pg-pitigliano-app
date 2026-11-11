@@ -64,6 +64,16 @@ class TreeBuilder(HTMLParser):
         self.cur = self.root
 
     def handle_starttag(self, tag, attrs):
+        if tag == "p":
+            # Come i browser (HTML5): un <p> chiude un <p> ancora aperto.
+            # La CEI scrive "<p><p>testo</p><p>altro</p></p>": senza questa regola
+            # i paragrafi risultano annidati e il testo viene incollato senza andare a capo.
+            node = self.cur
+            while node is not self.root and node.tag not in ("div", "section", "article", "body", "td", "li"):
+                if node.tag == "p":
+                    self.cur = node.parent
+                    break
+                node = node.parent
         node = Node(tag, dict(attrs), self.cur)
         self.cur.children.append(node)
         if tag not in VOID_TAGS:
