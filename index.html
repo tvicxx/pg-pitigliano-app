@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastorale Giovanile - Liturgia e Canti</title>
+  <!-- Tema chiaro/scuro: segue le impostazioni del browser o del telefono -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#b6ffb7">
   
   <!-- Favicon e Icone PWA -->
   <link rel="icon" type="image/png" href="logo.png">
@@ -11,24 +14,53 @@
   <link rel="manifest" href="manifest.json">
   
   <style>
-    :root { --primary: #0056b3; --bg: #f4f6f9; }
-    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+    /* Colori: tema chiaro (predefinito) e, più in basso, tema scuro quando il browser lo chiede */
+    :root {
+      color-scheme: light dark;
+      --primary: #0056b3;        /* testo e link blu */
+      --accent: #0056b3;         /* sfondo di riquadri/pulsanti selezionati (testo bianco sopra) */
+      --bg: #f4f6f9;
+      --surface: #ffffff;        /* card, barra, campi */
+      --text: #333333;
+      --text-strong: #222222;
+      --text-body: #444444;
+      --text-soft: #666666;
+      --text-muted: #888888;
+      --border: #d5dbe3;
+      --border-soft: #eeeeee;
+      --border-input: #cccccc;
+      --header-bg: rgb(182, 255, 183);
+      --header-border: #eef2f7;
+      --chip-bg: #e9ecef;
+      --rosso: #b3261e;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --focus: #8ab4f8;
+      --on-accent-soft: rgba(255, 255, 255, 0.85);
+      --clear-bg: #cccccc;
+      --clear-bg-hover: #999999;
+      --notice-bg: #fff8e1; --notice-border: #ffe08a; --notice-text: #6b5200;
+      --ok-bg: #d4edda; --ok-text: #155724;
+      --err-bg: #f8d7da; --err-text: #721c24;
+    }
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
     
     /* Header personalizzato con Logo */
-    header { background: rgb(182, 255, 183); color: #333; padding: 1.2rem 1rem; text-align: center; border-bottom: 2px solid #eef2f7; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+    /* Il banner con il logo resta chiaro anche nel tema scuro: i suoi colori non cambiano */
+    header { --primary: #0056b3; --text: #333333; --text-soft: #666666;
+      background: var(--header-bg); color: var(--text); padding: 1.2rem 1rem; text-align: center; border-bottom: 2px solid var(--header-border); box-shadow: 0 2px 4px var(--shadow); }
     .header-logo { max-width: 140px; height: auto; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
     header h1 { margin: 0; font-size: 1.2rem; color: var(--primary); }
-    header p { margin: 4px 0 0 0; font-size: 0.85rem; color: #666; font-weight: 500; }
+    header p { margin: 4px 0 0 0; font-size: 0.85rem; color: var(--text-soft); font-weight: 500; }
     
-    nav { display: flex; background: white; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
-    nav button { flex: 1; padding: 12px 4px; border: none; background: none; font-weight: bold; color: #666; cursor: pointer; font-size: 0.85rem; }
-    nav button.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
+    nav { display: flex; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+    nav button { flex: 1; padding: 12px 4px; border: none; background: none; font-weight: bold; color: var(--text-soft); cursor: pointer; font-size: 0.85rem; }
+    nav button.active { color: var(--primary); border-bottom: 3px solid var(--accent); }
     
     main { padding: 16px; max-width: 650px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     
-    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); margin-bottom: 16px; }
+    .card { background: var(--surface); padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px var(--shadow); margin-bottom: 16px; }
     
     /* Stili Canti e Controlli */
     .canti-controls { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -43,7 +75,9 @@
     .search-wrapper input[type="search"] {
       width: 100%;
       padding: 12px 36px 12px 12px; /* Spazio a destra per la X */
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-input);
+      background: var(--surface);
+      color: var(--text);
       border-radius: 8px;
       font-size: 1rem;
       box-sizing: border-box;
@@ -59,7 +93,7 @@
     .clear-search-btn {
       position: absolute;
       right: 10px;
-      background: #ccc;
+      background: var(--clear-bg);
       color: white;
       border: none;
       border-radius: 50%;
@@ -74,14 +108,14 @@
       line-height: 1;
       padding: 0;
     }
-    .clear-search-btn:hover { background: #999; }
+    .clear-search-btn:hover { background: var(--clear-bg-hover); }
 
     .sort-wrapper { position: relative; display: flex; align-items: center; }
     .sort-select { 
       padding: 12px 14px; 
-      border: 1px solid #ccc; 
+      border: 1px solid var(--border-input); 
       border-radius: 8px; 
-      background: white; 
+      background: var(--surface); 
       color: var(--primary); 
       font-weight: bold; 
       font-size: 0.95rem; 
@@ -95,49 +129,49 @@
     .sort-wrapper::after { content: '▼'; font-size: 0.7rem; color: var(--primary); position: absolute; right: 12px; pointer-events: none; }
 
     .song-title { font-weight: bold; color: var(--primary); font-size: 1.15rem; margin-bottom: 4px; }
-    .song-category { font-size: 0.8rem; background: #e9ecef; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
-    .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
-    .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
+    .song-category { font-size: 0.8rem; background: var(--chip-bg); color: var(--text); display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; font-weight: 500; }
+    .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: var(--text-body); }
+    .song-lyrics b, .song-lyrics strong { color: var(--text-strong); font-weight: 700; }
 
     /* Messa del Giorno */
-    .lit-date { font-size: 0.85rem; color: #666; margin: 0 0 2px 0; }
-    .lit-day { font-size: 1.1rem; font-weight: bold; color: #222; margin: 0 0 16px 0; }
+    .lit-date { font-size: 0.85rem; color: var(--text-soft); margin: 0 0 2px 0; }
+    .lit-day { font-size: 1.1rem; font-weight: bold; color: var(--text-strong); margin: 0 0 16px 0; }
     [hidden] { display: none !important; }
     .lit-picker { margin-bottom: 18px; }
-    .lit-picker label { display: block; font-size: 0.8rem; font-weight: 600; color: #666; margin-bottom: 4px; }
+    .lit-picker label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-soft); margin-bottom: 4px; }
 
     /* Fila di riquadri dei giorni, scorrevole in orizzontale */
     .lit-days { position: relative; display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 -2px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
-    .lit-day-tile { position: relative; flex: 0 0 auto; width: 66px; height: 66px; padding: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; border: 1px solid #d5dbe3; border-radius: 12px; background: white; color: #666; font-family: inherit; cursor: pointer; scroll-snap-align: center; -webkit-tap-highlight-color: transparent; }
+    .lit-day-tile { position: relative; flex: 0 0 auto; width: 66px; height: 66px; padding: 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text-soft); font-family: inherit; cursor: pointer; scroll-snap-align: center; -webkit-tap-highlight-color: transparent; }
     .lit-day-tile .wd, .lit-day-tile .mo { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1.2; }
-    .lit-day-tile .num { font-size: 1.45rem; font-weight: 700; line-height: 1.1; color: #222; }
-    .lit-day-tile.today::after { content: ''; position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
-    .lit-day-tile.selected { background: var(--primary); border-color: var(--primary); color: rgba(255,255,255,0.85); }
+    .lit-day-tile .num { font-size: 1.45rem; font-weight: 700; line-height: 1.1; color: var(--text-strong); }
+    .lit-day-tile.today::after { content: ''; position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .lit-day-tile.selected { background: var(--accent); border-color: var(--accent); color: var(--on-accent-soft); }
     .lit-day-tile.selected .num { color: white; }
     .lit-day-tile.selected.today::after { background: white; }
-    .lit-day-tile:focus-visible { outline: 3px solid #8ab4f8; outline-offset: 2px; }
-    .lit-select { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid #ccc; border-radius: 8px; background: white; color: var(--primary); font-weight: bold; font-size: 1rem; font-family: inherit; cursor: pointer; }
+    .lit-day-tile:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .lit-select { width: 100%; box-sizing: border-box; padding: 12px 14px; border: 1px solid var(--border-input); border-radius: 8px; background: var(--surface); color: var(--primary); font-weight: bold; font-size: 1rem; font-family: inherit; cursor: pointer; }
     .lit-mass-row { margin-top: 10px; }
-    .lit-notice { background: #fff8e1; border: 1px solid #ffe08a; color: #6b5200; padding: 10px 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 14px; line-height: 1.4; }
-    .lit-notice a { color: #6b5200; font-weight: bold; }
+    .lit-notice { background: var(--notice-bg); border: 1px solid var(--notice-border); color: var(--notice-text); padding: 10px 12px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 14px; line-height: 1.4; }
+    .lit-notice a { color: var(--notice-text); font-weight: bold; }
     .lit-section { margin-bottom: 22px; }
     .lit-section h3 { font-size: 1rem; color: var(--primary); margin: 0 0 2px 0; text-transform: uppercase; letter-spacing: 0.03em; }
-    .lit-sub { font-style: italic; color: #555; margin: 0 0 8px 0; font-size: 0.95rem; }
-    .lit-ref { font-size: 0.85rem; color: #666; font-weight: 600; margin: 0 0 8px 0; }
+    .lit-sub { font-style: italic; color: var(--text-soft); margin: 0 0 8px 0; font-size: 0.95rem; }
+    .lit-ref { font-size: 0.85rem; color: var(--text-soft); font-weight: 600; margin: 0 0 8px 0; }
     .lit-body p { margin: 0 0 12px 0; line-height: 1.6; font-size: 1rem; }
-    .lit-body .rosso { color: #b3261e; }
+    .lit-body .rosso { color: var(--rosso); }
     .lit-ant p { margin-bottom: 10px; }
-    .lit-source { font-size: 0.8rem; color: #888; border-top: 1px solid #eee; padding-top: 10px; margin-top: 8px; }
+    .lit-source { font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-soft); padding-top: 10px; margin-top: 8px; }
     .lit-source a { color: var(--primary); }
-    .lit-msg { color: #666; text-align: center; margin: 12px 0; }
+    .lit-msg { color: var(--text-soft); text-align: center; margin: 12px 0; }
     .lit-msg a { color: var(--primary); font-weight: bold; }
 
     /* Liturgia delle Ore: fila di pulsanti per scegliere l'ora */
     .ore-hours { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 -2px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
-    .ore-hour-chip { flex: 0 0 auto; padding: 8px 14px; border: 1px solid #d5dbe3; border-radius: 999px; background: white; color: #555; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
-    .ore-hour-chip.selected { background: var(--primary); border-color: var(--primary); color: white; }
-    .ore-hour-chip:focus-visible { outline: 3px solid #8ab4f8; outline-offset: 2px; }
-    .ore-day { font-size: 0.9rem; font-weight: bold; color: #222; margin: 0 0 4px 0; letter-spacing: 0.02em; }
+    .ore-hour-chip { flex: 0 0 auto; padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-soft); font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+    .ore-hour-chip.selected { background: var(--accent); border-color: var(--accent); color: white; }
+    .ore-hour-chip:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+    .ore-day { font-size: 0.9rem; font-weight: bold; color: var(--text-strong); margin: 0 0 4px 0; letter-spacing: 0.02em; }
     .ore-hour-title { font-size: 1.15rem; font-weight: bold; color: var(--primary); margin: 0 0 16px 0; }
 
     /* Modal Stato del Sistema */
@@ -147,17 +181,48 @@
     }
     .status-modal.active { display: flex; }
     .status-card { 
-      background: white; padding: 20px; border-radius: 12px; max-width: 450px; width: 92%; 
+      background: var(--surface); color: var(--text); padding: 20px; border-radius: 12px; max-width: 450px; width: 92%; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
     }
     .status-item { margin-bottom: 12px; font-size: 0.9rem; }
     .status-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
-    .badge-ok { background: #d4edda; color: #155724; }
-    .badge-err { background: #f8d7da; color: #721c24; }
+    .badge-ok { background: var(--ok-bg); color: var(--ok-text); }
+    .badge-err { background: var(--err-bg); color: var(--err-text); }
 
     /* Footer / Crediti */
-    footer { text-align: center; padding: 16px; background: white; font-size: 0.85rem; color: #666; border-top: 1px solid #eee; margin-top: auto; }
+    footer { text-align: center; padding: 16px; background: var(--surface); font-size: 0.85rem; color: var(--text-soft); border-top: 1px solid var(--border-soft); margin-top: auto; }
     footer a { color: var(--primary); text-decoration: underline; margin-left: 6px; cursor: pointer; }
+
+    /* Tema scuro: si attiva da solo se il browser/telefono è impostato sul tema scuro */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #7db4ff;
+        --accent: #1a6fd4;
+        --bg: #101215;
+        --surface: #1b1e23;
+        --text: #e3e5e9;
+        --text-strong: #ffffff;
+        --text-body: #d3d7dd;
+        --text-soft: #a9afb9;
+        --text-muted: #8a909b;
+        --border: #363b44;
+        --border-soft: #2a2e35;
+        --border-input: #474d57;
+        --chip-bg: #2c3037;
+        --rosso: #ff8f84;
+        --shadow: rgba(0, 0, 0, 0.45);
+        --focus: #8ab4f8;
+        --on-accent-soft: rgba(255, 255, 255, 0.88);
+        --clear-bg: #555b65;
+        --clear-bg-hover: #6f7682;
+        --notice-bg: #3a3314; --notice-border: #6b5c1f; --notice-text: #f1dc94;
+        --ok-bg: #1d3a29; --ok-text: #8fdba7;
+        --err-bg: #40222a; --err-text: #f4a6b0;
+      }
+      .status-modal { background: rgba(0, 0, 0, 0.7); }
+      /* la riga sotto il banner (azzurrino chiaro nel tema chiaro) nel tema scuro sembrerebbe una striscia bianca */
+      header { border-bottom-color: var(--header-bg); }
+    }
   </style>
 </head>
 <body>
@@ -178,7 +243,7 @@
     <!-- TAB LITURGIA -->
     <section id="liturgia" class="tab-content active">
       <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid var(--border-soft); padding-bottom: 8px;">
           <span style="font-weight:bold; color:var(--primary);">Messa del Giorno</span>
         </div>
         
@@ -200,7 +265,7 @@
     <!-- TAB LITURGIA DELLE ORE -->
     <section id="ore" class="tab-content">
       <div class="card">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid var(--border-soft); padding-bottom: 8px;">
           <span style="font-weight:bold; color:var(--primary);">Liturgia delle Ore</span>
         </div>
 
@@ -254,7 +319,7 @@
         </div>
       </div>
 
-      <button onclick="toggleModal(false)" style="margin-top: 14px; background: var(--primary); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight:bold;">Chiudi</button>
+      <button onclick="toggleModal(false)" style="margin-top: 14px; background: var(--accent); color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight:bold;">Chiudi</button>
     </div>
   </div>
 
@@ -643,7 +708,7 @@
       const container = document.getElementById('songsContainer');
       container.innerHTML = '';
       if (list.length === 0) {
-        container.innerHTML = '<p style="text-align:center; color:#888;">Nessun canto trovato.</p>';
+        container.innerHTML = '<p style="text-align:center; color:var(--text-muted);">Nessun canto trovato.</p>';
         return;
       }
       list.forEach(canto => {
