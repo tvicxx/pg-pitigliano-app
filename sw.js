@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pg-app-v3';
+const CACHE_NAME = 'pg-app-v10';
 // Elenco di tutti i file da salvare nella memoria del telefono
 const ASSETS = [
   './',
@@ -31,9 +31,9 @@ self.addEventListener('activate', (event) => {
 
 // Intercettazione richieste: serve i file dalla cache se manca internet
 self.addEventListener('fetch', (event) => {
-  // liturgia.json cambia ogni giorno: prima la rete (dato fresco),
+  // messa.json e ore.json cambiano ogni settimana: prima la rete (dato fresco),
   // se manca internet l'ultima copia salvata.
-  if (new URL(event.request.url).pathname.endsWith('/liturgia.json')) {
+  if (/\/(messa|ore)\.json$/.test(new URL(event.request.url).pathname)) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {

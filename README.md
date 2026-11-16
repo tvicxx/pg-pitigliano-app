@@ -54,15 +54,24 @@ La webapp è accessibile pubblicamente via browser al seguente indirizzo:
 
 ---
 
-## 📖 Liturgia del giorno automatica
+## 📖 Messa del Giorno automatica
 
-La scheda **Liturgia del Giorno** mostra la Messa del giorno (letture, salmo, Vangelo e preghiere) presa dal sito ufficiale della CEI, [chiesacattolica.it](https://www.chiesacattolica.it/liturgia-del-giorno/).
+La scheda **Messa del Giorno** mostra la Messa del giorno (letture, salmo, Vangelo e preghiere) presa dal sito ufficiale della CEI, [chiesacattolica.it](https://www.chiesacattolica.it/liturgia-del-giorno/).
 
-- Ogni mercoledì il workflow `.github/workflows/aggiorna-liturgia.yml` esegue `scripts/fetch_liturgia.py`, che scarica i prossimi 14 giorni e li salva in `liturgia.json`: se un aggiornamento salta, restano comunque almeno 7 giorni di margine.
+- Ogni mercoledì il workflow `.github/workflows/aggiorna-liturgia.yml` esegue `scripts/fetch_liturgia.py`, che scarica i prossimi 14 giorni e li salva in `messa.json`: se un aggiornamento salta, restano comunque almeno 7 giorni di margine.
 - Nella scheda un menu in alto permette di scegliere uno qualsiasi dei giorni scaricati; se un giorno ha più messe (per esempio il 2 novembre o le memorie facoltative) compare un secondo menu per sceglierla.
-- La webapp legge solo `liturgia.json` (nessuna API esterna a runtime) e, grazie al service worker, lo tiene anche per l'uso offline.
-- Per aggiornare subito: scheda **Actions** → *Aggiorna liturgia del giorno* → **Run workflow**.
+- La webapp legge solo `messa.json` (nessuna API esterna a runtime) e, grazie al service worker, lo tiene anche per l'uso offline.
+- Per aggiornare subito: scheda **Actions** → *Aggiorna Messa e Liturgia delle Ore* → **Run workflow**.
 - Per provarlo in locale: `python3 scripts/fetch_liturgia.py` (richiede solo Python 3.9+).
+
+## 🕯️ Liturgia delle Ore automatica
+
+La scheda **Liturgia delle Ore** mostra le ore del giorno (Invitatorio, Ufficio delle letture, Lodi mattutine, Terza, Sesta, Nona, Vespri, Compieta) prese dallo stesso sito della CEI.
+
+- Lo stesso workflow del mercoledì esegue anche `scripts/fetch_ore.py`, che scarica 14 giorni e li salva in `ore.json`. I due download sono indipendenti: se uno fallisce l'altro viene comunque salvato, e il workflow risulta in errore per avvisarti.
+- In alto si sceglie il giorno (riquadri scorrevoli) e poi l'ora; se il giorno ha memorie facoltative compare un menu per scegliere la celebrazione. Aprendo la scheda si parte dall'ora più vicina all'orario attuale.
+- `ore.json` è molto più grande di `messa.json` (circa 1-2 MB, ma GitHub Pages lo comprime): per questo la webapp lo scarica solo quando si apre la scheda. Una volta aperta, il service worker lo tiene per l'uso offline.
+- Per provarlo in locale: `python3 scripts/fetch_ore.py` (richiede una richiesta al secondo per ogni ora: circa 2-4 minuti).
 
 ---
 

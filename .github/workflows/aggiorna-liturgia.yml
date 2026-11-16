@@ -21,11 +21,11 @@ jobs:
       - name: Scarica la messa del giorno dalla CEI
         run: python3 scripts/fetch_liturgia.py --days 14
 
-      - name: Salva liturgia.json se è cambiato
+      - name: Salva messa.json se è cambiato
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add liturgia.json
+          git add messa.json
           if git diff --cached --quiet; then
             echo "Nessuna modifica da salvare"
           else

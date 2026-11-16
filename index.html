@@ -21,7 +21,7 @@
     header p { margin: 4px 0 0 0; font-size: 0.85rem; color: #666; font-weight: 500; }
     
     nav { display: flex; background: white; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 10; }
-    nav button { flex: 1; padding: 12px; border: none; background: none; font-weight: bold; color: #666; cursor: pointer; font-size: 0.95rem; }
+    nav button { flex: 1; padding: 12px 4px; border: none; background: none; font-weight: bold; color: #666; cursor: pointer; font-size: 0.85rem; }
     nav button.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
     
     main { padding: 16px; max-width: 650px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
@@ -99,7 +99,7 @@
     .song-lyrics { white-space: pre-wrap; font-family: inherit; font-size: 1rem; line-height: 1.6; color: #444; }
     .song-lyrics b, .song-lyrics strong { color: #111; font-weight: 700; }
 
-    /* Liturgia del giorno */
+    /* Messa del Giorno */
     .lit-date { font-size: 0.85rem; color: #666; margin: 0 0 2px 0; }
     .lit-day { font-size: 1.1rem; font-weight: bold; color: #222; margin: 0 0 16px 0; }
     [hidden] { display: none !important; }
@@ -126,10 +126,19 @@
     .lit-ref { font-size: 0.85rem; color: #666; font-weight: 600; margin: 0 0 8px 0; }
     .lit-body p { margin: 0 0 12px 0; line-height: 1.6; font-size: 1rem; }
     .lit-body .rosso { color: #b3261e; }
+    .lit-ant p { margin-bottom: 10px; }
     .lit-source { font-size: 0.8rem; color: #888; border-top: 1px solid #eee; padding-top: 10px; margin-top: 8px; }
     .lit-source a { color: var(--primary); }
     .lit-msg { color: #666; text-align: center; margin: 12px 0; }
     .lit-msg a { color: var(--primary); font-weight: bold; }
+
+    /* Liturgia delle Ore: fila di pulsanti per scegliere l'ora */
+    .ore-hours { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 -2px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    .ore-hour-chip { flex: 0 0 auto; padding: 8px 14px; border: 1px solid #d5dbe3; border-radius: 999px; background: white; color: #555; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+    .ore-hour-chip.selected { background: var(--primary); border-color: var(--primary); color: white; }
+    .ore-hour-chip:focus-visible { outline: 3px solid #8ab4f8; outline-offset: 2px; }
+    .ore-day { font-size: 0.9rem; font-weight: bold; color: #222; margin: 0 0 4px 0; letter-spacing: 0.02em; }
+    .ore-hour-title { font-size: 1.15rem; font-weight: bold; color: var(--primary); margin: 0 0 16px 0; }
 
     /* Modal Stato del Sistema */
     .status-modal {
@@ -160,7 +169,8 @@
   </header>
 
   <nav>
-    <button class="active" onclick="switchTab('liturgia', this)">Liturgia del Giorno</button>
+    <button class="active" onclick="switchTab('liturgia', this)">Messa del Giorno</button>
+    <button onclick="switchTab('ore', this)">Liturgia delle Ore</button>
     <button onclick="switchTab('canti', this)">Libretto Canti</button>
   </nav>
 
@@ -169,10 +179,10 @@
     <section id="liturgia" class="tab-content active">
       <div class="card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
-          <span style="font-weight:bold; color:var(--primary);">Liturgia del Giorno (CEI)</span>
+          <span style="font-weight:bold; color:var(--primary);">Messa del Giorno</span>
         </div>
         
-        <!-- Selettore: elenca i giorni presenti in liturgia.json (vedi scripts/fetch_liturgia.py) -->
+        <!-- Selettore: elenca i giorni presenti in messa.json (vedi scripts/fetch_liturgia.py) -->
         <div id="liturgiaPicker" class="lit-picker" hidden>
           <div id="litDays" class="lit-days" role="group" aria-label="Scegli il giorno"></div>
           <div id="litMassRow" class="lit-mass-row" hidden>
@@ -183,6 +193,29 @@
 
         <div id="liturgiaContent">
           <p class="lit-msg">Caricamento della liturgia…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB LITURGIA DELLE ORE -->
+    <section id="ore" class="tab-content">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px;">
+          <span style="font-weight:bold; color:var(--primary);">Liturgia delle Ore</span>
+        </div>
+
+        <!-- Selettore: i giorni presenti in ore.json (vedi scripts/fetch_ore.py), poi l'ora -->
+        <div id="orePicker" class="lit-picker" hidden>
+          <div id="oreDays" class="lit-days" role="group" aria-label="Scegli il giorno"></div>
+          <div id="oreHours" class="ore-hours" role="group" aria-label="Scegli l'ora"></div>
+          <div id="oreCelRow" class="lit-mass-row" hidden>
+            <label for="oreCel">Celebrazione</label>
+            <select id="oreCel" class="lit-select" onchange="selectOreCel(this.value)"></select>
+          </div>
+        </div>
+
+        <div id="oreContent">
+          <p class="lit-msg">Caricamento della Liturgia delle Ore…</p>
         </div>
       </div>
     </section>
@@ -239,17 +272,18 @@
       btn.classList.add('active');
       // una scheda nascosta perde lo scorrimento: ricentra il giorno scelto
       if (tabId === 'liturgia') centerSelectedDay(false);
+      if (tabId === 'ore') openOreTab();
     }
 
     function toggleModal(show) {
       document.getElementById('statusModal').classList.toggle('active', show);
     }
 
-    // ---- Liturgia del giorno ----
-    // I testi arrivano da liturgia.json, che GitHub Actions rigenera ogni settimana
+    // ---- Messa del Giorno ----
+    // I testi arrivano da messa.json, che GitHub Actions rigenera ogni settimana
     // scaricando la "Messa del Giorno" da chiesacattolica.it (scripts/fetch_liturgia.py).
     const CEI_URL = 'https://www.chiesacattolica.it/liturgia-del-giorno/';
-    let liturgiaDays = null;   // giorni validi di liturgia.json, per chiave YYYYMMDD
+    let liturgiaDays = null;   // giorni validi di messa.json, per chiave YYYYMMDD
     let liturgiaToday = null;  // chiave di "oggi" al momento del caricamento
     let liturgiaSel = null;    // giorno mostrato
     let liturgiaMass = 0;      // messa mostrata (indice in day.messe)
@@ -308,7 +342,7 @@
         <p class="lit-source">Fonte: <a href="${CEI_URL}?data-liturgia=${key}" target="_blank" rel="noopener">chiesacattolica.it</a> (Conferenza Episcopale Italiana)</p>`;
     }
 
-    // Una fila di riquadri (giorno della settimana, numero, mese), uno per ogni giorno di liturgia.json
+    // Una fila di riquadri (giorno della settimana, numero, mese), uno per ogni giorno di messa.json
     function renderLiturgiaPicker() {
       const keys = Object.keys(liturgiaDays).sort();
       document.getElementById('litDays').innerHTML = keys.map(k => {
@@ -373,7 +407,7 @@
       const today = localDateKey();
       liturgiaToday = today;
       try {
-        const res = await fetch('liturgia.json', { cache: 'no-cache' });
+        const res = await fetch('messa.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
         const data = await res.json();
         const all = data.giorni || {};
@@ -401,6 +435,207 @@
     // Se l'app resta aperta oltre la mezzanotte, al ritorno mostra il giorno nuovo
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && liturgiaToday && localDateKey() !== liturgiaToday) loadLiturgia();
+    });
+
+    // ---- Liturgia delle Ore ----
+    // I testi arrivano da ore.json, che GitHub Actions rigenera ogni settimana
+    // scaricando la "Liturgia delle Ore" da chiesacattolica.it (scripts/fetch_ore.py).
+    // Si carica solo la prima volta che si apre la scheda (il file è più grande di messa.json).
+    const CEI_ORE_URL = 'https://www.chiesacattolica.it/la-liturgia-delle-ore/';
+    let oreDays = null;     // giorni validi di ore.json, per chiave YYYYMMDD
+    let oreToday = null;    // chiave di "oggi" al momento del caricamento
+    let oreSel = null;      // giorno mostrato
+    let oreCel = 0;         // celebrazione mostrata (indice in day.celebrazioni)
+    let oreHour = null;     // ora mostrata (id: lodi-mattutine, vespri, ...)
+    let oreLoading = false;
+    let oreManual = false;  // true dopo che l'utente sceglie a mano giorno/ora/celebrazione: da lì non si cambia più da soli
+
+    // L'ora che di solito si prega adesso (si usa solo se il giorno mostrato è oggi)
+    function defaultOreHour() {
+      const h = new Date().getHours();
+      return h < 5 ? 'invitatorio' : h < 9 ? 'lodi-mattutine' : h < 11 ? 'terza' : h < 14 ? 'sesta'
+           : h < 17 ? 'nona' : h < 21 ? 'vespri' : 'compieta';
+    }
+
+    // Cerca nella celebrazione l'ora voluta. "vespri" e "compieta" sono generici: la domenica ci sono
+    // Primi e Secondi Vespri (e due Compiete), il sabato sera non ce n'è nessuno. Ritorna null se manca.
+    function resolveOreHour(cel, wanted) {
+      return cel.ore.find(o => o.id === wanted)
+        || (wanted === 'vespri' && cel.ore.find(o => /vespri/.test(o.id) && !/primi|compieta/.test(o.id)))
+        || (wanted === 'compieta' && cel.ore.find(o => /^compieta/.test(o.id) && !/primi/.test(o.id)))
+        || null;
+    }
+
+    // Sceglie giorno e ora più adatti ADESSO: oggi (o il giorno più vicino) e l'ora in base all'orario.
+    // Il sabato sera i Vespri non esistono (sono i Primi Vespri della domenica): si apre il giorno dopo.
+    function applyOreDefault(keys, today) {
+      oreSel = defaultLiturgiaKey(keys, today);
+      oreCel = 0;
+      oreHour = oreSel === today ? defaultOreHour() : 'lodi-mattutine';
+      if (oreSel === today && /^(vespri|compieta)$/.test(oreHour) && !resolveOreHour(oreDays[oreSel].celebrazioni[0], oreHour)) {
+        const next = keys.find(k => k > today);
+        const primi = oreHour === 'vespri' ? 'primi-vespri' : 'compieta-dopo-i-primi-vespri';
+        if (next && oreDays[next].celebrazioni[0].ore.some(o => o.id === primi)) { oreSel = next; oreHour = primi; }
+      }
+    }
+
+    // Ogni volta che si apre la scheda (o si torna nell'app) si riparte dall'ora più adatta,
+    // a meno che l'utente non abbia già scelto qualcosa a mano.
+    async function openOreTab() {
+      await loadOre();
+      if (oreDays && !oreManual) {
+        applyOreDefault(Object.keys(oreDays).sort(), oreToday);
+        renderOreDay();
+      }
+      centerOreDay(false);
+    }
+
+    function oreFallback(key, motivo) {
+      return `<p class="lit-msg">${motivo}<br><br>
+        <a href="${CEI_ORE_URL}?data-liturgia=${key}" target="_blank" rel="noopener">Apri la Liturgia delle Ore su chiesacattolica.it</a></p>`;
+    }
+
+    function renderOreBody(hour, day, key) {
+      // l'antifona di apertura sta SEMPRE prima del titolo (il campo s.antifona è già html ripulito)
+      const renderSection = s => `
+        <div class="lit-section">
+          ${s.antifona ? `<div class="lit-body lit-ant">${s.antifona}</div>` : ''}
+          ${s.titolo ? `<h3>${escapeHtml(s.titolo)}</h3>` : ''}
+          ${s.sottotitolo ? `<p class="lit-sub">${escapeHtml(s.sottotitolo)}</p>` : ''}
+          ${s.html ? `<div class="lit-body">${s.html}</div>` : ''}
+        </div>`;
+      return `
+        <p class="lit-date">${escapeHtml(day.dataLabel)}</p>
+        <p class="ore-day">${escapeHtml(day.celebrazioni[oreCel] && day.celebrazioni[oreCel].titolo || day.giorno)}</p>
+        <p class="ore-hour-title">${escapeHtml(hour.nome)}</p>
+        ${hour.sezioni.map(renderSection).join('')}
+        <p class="lit-source">Fonte: <a href="${CEI_ORE_URL}?data-liturgia=${key}" target="_blank" rel="noopener">chiesacattolica.it</a> (Conferenza Episcopale Italiana)</p>`;
+    }
+
+    // Una fila di riquadri (giorno della settimana, numero, mese), uno per ogni giorno di ore.json
+    function renderOrePicker() {
+      const keys = Object.keys(oreDays).sort();
+      document.getElementById('oreDays').innerHTML = keys.map(k => {
+        const d = keyDate(k);
+        const isToday = k === oreToday;
+        const label = keyLabel(k) + (isToday ? ' (oggi)' : '');
+        return `<button type="button" class="lit-day-tile${isToday ? ' today' : ''}" data-key="${k}" aria-label="${escapeHtml(label)}" onclick="selectOreDay('${k}')">
+          <span class="wd">${escapeHtml(weekdayShort.format(d))}</span>
+          <span class="num">${d.getDate()}</span>
+          <span class="mo">${escapeHtml(monthShort.format(d))}</span>
+        </button>`;
+      }).join('');
+      document.getElementById('orePicker').hidden = false;
+    }
+
+    function centerOreDay(smooth) {
+      const strip = document.getElementById('oreDays');
+      const tile = strip && strip.querySelector('.lit-day-tile.selected');
+      if (!tile || !strip.clientWidth) return; // scheda nascosta: ci pensa switchTab
+      strip.scrollTo({ left: tile.offsetLeft - (strip.clientWidth - tile.offsetWidth) / 2, behavior: smooth ? 'smooth' : 'auto' });
+    }
+
+    // Mostra giorno/celebrazione/ora selezionati e aggiorna riquadri, pulsanti delle ore e menu
+    function renderOreDay(smooth) {
+      const day = oreDays[oreSel];
+      const cels = day.celebrazioni;
+      if (!cels[oreCel]) oreCel = 0;
+      const cel = cels[oreCel];
+      // se l'ora scelta non esiste in questo giorno (es. i Vespri del sabato) si ripiega sulle Lodi
+      const hour = resolveOreHour(cel, oreHour) || cel.ore.find(o => o.id === 'lodi-mattutine') || cel.ore[0];
+
+      document.querySelectorAll('#oreDays .lit-day-tile').forEach(t => {
+        const on = t.dataset.key === oreSel;
+        t.classList.toggle('selected', on);
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      centerOreDay(smooth);
+
+      const hoursBox = document.getElementById('oreHours');
+      const prevScroll = hoursBox.scrollLeft;
+      hoursBox.innerHTML = cel.ore.map(o => `<button type="button" class="ore-hour-chip${o.id === hour.id ? ' selected' : ''}" data-id="${o.id}" aria-pressed="${o.id === hour.id}" onclick="selectOreHour('${o.id}')">${escapeHtml(o.nome)}</button>`).join('');
+      hoursBox.scrollLeft = prevScroll;
+      if (smooth === undefined || smooth === true) {
+        const chip = hoursBox.querySelector('.ore-hour-chip.selected');
+        if (chip && hoursBox.clientWidth) hoursBox.scrollTo({ left: chip.offsetLeft - (hoursBox.clientWidth - chip.offsetWidth) / 2 });
+      }
+
+      const celSel = document.getElementById('oreCel');
+      celSel.innerHTML = cels.map((c, i) => `<option value="${i}">${escapeHtml(c.titolo || day.giorno)}</option>`).join('');
+      celSel.value = String(oreCel);
+      document.getElementById('oreCelRow').hidden = cels.length < 2;
+
+      const notice = oreDays[oreToday] ? '' : `
+        <p class="lit-notice">La Liturgia delle Ore di oggi non è ancora disponibile nell'app.
+          <a href="${CEI_ORE_URL}?data-liturgia=${oreToday}" target="_blank" rel="noopener">Aprila su chiesacattolica.it</a></p>`;
+      document.getElementById('oreContent').innerHTML = notice + renderOreBody(hour, day, oreSel);
+    }
+
+    function selectOreDay(key) {
+      if (!oreDays || !oreDays[key]) return;
+      oreManual = true;
+      oreSel = key;
+      oreCel = 0;
+      renderOreDay(true);
+    }
+
+    function selectOreHour(id) {
+      oreManual = true;
+      oreHour = id;
+      renderOreDay(false);
+    }
+
+    function selectOreCel(i) {
+      oreManual = true;
+      oreCel = Number(i) || 0;
+      renderOreDay(false);
+    }
+
+    async function loadOre() {
+      const today = localDateKey();
+      if (oreLoading || (oreDays && oreToday === today)) return; // già caricato oggi
+      oreLoading = true;
+      const box = document.getElementById('oreContent');
+      oreToday = today;
+      try {
+        const res = await fetch('ore.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const all = data.giorni || {};
+        // teniamo solo i giorni ben formati (e le ore con un id sicuro, usato negli onclick)
+        oreDays = {};
+        Object.keys(all).sort().forEach(k => {
+          const d = all[k];
+          if (!/^\d{8}$/.test(k) || !d || !Array.isArray(d.celebrazioni)) return;
+          d.celebrazioni = d.celebrazioni.filter(c => c && Array.isArray(c.ore)).map(c => ({
+            ...c, ore: c.ore.filter(o => o && /^[a-z-]+$/.test(o.id) && Array.isArray(o.sezioni) && o.sezioni.length)
+          })).filter(c => c.ore.length);
+          if (d.celebrazioni.length) oreDays[k] = d;
+        });
+        const keys = Object.keys(oreDays);
+        if (!keys.length) throw new Error('HTTP nessun giorno');
+        oreManual = false;
+        applyOreDefault(keys, today);
+        renderOrePicker();
+        renderOreDay();
+      } catch (err) {
+        oreDays = null;
+        document.getElementById('orePicker').hidden = true;
+        const httpError = String(err.message).startsWith('HTTP');
+        box.innerHTML = oreFallback(today, httpError
+          ? 'La Liturgia delle Ore di oggi non è ancora disponibile nell\'app.'
+          : 'Impossibile caricare la Liturgia delle Ore (sei offline?).');
+      } finally {
+        oreLoading = false;
+      }
+    }
+
+    // Se si torna nell'app con la scheda aperta: dopo la mezzanotte ricarica il giorno nuovo,
+    // e in ogni caso riparte dall'ora più adatta (se non si era scelto nulla a mano)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden || !oreToday || !document.getElementById('ore').classList.contains('active')) return;
+      if (localDateKey() !== oreToday) { oreDays = null; oreManual = false; }
+      openOreTab();
     });
 
     // Render Canti

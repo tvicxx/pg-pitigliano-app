@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Scarica la "Messa del Giorno" dal sito ufficiale della CEI (chiesacattolica.it)
-e la salva in liturgia.json, che la webapp legge senza chiamare servizi esterni.
+e la salva in messa.json, che la webapp legge senza chiamare servizi esterni.
 
 Uso tipico (lo lancia GitHub Actions ogni mercoledì):
     python3 scripts/fetch_liturgia.py
 
 Opzioni utili:
     --days N              quanti giorni scaricare a partire da oggi (default 14)
-    --out FILE            file di destinazione (default liturgia.json nella root)
+    --out FILE            file di destinazione (default messa.json nella root)
     --html-file F --date YYYYMMDD
                           analizza una pagina salvata in locale (per i test)
 
@@ -124,10 +124,6 @@ def render_inline(node):
     inner = "".join(render_inline(c) for c in node.children)
     if not inner.strip():
         return inner
-    # La CEI scrive "<p><p><strong>R. …</strong></p><p>strofe…</p></p>": il paragrafo annidato
-    # che contiene solo il grassetto (l'antifona del salmo) deve andare a capo prima del testo.
-    if node.tag == "p" and inner.startswith("<strong>") and inner.endswith("</strong>"):
-        return inner + "<br>"
     if node.tag in ("strong", "b"):
         return f"<strong>{inner}</strong>"
     if node.tag in ("em", "i"):
@@ -144,15 +140,47 @@ def tidy(markup):
     return markup.strip()
 
 
+BLOCK_TAGS = {"p", "div"}
+BOLD_ONLY = re.compile(r"^<strong>(?:(?!</strong>).)*</strong>$", re.S)
+
+
+def blocks(node):
+    """Spezza il contenuto in "blocchi" (= paragrafi della CEI).
+
+    La CEI annida i paragrafi ("<p><p>A</p><p>B</p></p>") e il parser qui sopra non applica la
+    chiusura implicita dei <p> dell'HTML5: quindi ogni <p> (a qualsiasi profondità) è un confine
+    di blocco, e il testo "sciolto" tra due <p> forma un blocco a sé.
+    """
+    buf = []
+    for child in node.children:
+        if isinstance(child, Node) and child.tag in BLOCK_TAGS:
+            if buf:
+                yield buf
+                buf = []
+            yield from blocks(child)
+        else:
+            buf.append(child)
+    if buf:
+        yield buf
+
+
 def render_body(content_div):
-    paragraphs = []
-    for child in element_children(content_div):
-        if not clean_text(child):
-            continue
-        markup = tidy("".join(render_inline(c) for c in child.children))
+    """Una sola <p> per sezione; i confini tra paragrafi della CEI diventano <br>.
+
+    - tra due paragrafi: riga vuota (<br><br>);
+    - dopo un paragrafo fatto solo di grassetto (antifona del salmo): un solo <br>.
+    """
+    rendered = []
+    for block in blocks(content_div):
+        markup = tidy("".join(render_inline(c) for c in block))
         if markup:
-            paragraphs.append(f"<p>{markup}</p>")
-    return "".join(paragraphs)
+            rendered.append(markup)
+    out = ""
+    for k, markup in enumerate(rendered):
+        if k:
+            out += "<br>" if BOLD_ONLY.match(rendered[k - 1]) else "<br><br>"
+        out += markup
+    return f"<p>{out}</p>" if out else ""
 
 
 # --------------------------------------------------------------------------- #
@@ -295,7 +323,7 @@ def load_existing(path):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--days", type=int, default=14)
-    ap.add_argument("--out", default=str(Path(__file__).resolve().parent.parent / "liturgia.json"))
+    ap.add_argument("--out", default=str(Path(__file__).resolve().parent.parent / "messa.json"))
     ap.add_argument("--html-file")
     ap.add_argument("--date", help="YYYYMMDD, solo con --html-file")
     args = ap.parse_args()
