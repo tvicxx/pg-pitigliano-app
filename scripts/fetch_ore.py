@@ -44,6 +44,7 @@ SUBTITLE_CLASSES = {"lo_sottotitolo", "lo_sottotitolonoi", "lo_sottotitolorosso"
 INDENT = "&nbsp;&nbsp;&nbsp;"  # rientro dei versi (la CEI lo scrive con una serie di &nbsp;)
 ROMAN = re.compile(r"^[IVX]+$")
 ANTIPHON_LABEL = re.compile(r"^(\d+\s*)?ant\.(\s*al\s+\w+\.?)?$", re.I)
+SOFT_BREAKS = re.compile(r"(?:\s*<br>(?:&nbsp;)*)+\s*")
 MIN_HOURS = 3  # ore minime in un giorno (il sabato ce ne sono 4 voci di menù: Invitatorio, Ufficio, Lodi, Ora media)
 SKIP_CLASSES = {"share-container", "cci_get_social_share", "cci_get_social_share_buttons"}
 
@@ -158,6 +159,9 @@ def render_block(block):
     markup = tidy("".join(render_inline(c) for c in block.nodes))
     if not re.sub(r"<[^>]+>|&nbsp;|\s", "", markup):
         return ""
+    if block.kind in ("sottotitolo", "nota"):
+        # epigrafi e note: la CEI le spezza in righe corte come sulla carta; qui il testo scorre e va a capo da solo
+        markup = SOFT_BREAKS.sub(" ", markup).strip()
     if block.kind == "sottotitolo" and not block.red:
         markup = f"<em>{markup}</em>"
     elif block.kind == "nota" and not block.red:
