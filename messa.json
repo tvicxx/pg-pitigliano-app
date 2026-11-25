@@ -1,664 +1,6 @@
 {
  "fonte": "https://www.chiesacattolica.it/liturgia-del-giorno/",
  "giorni": {
-  "20261117": {
-   "data": "2026-11-17",
-   "dataLabel": "17 Novembre 2026",
-   "giorno": "SANTA ELISABETTA D'UNGHERIA, RELIGIOSA - MEMORIA",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261117",
-   "messe": [
-    {
-     "titolo": "",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>«Venite, benedetti del Padre mio», dice il Signore:<br>«ero malato e mi avete visitato.<br>In verità io vi dico:<br>tutto ciò che avete fatto a uno solo di questi miei fratelli<br>più piccoli, l’avete fatto a me». (Cf. Mt 25,34.36.40)<br><br><span class=\"rosso\">Oppure:</span><br><br>Egli dona largamente ai poveri,<br>la sua giustizia rimane per sempre,<br>la sua potenza s’innalza nella gloria. (Cf. Sal 111,9)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>O Dio, che a santa Elisabetta hai dato la grazia<br>di riconoscere e onorare Cristo nei poveri,<br>concedi a noi, per sua intercessione,<br>di servire con instancabile carità<br>coloro che si trovano nella sofferenza e nel bisogno.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Se qualcuno ascolta la mia voce e mi apre la porta, io verrò da lui, cenerò con lui.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 3,1-6.14-22<br><br>Io Giovanni, udii il Signore che mi diceva:<br>«All’angelo della Chiesa che è a Sardi scrivi:<br>“Così parla Colui che possiede i sette spiriti di Dio e le sette stelle. Conosco le tue opere; ti si crede vivo, e sei morto. Sii vigilante, rinvigorisci ciò che rimane e sta per morire, perché non ho trovato perfette le tue opere davanti al mio Dio. Ricorda dunque come hai ricevuto e ascoltato la Parola, custodiscila e convèrtiti perché, se non sarai vigilante, verrò come un ladro, senza che tu sappia a che ora io verrò da te. Tuttavia a Sardi vi sono alcuni che non hanno macchiato le loro vesti; essi cammineranno con me in vesti bianche, perché ne sono degni. Il vincitore sarà vestito di bianche vesti; non cancellerò il suo nome dal libro della vita, ma lo riconoscerò davanti al Padre mio e davanti ai suoi angeli. Chi ha orecchi, ascolti ciò che lo Spirito dice alle Chiese”.<br>All’angelo della Chiesa che è a Laodicèa scrivi:<br>“Così parla l’Amen, il Testimone degno di fede e veritiero, il Principio della creazione di Dio. Conosco le tue opere: tu non sei né freddo né caldo. Magari tu fossi freddo o caldo! Ma poiché sei tiepido, non sei cioè né freddo né caldo, sto per vomitarti dalla mia bocca. Tu dici: Sono ricco, mi sono arricchito, non ho bisogno di nulla. Ma non sai di essere un infelice, un miserabile, un povero, cieco e nudo. Ti consiglio di comperare da me oro purificato dal fuoco per diventare ricco, e abiti bianchi per vestirti e perché non appaia la tua vergognosa nudità, e collirio per ungerti gli occhi e recuperare la vista. Io, tutti quelli che amo, li rimprovero e li educo. Sii dunque zelante e convèrtiti. Ecco: sto alla porta e busso. Se qualcuno ascolta la mia voce e mi apre la porta, io verrò da lui, cenerò con lui ed egli con me. Il vincitore lo farò sedere con me, sul mio trono, come anche io ho vinto e siedo con il Padre mio sul suo trono. Chi ha orecchi, ascolti ciò che lo Spirito dice alle Chiese”».<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 14 (15)",
-       "html": "<p><strong><span class=\"rosso\">R. </span>Il vincitore lo farò sedere con me, sul mio trono.</strong><br><span class=\"rosso\">Oppure:</span><br><strong><span class=\"rosso\">R.</span> Ci accoglierai, Signore, nella gioia del tuo regno.</strong><br><br>Colui che cammina senza colpa,<br>pratica la giustizia<br>e dice la verità che ha nel cuore,<br>non sparge calunnie con la sua lingua. <span class=\"rosso\">R.</span><br><br>Non fa danno al suo prossimo<br>e non lancia insulti al suo vicino.<br>Ai suoi occhi è spregevole il malvagio,<br>ma onora chi teme il Signore. <span class=\"rosso\">R.</span><br><br>Non presta il suo denaro a usura<br>e non accetta doni contro l’innocente.<br>Colui che agisce in questo modo<br>resterà saldo per sempre. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Dio ha amato noi e ha mandato il suo Figlio<br>come vittima di espiazione per i nostri peccati. (1Gv 4,10b)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Il Figlio dell’uomo era venuto a cercare e a salvare ciò che era perduto.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 19,1-10<br><br>In quel tempo, Gesù entrò nella città di Gèrico e la stava attraversando, quand’ecco un uomo, di nome Zacchèo, capo dei pubblicani e ricco, cercava di vedere chi era Gesù, ma non gli riusciva a causa della folla, perché era piccolo di statura. Allora corse avanti e, per riuscire a vederlo, salì su un sicomòro, perché doveva passare di là.<br>Quando giunse sul luogo, Gesù alzò lo sguardo e gli disse: «Zacchèo, scendi subito, perché oggi devo fermarmi a casa tua». Scese in fretta e lo accolse pieno di gioia. Vedendo ciò, tutti mormoravano: «È entrato in casa di un peccatore!».<br>Ma Zacchèo, alzatosi, disse al Signore: «Ecco, Signore, io do la metà di ciò che possiedo ai poveri e, se ho rubato a qualcuno, restituisco quattro volte tanto».<br>Gesù gli rispose: «Oggi per questa casa è venuta la salvezza, perché anch’egli è figlio di Abramo. Il Figlio dell’uomo infatti è venuto a cercare e a salvare ciò che era perduto».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Accogli, o Padre, i doni del tuo popolo<br>e concedi a noi,<br>che celebriamo l’opera dell’immensa carità del tuo Figlio,<br>di essere confermati, secondo l’esempio di santa Elisabetta,<br>nell’amore per te e per il prossimo.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>«Nessuno ha un amore più grande di questo:<br>dare la vita per i propri amici», dice il Signore. (Gv 15,13)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Nutriti dai santi misteri, o Signore, ti preghiamo:<br>donaci di imitare l’esempio di santa Elisabetta,<br>che si consacrò a te con totale dedizione<br>e si prodigò per il tuo popolo con carità inesauribile.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Saziati, o Signore,<br>dalla dolcezza del sacramento della nostra redenzione,<br>supplichiamo la tua misericordia:<br>fa’ che, imitando la carità di santa Elisabetta,<br>diventiamo partecipi anche della sua gloria.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261118": {
-   "data": "2026-11-18",
-   "dataLabel": "18 Novembre 2026",
-   "giorno": "MERCOLEDÌ DELLA XXXIII SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261118",
-   "messe": [
-    {
-     "titolo": "MERCOLEDÌ DELLA XXXIII SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dice il Signore:<br>«Io ho progetti di pace e non di sventura.<br>Voi mi invocherete e io vi esaudirò:<br>vi radunerò da tutte le nazioni dove vi ho disperso». (Cf. Ger 29,11-12.14)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il tuo aiuto, Signore Dio nostro,<br>ci renda sempre lieti nel tuo servizio,<br>perché solo nella dedizione a te, fonte di ogni bene,<br>possiamo avere felicità piena e duratura.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Santo il Signore Dio, l'Onnipotente, Colui che era, che è e che viene!",
-       "versetto": "",
-       "html": "<p>Dal libro dell'Apocalisse di san Giovanni apostolo<br>Ap 4,1-11<br><br>Io, Giovanni, vidi: ecco, una porta era aperta nel cielo. La voce, che prima avevo udito parlarmi come una tromba, diceva: «Sali quassù, ti mostrerò le cose che devono accadere in seguito». Subito fui preso dallo Spirito.<br>Ed ecco, c'era un trono nel cielo, e sul trono Uno stava seduto. Colui che stava seduto era simile nell'aspetto a diaspro e cornalina. Un arcobaleno simile nell'aspetto a smeraldo avvolgeva il trono. Attorno al trono c'erano ventiquattro seggi e sui seggi stavano seduti ventiquattro anziani avvolti in candide vesti con corone d'oro sul capo. Dal trono uscivano lampi, voci e tuoni; ardevano davanti al trono sette fiaccole accese, che sono i sette spiriti di Dio. Davanti al trono vi era come un mare trasparente simile a cristallo. In mezzo al trono e attorno al trono vi erano quattro esseri viventi, pieni d'occhi davanti e dietro.<br>Il primo vivente era simile a un leone; il secondo vivente era simile a un vitello; il terzo vivente aveva l'aspetto come di uomo; il quarto vivente era simile a un'aquila che vola. I quattro esseri viventi hanno ciascuno sei ali, intorno e dentro sono costellati di occhi; giorno e notte non cessano di ripetere:<br>«Santo, santo, santo<br>il Signore Dio, l'Onnipotente,<br>Colui che era, che è e che viene!».<br>E ogni volta che questi esseri viventi rendono gloria, onore e grazie a Colui che è seduto sul trono e che vive nei secoli dei secoli, i ventiquattro anziani si prostrano davanti a Colui che siede sul trono e adorano Colui che vive nei secoli dei secoli e gettano le loro corone davanti al trono, dicendo:<br>«Tu sei degno, o Signore e Dio nostro,<br>di ricevere la gloria, l'onore e la potenza,<br>perché tu hai creato tutte le cose,<br>per la tua volontà esistevano e furono create».<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 150",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Santo, santo, santo il Signore Dio, l'Onnipotente.</strong><br>Lodate Dio nel suo santuario,<br>lodatelo nel suo maestoso firmamento.<br>Lodatelo per le sue imprese,<br>lodatelo per la sua immensa grandezza. <span class=\"rosso\">R.</span><br><br>Lodatelo con il suono del corno,<br>lodatelo con l'arpa e la cetra.<br>Lodatelo con tamburelli e danze,<br>lodatelo sulle corde e con i flauti. <span class=\"rosso\">R.</span><br><br>Lodatelo con cimbali sonori,<br>lodatelo con cimbali squillanti.<br>Ogni vivente dia lode al Signore. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Io ho scelto voi, dice il Signore,<br>perché andiate e portiate frutto<br>e il vostro frutto rimanga. (Cf. Gv 15,16)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Perché non hai consegnato il mio denaro a una banca?",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 19,11-28<br><br>In quel tempo, Gesù disse una parabola, perché era vicino a Gerusalemme ed essi pensavano che il regno di Dio dovesse manifestarsi da un momento all'altro.<br>Disse dunque: «Un uomo di nobile famiglia partì per un paese lontano, per ricevere il titolo di re e poi ritornare. Chiamati dieci dei suoi servi, consegnò loro dieci monete d'oro, dicendo: \"Fatele fruttare fino al mio ritorno\". Ma i suoi cittadini lo odiavano e mandarono dietro di lui una delegazione a dire: \"Non vogliamo che costui venga a regnare su di noi\". Dopo aver ricevuto il titolo di re, egli ritornò e fece chiamare quei servi a cui aveva consegnato il denaro, per sapere quanto ciascuno avesse guadagnato.<br>Si presentò il primo e disse: \"Signore, la tua moneta d'oro ne ha fruttate dieci\". Gli disse: \"Bene, servo buono! Poiché ti sei mostrato fedele nel poco, ricevi il potere sopra dieci città\".<br>Poi si presentò il secondo e disse: \"Signore, la tua moneta d'oro ne ha fruttate cinque\". Anche a questo disse: \"Tu pure sarai a capo di cinque città\".<br>Venne poi anche un altro e disse: \"Signore, ecco la tua moneta d'oro, che ho tenuto nascosta in un fazzoletto; avevo paura di te, che sei un uomo severo: prendi quello che non hai messo in deposito e mieti quello che non hai seminato\". Gli rispose: \"Dalle tue stesse parole ti giudico, servo malvagio! Sapevi che sono un uomo severo, che prendo quello che non ho messo in deposito e mieto quello che non ho seminato: perché allora non hai consegnato il mio denaro a una banca? Al mio ritorno l'avrei riscosso con gli interessi\". Disse poi ai presenti: \"Toglietegli la moneta d'oro e datela a colui che ne ha dieci\". Gli risposero: \"Signore, ne ha già dieci!\". \"Io vi dico: A chi ha, sarà dato; invece a chi non ha, sarà tolto anche quello che ha. E quei miei nemici, che non volevano che io diventassi loro re, conduceteli qui e uccideteli davanti a me\"».<br>Dette queste cose, Gesù camminava davanti a tutti salendo verso Gerusalemme.<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>L’offerta che ti presentiamo, o Signore,<br>ci ottenga la grazia di servirti fedelmente<br>e ci prepari il frutto di un’eternità beata.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il mio bene è stare vicino a Dio;<br>nel Signore ho posto il mio rifugio. (Sal 72,28)<br><br><span class=\"rosso\">Oppure:</span><br><br>«In verità io vi dico:<br>tutto quello che chiederete nella preghiera,<br>abbiate fede di averlo ottenuto e vi sarà accordato»,<br>dice il Signore. (Cf. Mc 11,23.24)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Nutriti da questo sacramento,<br>ti preghiamo umilmente, o Padre:<br>la celebrazione che il tuo Figlio<br>ha comandato di fare in sua memoria,<br>ci faccia crescere nell’amore.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    },
-    {
-     "titolo": "DEDICAZIONE DELLE BASILICHE DEI SANTI PIETRO E PAOLO, APOSTOLI - MEMORIA FACOLTATIVA",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Li farai principi di tutta la terra;<br>faranno ricordare il tuo nome per tutte le generazioni;<br>i popoli ti loderanno in eterno, per sempre. (Cf. Sal 44,17-18)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Difendi, o Signore, la tua Chiesa,<br>che dalla predicazione degli apostoli Pietro e Paolo<br>ha ricevuto il primo annuncio del Vangelo:<br>con il loro aiuto cresca nella fede e nell’amore,<br>sino alla fine dei tempi.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Santo il Signore Dio, l’Onnipotente, Colui che era, che è e che viene!",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 4,1-11<br><br>Io, Giovanni, vidi: ecco, una porta era aperta nel cielo. La voce, che prima avevo udito parlarmi come una tromba, diceva: «Sali quassù, ti mostrerò le cose che devono accadere in seguito». Subito fui preso dallo Spirito.<br>Ed ecco, c’era un trono nel cielo, e sul trono Uno stava seduto. Colui che stava seduto era simile nell’aspetto a diaspro e cornalina. Un arcobaleno simile nell’aspetto a smeraldo avvolgeva il trono. Attorno al trono c’erano ventiquattro seggi e sui seggi stavano seduti ventiquattro anziani avvolti in candide vesti con corone d’oro sul capo. Dal trono uscivano lampi, voci e tuoni; ardevano davanti al trono sette fiaccole accese, che sono i sette spiriti di Dio. Davanti al trono vi era come un mare trasparente simile a cristallo. In mezzo al trono e attorno al trono vi erano quattro esseri viventi, pieni d’occhi davanti e dietro.<br>Il primo vivente era simile a un leone; il secondo vivente era simile a un vitello; il terzo vivente aveva l’aspetto come di uomo; il quarto vivente era simile a un’aquila che vola. I quattro esseri viventi hanno ciascuno sei ali, intorno e dentro sono costellati di occhi; giorno e notte non cessano di ripetere:<br>«Santo, santo, santo<br>il Signore Dio, l’Onnipotente,<br>Colui che era, che è e che viene!».<br>E ogni volta che questi esseri viventi rendono gloria, onore e grazie a Colui che è seduto sul trono e che vive nei secoli dei secoli, i ventiquattro anziani si prostrano davanti a Colui che siede sul trono e adorano Colui che vive nei secoli dei secoli e gettano le loro corone davanti al trono, dicendo:<br>«Tu sei degno, o Signore e Dio nostro,<br>di ricevere la gloria, l’onore e la potenza,<br>perché tu hai creato tutte le cose,<br>per la tua volontà esistevano e furono create».<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 150",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Santo, santo, santo il Signore Dio, l’Onnipotente.</strong><br>Lodate Dio nel suo santuario,<br>lodatelo nel suo maestoso firmamento.<br>Lodatelo per le sue imprese,<br>lodatelo per la sua immensa grandezza. <span class=\"rosso\">R.</span><br><br>Lodatelo con il suono del corno,<br>lodatelo con l’arpa e la cetra.<br>Lodatelo con tamburelli e danze,<br>lodatelo sulle corde e con i flauti. <span class=\"rosso\">R.</span><br><br>Lodatelo con cimbali sonori,<br>lodatelo con cimbali squillanti.<br>Ogni vivente dia lode al Signore. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Io ho scelto voi, dice il Signore,<br>perché andiate e portiate frutto<br>e il vostro frutto rimanga. (Cf. Gv 15,16)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Perché non hai consegnato il mio denaro a una banca?",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 19,11-28<br><br>In quel tempo, Gesù disse una parabola, perché era vicino a Gerusalemme ed essi pensavano che il regno di Dio dovesse manifestarsi da un momento all'altro.<br>Disse dunque: «Un uomo di nobile famiglia partì per un paese lontano, per ricevere il titolo di re e poi ritornare. Chiamati dieci dei suoi servi, consegnò loro dieci monete d'oro, dicendo: \"Fatele fruttare fino al mio ritorno\". Ma i suoi cittadini lo odiavano e mandarono dietro di lui una delegazione a dire: \"Non vogliamo che costui venga a regnare su di noi\". Dopo aver ricevuto il titolo di re, egli ritornò e fece chiamare quei servi a cui aveva consegnato il denaro, per sapere quanto ciascuno avesse guadagnato.<br>Si presentò il primo e disse: \"Signore, la tua moneta d'oro ne ha fruttate dieci\". Gli disse: \"Bene, servo buono! Poiché ti sei mostrato fedele nel poco, ricevi il potere sopra dieci città\".<br>Poi si presentò il secondo e disse: \"Signore, la tua moneta d'oro ne ha fruttate cinque\". Anche a questo disse: \"Tu pure sarai a capo di cinque città\".<br>Venne poi anche un altro e disse: \"Signore, ecco la tua moneta d'oro, che ho tenuto nascosta in un fazzoletto; avevo paura di te, che sei un uomo severo: prendi quello che non hai messo in deposito e mieti quello che non hai seminato\". Gli rispose: \"Dalle tue stesse parole ti giudico, servo malvagio! Sapevi che sono un uomo severo, che prendo quello che non ho messo in deposito e mieto quello che non ho seminato: perché allora non hai consegnato il mio denaro a una banca? Al mio ritorno l'avrei riscosso con gli interessi\". Disse poi ai presenti: \"Toglietegli la moneta d'oro e datela a colui che ne ha dieci\". Gli risposero: \"Signore, ne ha già dieci!\". \"Io vi dico: A chi ha, sarà dato; invece a chi non ha, sarà tolto anche quello che ha. E quei miei nemici, che non volevano che io diventassi loro re, conduceteli qui e uccideteli davanti a me\"».<br>Dette queste cose, Gesù camminava davanti a tutti salendo verso Gerusalemme.<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Ti offriamo, o Signore, i doni del nostro servizio sacerdotale<br>e imploriamo la tua misericordia,<br>perché la verità a noi trasmessa<br>dal ministero degli apostoli Pietro e Paolo<br>si conservi integra nei nostri cuori.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Signore, tu hai parole di vita eterna<br>e noi abbiamo creduto che tu sei il Cristo,<br>il Figlio di Dio. (Cf. Gv 6,68.69)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Si rallegri, o Signore, il tuo popolo, saziato dal pane del cielo<br>nella memoria degli apostoli Pietro e Paolo,<br>che tu ci hai donato come guide e custodi.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261119": {
-   "data": "2026-11-19",
-   "dataLabel": "19 Novembre 2026",
-   "giorno": "GIOVEDÌ DELLA XXXIII SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261119",
-   "messe": [
-    {
-     "titolo": "",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dice il Signore:<br>«Io ho progetti di pace e non di sventura.<br>Voi mi invocherete e io vi esaudirò:<br>vi radunerò da tutte le nazioni dove vi ho disperso». (Cf. Ger 29,11-12.14)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il tuo aiuto, Signore Dio nostro,<br>ci renda sempre lieti nel tuo servizio,<br>perché solo nella dedizione a te, fonte di ogni bene,<br>possiamo avere felicità piena e duratura.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "L’Agnello è stato immolato e ci ha riscattato con il suo sangue, noi uomini di ogni nazione.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 5,1-10<br><br>Io, Giovanni, vidi nella mano destra di Colui che sedeva sul trono, un libro scritto sul lato interno e su quello esterno, sigillato con sette sigilli.<br>Vidi un angelo forte che proclamava a gran voce: «Chi è degno di aprire il libro e scioglierne i sigilli?». Ma nessuno né in cielo, né in terra, né sotto terra, era in grado di aprire il libro e di guardarlo. Io piangevo molto, perché non fu trovato nessuno degno di aprire il libro e di guardarlo. Uno degli anziani mi disse: «Non piangere; ha vinto il leone della tribù di Giuda, il Germoglio di Davide, e aprirà il libro e i suoi sette sigilli».<br>Poi vidi, in mezzo al trono, circondato dai quattro esseri viventi e dagli anziani, un Agnello, in piedi, come immolato; aveva sette corna e sette occhi, i quali sono i sette spiriti di Dio mandati su tutta la terra.<br>Giunse e prese il libro dalla destra di Colui che sedeva sul trono. E quando l’ebbe preso, i quattro esseri viventi e i ventiquattro anziani si prostrarono davanti all’Agnello, avendo ciascuno una cetra e coppe d’oro colme di profumi, che sono le preghiere dei santi, e cantavano un canto nuovo:<br>«Tu sei degno di prendere il libro<br>e di aprirne i sigilli,<br>perché sei stato immolato<br>e hai riscattato per Dio, con il tuo sangue,<br>uomini di ogni tribù, lingua, popolo e nazione,<br>e hai fatto di loro, per il nostro Dio,<br>un regno e sacerdoti,<br>e regneranno sopra la terra».<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 149",
-       "html": "<p><strong><span class=\"rosso\">R. </span>Hai fatto di noi, per il nostro Dio, un regno e sacerdoti.</strong><br>Cantate al Signore un canto nuovo;<br>la sua lode nell’assemblea dei fedeli.<br>Gioisca Israele nel suo creatore,<br>esultino nel loro re i figli di Sion. <span class=\"rosso\">R.</span><br><br>Lodino il suo nome con danze,<br>con tamburelli e cetre gli cantino inni.<br>Il Signore ama il suo popolo,<br>incorona i poveri di vittoria. <span class=\"rosso\">R.</span><br><br>Esultino i fedeli nella gloria,<br>facciano festa sui loro giacigli.<br>Le lodi di Dio sulla loro bocca:<br>questo è un onore per tutti i suoi fedeli. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Oggi non indurite il vostro cuore,<br>ma ascoltate la voce del Signore. (Cf. Sal 94 (95),8ab)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Se avessi compreso quello che porta alla pace!",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 19,41-44<br><br>In quel tempo, Gesù, quando fu vicino a Gerusalemme, alla vista della città pianse su di essa dicendo:<br>«Se avessi compreso anche tu, in questo giorno, quello che porta alla pace! Ma ora è stato nascosto ai tuoi occhi.<br>Per te verranno giorni in cui i tuoi nemici ti circonderanno di trincee, ti assedieranno e ti stringeranno da ogni parte; distruggeranno te e i tuoi figli dentro di te e non lasceranno in te pietra su pietra, perché non hai riconosciuto il tempo in cui sei stata visitata».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>L’offerta che ti presentiamo, o Signore,<br>ci ottenga la grazia di servirti fedelmente<br>e ci prepari il frutto di un’eternità beata.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il mio bene è stare vicino a Dio;<br>nel Signore ho posto il mio rifugio. (Sal 72,28)<br><br><span class=\"rosso\">Oppure:</span><br><br>«In verità io vi dico:<br>tutto quello che chiederete nella preghiera,<br>abbiate fede di averlo ottenuto e vi sarà accordato»,<br>dice il Signore. (Cf. Mc 11,23.24)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Nutriti da questo sacramento,<br>ti preghiamo umilmente, o Padre:<br>la celebrazione che il tuo Figlio<br>ha comandato di fare in sua memoria,<br>ci faccia crescere nell’amore.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261120": {
-   "data": "2026-11-20",
-   "dataLabel": "20 Novembre 2026",
-   "giorno": "VENERDÌ DELLA XXXIII SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261120",
-   "messe": [
-    {
-     "titolo": "",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dice il Signore:<br>«Io ho progetti di pace e non di sventura.<br>Voi mi invocherete e io vi esaudirò:<br>vi radunerò da tutte le nazioni dove vi ho disperso». (Cf. Ger 29,11-12.14)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il tuo aiuto, Signore Dio nostro,<br>ci renda sempre lieti nel tuo servizio,<br>perché solo nella dedizione a te, fonte di ogni bene,<br>possiamo avere felicità piena e duratura.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Presi quel piccolo libro e lo divorai.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 10,8-11<br><br>Io, Giovanni, udii una voce dal cielo che diceva: «Va’, prendi il libro aperto dalla mano dell’angelo che sta in piedi sul mare e sulla terra».<br>Allora mi avvicinai all’angelo e lo pregai di darmi il piccolo libro. Ed egli mi disse: «Prendilo e divoralo; ti riempirà di amarezza le viscere, ma in bocca ti sarà dolce come il miele».<br>Presi quel piccolo libro dalla mano dell’angelo e lo divorai; in bocca lo sentii dolce come il miele, ma come l’ebbi inghiottito ne sentii nelle viscere tutta l’amarezza. Allora mi fu detto: «Devi profetizzare ancora su molti popoli, nazioni, lingue e re».<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 118 (119)",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Quanto sono dolci al mio palato le tue promesse!</strong><br><span class=\"rosso\">Oppure:</span><br><strong><span class=\"rosso\">R.</span> Nelle tue parole, Signore, è la mia gioia.</strong><br><br>Nella via dei tuoi insegnamenti è la mia gioia,<br>più che in tutte le ricchezze.<br>I tuoi insegnamenti sono la mia delizia:<br>sono essi i miei consiglieri. <span class=\"rosso\">R.</span><br><br>Bene per me è la legge della tua bocca,<br>più di mille pezzi d’oro e d’argento.<br>Quanto sono dolci al mio palato le tue promesse,<br>più del miele per la mia bocca. <span class=\"rosso\">R.</span><br><br>Mia eredità per sempre sono i tuoi insegnamenti,<br>perché sono essi la gioia del mio cuore.<br>Apro anelante la mia bocca,<br>perché ho sete dei tuoi comandi. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Le mie pecore ascoltano la mia voce, dice il Signore,<br>e io le conosco ed esse mi seguono. (Gv 10,27)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Avete fatto della casa di Dio un covo di ladri.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 19,45-48<br><br>In quel tempo, Gesù, entrato nel tempio, si mise a scacciare quelli che vendevano, dicendo loro: «Sta scritto: “La mia casa sarà casa di preghiera”. Voi invece ne avete fatto un covo di ladri».<br>Ogni giorno insegnava nel tempio. I capi dei sacerdoti e gli scribi cercavano di farlo morire e così anche i capi del popolo; ma non sapevano che cosa fare, perché tutto il popolo pendeva dalle sue labbra nell’ascoltarlo.<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>L’offerta che ti presentiamo, o Signore,<br>ci ottenga la grazia di servirti fedelmente<br>e ci prepari il frutto di un’eternità beata.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il mio bene è stare vicino a Dio;<br>nel Signore ho posto il mio rifugio. (Sal 72,28)<br><br><span class=\"rosso\">Oppure:</span><br><br>«In verità io vi dico:<br>tutto quello che chiederete nella preghiera,<br>abbiate fede di averlo ottenuto e vi sarà accordato»,<br>dice il Signore. (Cf. Mc 11,23.24)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Nutriti da questo sacramento,<br>ti preghiamo umilmente, o Padre:<br>la celebrazione che il tuo Figlio<br>ha comandato di fare in sua memoria,<br>ci faccia crescere nell’amore.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261121": {
-   "data": "2026-11-21",
-   "dataLabel": "21 Novembre 2026",
-   "giorno": "PRESENTAZIONE DELLA BEATA VERGINE MARIA – MEMORIA",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261121",
-   "messe": [
-    {
-     "titolo": "",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Disse Maria: «Il mio spirito esulta in Dio, mio Salvatore,<br>il Signore ha guardato l’umiltà della sua serva». (Cf. Lc 1,47-48)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Nella gloriosa memoria della santissima Vergine Maria<br>concedi anche a noi, o Signore, per sua intercessione,<br>di partecipare alla pienezza della tua grazia.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Gioisci, figlia di Sion, perché, ecco, io vengo.",
-       "versetto": "",
-       "html": "<p>Dal libro del profeta Zaccarìa<br>Zc 2,14-17<br><br>Rallégrati, esulta, figlia di Sion,<br>perché, ecco, io vengo ad abitare in mezzo a te.<br>Oracolo del Signore.<br>Nazioni numerose aderiranno in quel giorno al Signore<br>e diverranno suo popolo,<br>ed egli dimorerà in mezzo a te<br>e tu saprai che il Signore degli eserciti<br>mi ha inviato a te.<br>Il Signore si terrà Giuda<br>come eredità nella terra santa<br>ed eleggerà di nuovo Gerusalemme.<br>Taccia ogni mortale davanti al Signore,<br>poiché egli si è destato dalla sua santa dimora.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Da Lc 1,46-55",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Il Signore si è ricordato della sua misericordia.</strong><br><span class=\"rosso\">Oppure:<br><strong>R.</strong></span><strong> Grandi cose ha fatto per me l'Onnipotente.</strong><br><br>L’anima mia magnifica il Signore<br>e il mio spirito esulta in Dio, mio salvatore. <span class=\"rosso\">R.</span><br><br>Perché ha guardato l’umiltà della sua serva.<br>D’ora in poi tutte le generazioni mi chiameranno beata.<br>Grandi cose ha fatto per me l’Onnipotente<br>e Santo è il suo nome. <span class=\"rosso\">R.</span><br><br>Di generazione in generazione la sua misericordia<br>per quelli che lo temono.<br>Ha spiegato la potenza del suo braccio,<br>ha disperso i superbi nei pensieri del loro cuore. <span class=\"rosso\">R.</span><br><br>Ha rovesciato i potenti dai troni,<br>ha innalzato gli umili;<br>ha ricolmato di beni gli affamati,<br>ha rimandato i ricchi a mani vuote. <span class=\"rosso\">R.</span><br><br>Ha soccorso Israele, suo servo,<br>ricordandosi della sua misericordia,<br>come aveva detto ai nostri padri,<br>per Abramo e la sua discendenza, per sempre. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Beati coloro che ascoltano la parola di Dio<br>e la osservano. (Lc 11,28)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Tendendo la mano verso i suoi discepoli, disse: «Ecco mia madre e i miei fratelli!».",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 12,46-50<br><br>In quel tempo, mentre Gesù parlava ancora alla folla, ecco, sua madre e i suoi fratelli stavano fuori e cercavano di parlargli.<br>Qualcuno gli disse: «Ecco, tua madre e i tuoi fratelli stanno fuori e cercano di parlarti».<br>Ed egli, rispondendo a chi gli parlava, disse: «Chi è mia madre e chi sono i miei fratelli?». Poi, tendendo la mano verso i suoi discepoli, disse: «Ecco mia madre e i miei fratelli! Perché chiunque fa la volontà del Padre mio che è nei cieli, egli è per me fratello, sorella e madre».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Accogli, o Padre, i doni offerti dal tuo popolo<br>nella memoria della beata Vergine Maria,<br>che per la verginità fu a te gradita<br>e nell’umiltà concepì il tuo Figlio, Signore nostro.<br>Egli vive e regna nei secoli dei secoli.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Maria custodiva tutte queste cose,<br>meditandole nel suo cuore. (Lc 2,19)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>O Signore, Dio nostro,<br>che ci hai resi partecipi del cibo spirituale,<br>fa’ che, imitando assiduamente la beata Vergine Maria,<br>ci dedichiamo sempre al servizio della Chiesa<br>e sperimentiamo la gioia di esserti fedeli.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261122": {
-   "data": "2026-11-22",
-   "dataLabel": "22 Novembre 2026",
-   "giorno": "XXXIV DOMENICA DEL TEMPO ORDINARIO – SOLENNITÀ DI NOSTRO SIGNORE GESÚ CRISTO RE DELL'UNIVERSO – ANNO A",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261122",
-   "messe": [
-    {
-     "titolo": "",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>L’Agnello immolato<br>è degno di ricevere potenza e ricchezza,<br>sapienza, forza e onore:<br>a lui gloria e potenza nei secoli dei secoli. (Ap 5,12;1,6)<br><br><span class=\"rosso\">Si dice il Gloria.</span></p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dio onnipotente ed eterno,<br>che hai voluto ricapitolare tutte le cose<br>in Cristo tuo Figlio, Re dell’universo,<br>fa’ che ogni creatura,<br>libera dalla schiavitù del peccato,<br>ti serva e ti lodi senza fine.<br>Per il nostro Signore Gesù Cristo.<br><br><span class=\"rosso\">Oppure:</span><br><br>O Padre,<br>che hai costituito il tuo Figlio<br>pastore e re dell’universo,<br>donaci di riconoscerlo nel più piccolo dei fratelli,<br>perché, quando egli verrà nella gloria<br>ci accolga nel suo regno di risurrezione e di vita.<br>Egli è Dio, e vive e regna con te.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Voi siete mio gregge, io giudicherò tra pecora e pecora.",
-       "versetto": "",
-       "html": "<p>Dal libro del profeta Ezechièle<br>Ez 34,11-12.15-17<br><br>Così dice il Signore Dio: Ecco, io stesso cercherò le mie pecore e le passerò in rassegna. Come un pastore passa in rassegna il suo gregge quando si trova in mezzo alle sue pecore che erano state disperse, così io passerò in rassegna le mie pecore e le radunerò da tutti i luoghi dove erano disperse nei giorni nuvolosi e di caligine.<br>Io stesso condurrò le mie pecore al pascolo e io le farò riposare. Oracolo del Signore Dio. Andrò in cerca della pecora perduta e ricondurrò all'ovile quella smarrita, fascerò quella ferita e curerò quella malata, avrò cura della grassa e della forte; le pascerò con giustizia.<br>A te, mio gregge, così dice il Signore Dio: Ecco, io giudicherò fra pecora e pecora, fra montoni e capri.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 22 (23)",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Il Signore è il mio pastore: non manco di nulla.</strong><br>Il Signore è il mio pastore:<br>non manco di nulla.<br>Su pascoli erbosi mi fa riposare,<br>ad acque tranquille mi conduce. <span class=\"rosso\">R.</span><br><br>Rinfranca l’anima mia,<br>mi guida per il giusto cammino<br>a motivo del suo nome. <span class=\"rosso\">R.</span><br><br>Anche se vado per una valle oscura,<br>non temo alcun male, perché tu sei con me.<br>Il tuo bastone e il tuo vincastro<br>mi danno sicurezza. <span class=\"rosso\">R.</span><br><br>Davanti a me tu prepari una mensa<br>sotto gli occhi dei miei nemici.<br>Ungi di olio il mio capo;<br>il mio calice trabocca. <span class=\"rosso\">R.</span><br><br>Sì, bontà e fedeltà mi saranno compagne<br>tutti i giorni della mia vita,<br>abiterò ancora nella casa del Signore<br>per lunghi giorni. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Seconda Lettura",
-       "sottotitolo": "Consegnerà il regno a Dio Padre, perché Dio sia tutto in tutti.",
-       "versetto": "",
-       "html": "<p>Dalla prima lettera di san Paolo apostolo ai Corìnzi<br>1Cor 15,20-26.28<br><br>Fratelli, Cristo è risorto dai morti, primizia di coloro che sono morti. Perché, se per mezzo di un uomo venne la morte, per mezzo di un uomo verrà anche la risurrezione dei morti. Come infatti in Adamo tutti muoiono, così in Cristo tutti riceveranno la vita.<br>Ognuno però al suo posto: prima Cristo, che è la primizia; poi, alla sua venuta, quelli che sono di Cristo. Poi sarà la fine, quando egli consegnerà il regno a Dio Padre, dopo avere ridotto al nulla ogni Principato e ogni Potenza e Forza.<br>È necessario infatti che egli regni finché non abbia posto tutti i nemici sotto i suoi piedi. L'ultimo nemico a essere annientato sarà la morte.<br>E quando tutto gli sarà stato sottomesso, anch'egli, il Figlio, sarà sottomesso a Colui che gli ha sottomesso ogni cosa, perché Dio sia tutto in tutti.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Benedetto colui che viene nel nome del Signore!<br>Benedetto il Regno che viene, del nostro padre Davide! (Mc 11,9.10)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Siederà sul trono della sua gloria e separerà gli uni dagli altri.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 25,31-46<br><br>In quel tempo, Gesù disse ai suoi discepoli:<br>«Quando il Figlio dell'uomo verrà nella sua gloria, e tutti gli angeli con lui, siederà sul trono della sua gloria. Davanti a lui verranno radunati tutti i popoli. Egli separerà gli uni dagli altri, come il pastore separa le pecore dalle capre, e porrà le pecore alla sua destra e le capre alla sinistra.<br>Allora il re dirà a quelli che saranno alla sua destra: \"Venite, benedetti del Padre mio, ricevete in eredità il regno preparato per voi fin dalla creazione del mondo, perché ho avuto fame e mi avete dato da mangiare, ho avuto sete e mi avete dato da bere, ero straniero e mi avete accolto, nudo e mi avete vestito, malato e mi avete visitato, ero in carcere e siete venuti a trovarmi\".<br>Allora i giusti gli risponderanno: \"Signore, quando ti abbiamo visto affamato e ti abbiamo dato da mangiare, o assetato e ti abbiamo dato da bere? Quando mai ti abbiamo visto straniero e ti abbiamo accolto, o nudo e ti abbiamo vestito? Quando mai ti abbiamo visto malato o in carcere e siamo venuti a visitarti?\". E il re risponderà loro: \"In verità io vi dico: tutto quello che avete fatto a uno solo di questi miei fratelli più piccoli, l'avete fatto a me\".<br>Poi dirà anche a quelli che saranno alla sinistra: \"Via, lontano da me, maledetti, nel fuoco eterno, preparato per il diavolo e per i suoi angeli, perché ho avuto fame e non mi avete dato da mangiare, ho avuto sete e non mi avete dato da bere, ero straniero e non mi avete accolto, nudo e non mi avete vestito, malato e in carcere e non mi avete visitato\".<br>Anch'essi allora risponderanno: \"Signore, quando ti abbiamo visto affamato o assetato o straniero o nudo o malato o in carcere, e non ti abbiamo servito?\". Allora egli risponderà loro: \"In verità io vi dico: tutto quello che non avete fatto a uno solo di questi più piccoli, non l'avete fatto a me\".<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p><span class=\"rosso\">Si dice il Credo.</span></p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Ti offriamo, o Padre, il sacrificio di Cristo<br>per la nostra riconciliazione,<br>e ti preghiamo umilmente:<br>il tuo Figlio conceda a tutti i popoli<br>il dono dell’unità e della pace.<br>Egli vive e regna nei secoli dei secoli.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il Signore siede re per sempre:<br>benedirà il suo popolo con la pace. (Sal 28,10-11)<br><br><strong><span class=\"rosso\">Oppure:</span></strong><br>Il Figlio dell’uomo verrà nella gloria<br>per giudicare tutti i popoli. (Cf. Mt 25,31-32)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>O Padre, che ci hai nutriti<br>con il pane della vita immortale,<br>fa’ che obbediamo con gioia<br>ai comandamenti di Cristo, Re dell’universo,<br>per vivere senza fine con lui nel regno dei cieli.<br>Egli vive e regna nei secoli dei secoli.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  "20261123": {
-   "data": "2026-11-23",
-   "dataLabel": "23 Novembre 2026",
-   "giorno": "LUNEDÌ DELLA XXXIV SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261123",
-   "messe": [
-    {
-     "titolo": "LUNEDÌ DELLA XXXIV SETTIMANA DEL TEMPO ORDINARIO (ANNO PARI)",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Il Signore annuncia la pace per il suo popolo,<br>per i suoi fedeli, per chi ritorna a lui con fiducia. (Sal 84,9)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Ridesta, o Signore, la volontà dei tuoi fedeli,<br>perché, collaborando con impegno alla tua opera di salvezza,<br>ottengano in misura sempre più abbondante<br>i doni della tua misericordia.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Recavano scritto sulla fronte il nome di Cristo e il nome del Padre suo.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 14,1-3.4b-5<br><br>Io, Giovanni, vidi: ecco l’Agnello in piedi sul monte Sion, e insieme a lui centoquarantaquattromila persone, che recavano scritto sulla fronte il suo nome e il nome del Padre suo.<br>E udii una voce che veniva dal cielo, come un fragore di grandi acque e come un rimbombo di forte tuono. La voce che udii era come quella di suonatori di cetra che si accompagnano nel canto con le loro cetre. Essi cantano come un canto nuovo davanti al trono e davanti ai quattro esseri viventi e agli anziani. E nessuno poteva comprendere quel canto se non i centoquarantaquattromila, i redenti della terra.<br>Essi sono coloro che seguono l’Agnello dovunque vada. Questi sono stati redenti tra gli uomini come primizie per Dio e per l’Agnello. Non fu trovata menzogna sulla loro bocca: sono senza macchia.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 23 (24)",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Ecco la generazione che cerca il tuo volto, Signore.</strong><br>Del Signore è la terra e quanto contiene:<br>il mondo, con i suoi abitanti.<br>È lui che l’ha fondato sui mari<br>e sui fiumi l’ha stabilito. <span class=\"rosso\">R.</span><br><br>Chi potrà salire il monte del Signore?<br>Chi potrà stare nel suo luogo santo?<br>Chi ha mani innocenti e cuore puro,<br>chi non si rivolge agli idoli. <span class=\"rosso\">R.</span><br><br>Egli otterrà benedizione dal Signore,<br>giustizia da Dio sua salvezza.<br>Ecco la generazione che lo cerca,<br>che cerca il tuo volto, Dio di Giacobbe. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Vegliate e tenetevi pronti,<br>perché, nell’ora che non immaginate,<br>viene il Figlio dell’uomo. (Mt 24,42a.44)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Vide una vedova povera, che gettava due monetine.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 21,1-4<br><br>In quel tempo, Gesù alzàti gli occhi, vide i ricchi che gettavano le loro offerte nel tesoro del tempio.<br>Vide anche una vedova povera, che vi gettava due monetine, e disse: «In verità vi dico: questa vedova, così povera, ha gettato più di tutti. Tutti costoro, infatti, hanno gettato come offerta parte del loro superfluo. Ella invece, nella sua miseria, ha gettato tutto quello che aveva per vivere».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Accogli, o Signore, questi santi doni<br>che ci hai comandato di offrire in onore del tuo nome,<br>perché, seguendo i tuoi insegnamenti,<br>diventiamo un’offerta a te gradita.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Genti tutte, lodate il Signore,<br>popoli tutti, cantate la sua lode,<br>perché forte è il suo amore per noi. (Sal 116,1-2)<br><br><span class=\"rosso\">Oppure:</span><br>Ecco, io sono con voi tutti i giorni,<br>sino alla fine del mondo. Alleluia. (Mt 28,20)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dio onnipotente,<br>che ci dai la gioia di partecipare ai divini misteri,<br>non permettere che ci separiamo mai da te,<br>fonte di ogni bene.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    },
-    {
-     "titolo": "SAN CLEMENTE I, PAPA E MARTIRE - MEMORIA FACOLTATIVA",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Questo è un vero martire;<br>per il nome di Cristo ha versato il proprio sangue,<br>non ha temuto le minacce dei giudici:<br>così è giunto nel regno dei cieli.<br><br><span class=\"rosso\">Oppure:</span><br><br>Tutto considero una perdita<br>a motivo della conoscenza di Cristo<br>e della comunione alle sue sofferenze,<br>per rendermi conforme alla sua morte. (Cf. Fil 3,8.10)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Dio onnipotente ed eterno,<br>mirabile nella forza di tutti i tuoi santi,<br>concedi a noi di vivere nella gioia<br>l’annuale memoria di san Clemente,<br>sacerdote e martire del tuo Figlio,<br>che testimoniò con il sangue il mistero celebrato<br>e confermò con la vita il Vangelo che annunciava.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Recavano scritto sulla fronte il nome di Cristo e il nome del Padre suo.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 14,1-3.4b-5<br><br>Io, Giovanni, vidi: ecco l’Agnello in piedi sul monte Sion, e insieme a lui centoquarantaquattromila persone, che recavano scritto sulla fronte il suo nome e il nome del Padre suo.<br>E udii una voce che veniva dal cielo, come un fragore di grandi acque e come un rimbombo di forte tuono. La voce che udii era come quella di suonatori di cetra che si accompagnano nel canto con le loro cetre. Essi cantano come un canto nuovo davanti al trono e davanti ai quattro esseri viventi e agli anziani. E nessuno poteva comprendere quel canto se non i centoquarantaquattromila, i redenti della terra.<br>Essi sono coloro che seguono l’Agnello dovunque vada. Questi sono stati redenti tra gli uomini come primizie per Dio e per l’Agnello. Non fu trovata menzogna sulla loro bocca: sono senza macchia.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 23 (24)",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Ecco la generazione che cerca il tuo volto, Signore.</strong><br>Del Signore è la terra e quanto contiene:<br>il mondo, con i suoi abitanti.<br>È lui che l’ha fondato sui mari<br>e sui fiumi l’ha stabilito. <span class=\"rosso\">R.</span><br><br>Chi potrà salire il monte del Signore?<br>Chi potrà stare nel suo luogo santo?<br>Chi ha mani innocenti e cuore puro,<br>chi non si rivolge agli idoli. <span class=\"rosso\">R.</span><br><br>Egli otterrà benedizione dal Signore,<br>giustizia da Dio sua salvezza.<br>Ecco la generazione che lo cerca,<br>che cerca il tuo volto, Dio di Giacobbe. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Vegliate e tenetevi pronti,<br>perché, nell’ora che non immaginate,<br>viene il Figlio dell’uomo. (Mt 24,42a.44)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Vide una vedova povera, che gettava due monetine.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 21,1-4<br><br>In quel tempo, Gesù alzàti gli occhi, vide i ricchi che gettavano le loro offerte nel tesoro del tempio.<br>Vide anche una vedova povera, che vi gettava due monetine, e disse: «In verità vi dico: questa vedova, così povera, ha gettato più di tutti. Tutti costoro, infatti, hanno gettato come offerta parte del loro superfluo. Ella invece, nella sua miseria, ha gettato tutto quello che aveva per vivere».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Padre clementissimo,<br>effondi su queste offerte la tua benedizione,<br>e confermaci nella fede<br>che san Clemente testimoniò versando il suo sangue.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Ti presentiamo, o Signore, queste offerte<br>nella memoria del tuo santo martire Clemente,<br>che nessuna prova poté separare dall’unità del corpo di Cristo.<br>Egli vive e regna nei secoli dei secoli.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Chi rimane in me, e io in lui, porta molto frutto:<br>senza di me non potete far nulla. (Gv 15,5)<br><br><span class=\"rosso\">Oppure:</span><br><br>«Chi segue me, non camminerà nelle tenebre,<br>ma avrà la luce della vita», dice il Signore. (Gv 8,12)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Rinnovati dai santi misteri, ti preghiamo, o Signore:<br>fa’ che, imitando la mirabile costanza di san Clemente,<br>otteniamo il premio eterno<br>promesso a chi soffre a causa del tuo nome.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    },
-    {
-     "titolo": "SAN COLOMBANO, ABATE - MEMORIA FACOLTATIVA",
-     "sezioni": [
-      {
-       "titolo": "Antifona",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Ecco gli uomini santi che sono divenuti amici di Dio,<br>annuncio gioioso della verità divina.<br><span class=\"rosso\"><br>Oppure:</span><br><br>Ti loderò, Signore, tra le genti,<br>e annuncerò il tuo nome ai miei fratelli. (Cf. Sal 17,50; 21,23)</p>"
-      },
-      {
-       "titolo": "Colletta",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>O Dio, che in san Colombano hai congiunto in modo mirabile<br>l’annuncio del Vangelo e l’amore per la vita monastica,<br>concedi anche a noi, per sua intercessione e con il suo esempio,<br>di cercare te sopra ogni cosa<br>e di lavorare assiduamente per accrescere il popolo dei credenti.<br>Per il nostro Signore Gesù Cristo.</p>"
-      },
-      {
-       "titolo": "Prima Lettura",
-       "sottotitolo": "Recavano scritto sulla fronte il nome di Cristo e il nome del Padre suo.",
-       "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 14,1-3.4b-5<br><br>Io, Giovanni, vidi: ecco l’Agnello in piedi sul monte Sion, e insieme a lui centoquarantaquattromila persone, che recavano scritto sulla fronte il suo nome e il nome del Padre suo.<br>E udii una voce che veniva dal cielo, come un fragore di grandi acque e come un rimbombo di forte tuono. La voce che udii era come quella di suonatori di cetra che si accompagnano nel canto con le loro cetre. Essi cantano come un canto nuovo davanti al trono e davanti ai quattro esseri viventi e agli anziani. E nessuno poteva comprendere quel canto se non i centoquarantaquattromila, i redenti della terra.<br>Essi sono coloro che seguono l’Agnello dovunque vada. Questi sono stati redenti tra gli uomini come primizie per Dio e per l’Agnello. Non fu trovata menzogna sulla loro bocca: sono senza macchia.<br><br>Parola di Dio.</p>"
-      },
-      {
-       "titolo": "Salmo Responsoriale",
-       "sottotitolo": "",
-       "versetto": "Dal Sal 23 (24)",
-       "html": "<p><strong><span class=\"rosso\">R.</span> Ecco la generazione che cerca il tuo volto, Signore.</strong><br>Del Signore è la terra e quanto contiene:<br>il mondo, con i suoi abitanti.<br>È lui che l’ha fondato sui mari<br>e sui fiumi l’ha stabilito. <span class=\"rosso\">R.</span><br><br>Chi potrà salire il monte del Signore?<br>Chi potrà stare nel suo luogo santo?<br>Chi ha mani innocenti e cuore puro,<br>chi non si rivolge agli idoli. <span class=\"rosso\">R.</span><br><br>Egli otterrà benedizione dal Signore,<br>giustizia da Dio sua salvezza.<br>Ecco la generazione che lo cerca,<br>che cerca il tuo volto, Dio di Giacobbe. <span class=\"rosso\">R.</span></p>"
-      },
-      {
-       "titolo": "Acclamazione al Vangelo",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Alleluia, alleluia.<br><br>Vegliate e tenetevi pronti,<br>perché, nell’ora che non immaginate,<br>viene il Figlio dell’uomo. (Mt 24,42a.44)<br><br>Alleluia.</p>"
-      },
-      {
-       "titolo": "Vangelo",
-       "sottotitolo": "Vide una vedova povera, che gettava due monetine.",
-       "versetto": "",
-       "html": "<p>Dal Vangelo secondo Luca<br>Lc 21,1-4<br><br>In quel tempo, Gesù alzàti gli occhi, vide i ricchi che gettavano le loro offerte nel tesoro del tempio.<br>Vide anche una vedova povera, che vi gettava due monetine, e disse: «In verità vi dico: questa vedova, così povera, ha gettato più di tutti. Tutti costoro, infatti, hanno gettato come offerta parte del loro superfluo. Ella invece, nella sua miseria, ha gettato tutto quello che aveva per vivere».<br><br>Parola del Signore.</p>"
-      },
-      {
-       "titolo": "Sulle offerte",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Accogli, Dio onnipotente,<br>il sacrificio che ti offriamo nella festa di san Colombano,<br>e donaci di testimoniare nella santità della vita<br>la passione del Signore, che celebriamo nel mistero.<br>Per Cristo nostro Signore.</p>"
-      },
-      {
-       "titolo": "Antifona alla comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>«Io stesso condurrò le mie pecore al pascolo<br>e le farò riposare», dice il Signore. (Ez 34,15)<br><br><span class=\"rosso\">Oppure:</span><br><br>Quello che io vi dico nelle tenebre, ditelo nella luce,<br>e quello che ascoltate all’orecchio,<br>annunciatelo dalle terrazze. (Mt 10,27)</p>"
-      },
-      {
-       "titolo": "Dopo la comunione",
-       "sottotitolo": "",
-       "versetto": "",
-       "html": "<p>Con la forza di questo sacramento confermaci nella fede, o Signore,<br>perché testimoniamo ovunque, con la parola e con le opere,<br>la verità per la quale san Colombano<br>lavorò instancabilmente fino alla morte.<br>Per Cristo nostro Signore.</p>"
-      }
-     ]
-    }
-   ]
-  },
   "20261124": {
    "data": "2026-11-24",
    "dataLabel": "24 Novembre 2026",
@@ -877,7 +219,7 @@
        "titolo": "Prima Lettura",
        "sottotitolo": "È caduta Babilonia la grande.",
        "versetto": "",
-       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 18,1-2.21-23; 19,1-3.9a<br><br>Io, Giovanni, vidi un altro angelo discendere dal cielo con grande potere, e la terra fu illuminata dal suo splendore.<br>Gridò a gran voce:<br>«È caduta, è caduta Babilonia la grande,<br>ed è diventata covo di demòni,<br>rifugio di ogni spirito impuro,<br>rifugio di ogni uccello impuro<br>e rifugio di ogni bestia impura e orrenda».<br>Un angelo possente prese allora una pietra, grande come una<br>macina, e la gettò nel mare esclamando:<br>«Con questa violenza sarà distrutta<br>Babilonia, la grande città,<br>e nessuno più la troverà.<br>Il suono dei musicisti,<br>dei suonatori di cetra, di flauto e di tromba,<br>non si udrà più in te;<br>ogni artigiano di qualsiasi mestiere<br>non si troverà più in te;<br>il rumore della macina<br>non si udrà più in te;<br>la luce della lampada<br>non brillerà più in te;<br>la voce dello sposo e della sposa<br>non si udrà più in te.<br>Perché i tuoi mercanti erano i grandi della terra<br>e tutte le nazioni dalle tue droghe furono sedotte».<br>Dopo questo, udii come una voce potente di folla immensa nel cielo che diceva:<br>«Alleluia!<br>Salvezza, gloria e potenza<br>sono del nostro Dio,<br>perché veri e giusti sono i suoi giudizi.<br>Egli ha condannato la grande prostituta<br>che corrompeva la terra con la sua prostituzione,<br>vendicando su di lei<br>il sangue dei suoi servi!».<br>E per la seconda volta dissero:<br>«Alleluia!<br>Il suo fumo sale nei secoli dei secoli!».<br>Allora l’angelo mi disse: «Scrivi: Beati gli invitati al banchetto di nozze dell’Agnello!».<br><br>Parola di Dio.</p>"
+       "html": "<p>Dal libro dell’Apocalisse di san Giovanni apostolo<br>Ap 18,1-2.21-23; 19,1-3.9a<br><br>Io, Giovanni, vidi un altro angelo discendere dal cielo con grande potere, e la terra fu illuminata dal suo splendore.<br>Gridò a gran voce:<br>«È caduta, è caduta Babilonia la grande,<br>ed è diventata covo di demòni,<br>rifugio di ogni spirito impuro,<br>rifugio di ogni uccello impuro<br>e rifugio di ogni bestia impura e orrenda».<br>Un angelo possente prese allora una pietra, grande come una macina, e la gettò nel mare esclamando:<br>«Con questa violenza sarà distrutta<br>Babilonia, la grande città,<br>e nessuno più la troverà.<br>Il suono dei musicisti,<br>dei suonatori di cetra, di flauto e di tromba,<br>non si udrà più in te;<br>ogni artigiano di qualsiasi mestiere<br>non si troverà più in te;<br>il rumore della macina<br>non si udrà più in te;<br>la luce della lampada<br>non brillerà più in te;<br>la voce dello sposo e della sposa<br>non si udrà più in te.<br>Perché i tuoi mercanti erano i grandi della terra<br>e tutte le nazioni dalle tue droghe furono sedotte».<br>Dopo questo, udii come una voce potente di folla immensa nel cielo che diceva:<br>«Alleluia!<br>Salvezza, gloria e potenza<br>sono del nostro Dio,<br>perché veri e giusti sono i suoi giudizi.<br>Egli ha condannato la grande prostituta<br>che corrompeva la terra con la sua prostituzione,<br>vendicando su di lei<br>il sangue dei suoi servi!».<br>E per la seconda volta dissero:<br>«Alleluia!<br>Il suo fumo sale nei secoli dei secoli!».<br>Allora l’angelo mi disse: «Scrivi: Beati gli invitati al banchetto di nozze dell’Agnello!».<br><br>Parola di Dio.</p>"
       },
       {
        "titolo": "Salmo Responsoriale",
@@ -944,7 +286,7 @@
        "titolo": "Prima Lettura",
        "sottotitolo": "I morti vennero giudicati, ciascuno secondo le sue opere. Vidi la Gerusalemme nuova scendere dal cielo.",
        "versetto": "",
-       "html": "<p>Dal libro dell'Apocalisse di san Giovanni apostolo<br>Ap 20,1-4.11; 21,2<br><br>Io, Giovanni, vidi un angelo che scendeva dal cielo con in mano la chiave dell'Abisso e una grande catena. Afferrò il drago, il serpente antico, che è diavolo e il Satana, e lo incatenò per mille anni; lo gettò nell'Abisso, lo rinchiuse e pose il sigillo sopra di lui, perché non seducesse più le nazioni, fino al compimento dei mille anni, dopo i quali deve essere lasciato libero per un po' di tempo.<br>Poi vidi alcuni troni - a quelli che vi sedettero fu dato il potere di giudicare - e le anime dei decapitati a causa della testimonianza di Gesù e della parola di Dio, e quanti non avevano adorato la bestia e la sua statua e non avevano ricevuto il marchio sulla fronte e sulla mano. Essi ripresero vita e regnarono con Cristo per mille anni.<br>E vidi un grande trono bianco e Colui che vi sedeva. Scomparvero dalla sua presenza la terra e il cielo senza lasciare traccia di sé. E vidi i morti, grandi e piccoli, in piedi davanti al trono. E i libri furono aperti. Fu aperto anche un altro libro, quello della vita. I morti vennero giudicati secondo le loro opere, in base a ciò che era scritto in quei libri. Il mare restituì i morti che esso custodiva, la Morte e gli inferi resero i morti da loro custoditi e ciascuno venne giudicato secondo le sue opere. Poi la Morte e gli inferi furono gettati nello stagno di fuoco. Questa è la seconda morte, lo stagno di fuoco. E chi non risultò scritto nel libro della vita fu gettato nello stagno di fuoco.<br>E vidi un cielo nuovo e una terra nuova: il cielo e la terra di prima infatti erano scomparsi e il mare non c'era più. E vidi anche la città santa, la Gerusalemme nuova, scendere dal cielo, da Dio, pronta come una sposa adorna per il suo sposo.<br><br>Parola di Dio.</p>"
+       "html": "<p>Dal libro dell'Apocalisse di san Giovanni apostolo<br>Ap 20,1-4.11-21,2<br><br>Io, Giovanni, vidi un angelo che scendeva dal cielo con in mano la chiave dell'Abisso e una grande catena. Afferrò il drago, il serpente antico, che è diavolo e il Satana, e lo incatenò per mille anni; lo gettò nell'Abisso, lo rinchiuse e pose il sigillo sopra di lui, perché non seducesse più le nazioni, fino al compimento dei mille anni, dopo i quali deve essere lasciato libero per un po' di tempo.<br>Poi vidi alcuni troni - a quelli che vi sedettero fu dato il potere di giudicare - e le anime dei decapitati a causa della testimonianza di Gesù e della parola di Dio, e quanti non avevano adorato la bestia e la sua statua e non avevano ricevuto il marchio sulla fronte e sulla mano. Essi ripresero vita e regnarono con Cristo per mille anni.<br>E vidi un grande trono bianco e Colui che vi sedeva. Scomparvero dalla sua presenza la terra e il cielo senza lasciare traccia di sé. E vidi i morti, grandi e piccoli, in piedi davanti al trono. E i libri furono aperti. Fu aperto anche un altro libro, quello della vita. I morti vennero giudicati secondo le loro opere, in base a ciò che era scritto in quei libri. Il mare restituì i morti che esso custodiva, la Morte e gli inferi resero i morti da loro custoditi e ciascuno venne giudicato secondo le sue opere. Poi la Morte e gli inferi furono gettati nello stagno di fuoco. Questa è la seconda morte, lo stagno di fuoco. E chi non risultò scritto nel libro della vita fu gettato nello stagno di fuoco.<br>E vidi un cielo nuovo e una terra nuova: il cielo e la terra di prima infatti erano scomparsi e il mare non c'era più. E vidi anche la città santa, la Gerusalemme nuova, scendere dal cielo, da Dio, pronta come una sposa adorna per il suo sposo.<br><br>Parola di Dio.</p>"
       },
       {
        "titolo": "Salmo Responsoriale",
@@ -1017,7 +359,7 @@
        "titolo": "Salmo Responsoriale",
        "sottotitolo": "",
        "versetto": "Dal Sal 94 (95)",
-       "html": "<p><strong>R. Marána tha! Vieni, Signore Gesù!</strong><br><span class=\"rosso\">Oppure:</span><br><strong>R. Vieni, Signore Gesù!</strong><br><br>Venite, cantiamo al Signore,<br>acclamiamo la roccia della nostra salvezza.<br>Accostiamoci a lui per rendergli grazie,<br>a lui acclamiamo con canti di gioia. <span class=\"rosso\">R.</span><br><br>Perché grande Dio è il Signore,<br>grande re sopra tutti gli dèi.<br>Nella sua mano sono gli abissi della terra,<br>sono sue le vette dei monti.<br>Suo è il mare, è lui che l’ha fatto;<br>le sue mani hanno plasmato la terra. <span class=\"rosso\">R.</span><br><br>Entrate: prostràti, adoriamo,<br>in ginocchio davanti al Signore che ci ha fatti.<br>È lui il nostro Dio<br>e noi il popolo del suo pascolo,<br>il gregge che egli conduce. <span class=\"rosso\">R.</span></p>"
+       "html": "<p><strong><span class=\"rosso\">R.</span> Marána tha! Vieni, Signore Gesù!</strong><br><span class=\"rosso\">Oppure:</span><br><strong><span class=\"rosso\">R.</span> Vieni, Signore Gesù!</strong><br><br>Venite, cantiamo al Signore,<br>acclamiamo la roccia della nostra salvezza.<br>Accostiamoci a lui per rendergli grazie,<br>a lui acclamiamo con canti di gioia. <span class=\"rosso\">R.</span><br><br>Perché grande Dio è il Signore,<br>grande re sopra tutti gli dèi.<br>Nella sua mano sono gli abissi della terra,<br>sono sue le vette dei monti.<br>Suo è il mare, è lui che l’ha fatto;<br>le sue mani hanno plasmato la terra. <span class=\"rosso\">R.</span><br><br>Entrate: prostràti, adoriamo,<br>in ginocchio davanti al Signore che ci ha fatti.<br>È lui il nostro Dio<br>e noi il popolo del suo pascolo,<br>il gregge che egli conduce. <span class=\"rosso\">R.</span></p>"
       },
       {
        "titolo": "Acclamazione al Vangelo",
@@ -1255,6 +597,493 @@
        "sottotitolo": "",
        "versetto": "",
        "html": "<p>Saziati del cibo spirituale, o Signore,<br>a te innalziamo la nostra supplica:<br>per la partecipazione a questo sacramento,<br>insegnaci a valutare con sapienza i beni della terra<br>e a tenere fisso lo sguardo su quelli del cielo.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Nutriti dell’unico pane, ti supplichiamo, o Signore,<br>di confermarci sempre nel tuo amore,<br>perché possiamo camminare in novità di vita.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261202": {
+   "data": "2026-12-02",
+   "dataLabel": "02 Dicembre 2026",
+   "giorno": "MERCOLEDÌ DELLA I SETTIMANA DI AVVENTO",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261202",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Il Signore viene, non tarderà:<br>metterà in luce i segreti delle tenebre<br>e si rivelerà a tutte le genti. (Cf. Ab 2,3; 1Cor 4,5)</p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Signore Dio nostro,<br>con la tua divina potenza prepara i nostri cuori,<br>perché, alla venuta di Cristo tuo Figlio,<br>siamo trovati degni del banchetto della vita eterna<br>e, da lui serviti, possiamo gustare il pane del cielo.<br>Egli è Dio, e vive e regna con te.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Il Signore invita tutti al suo banchetto e asciuga le lacrime su ogni volto.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 25,6-10a<br><br>In quel giorno,<br>preparerà il Signore degli eserciti<br>per tutti i popoli, su questo monte,<br>un banchetto di grasse vivande,<br>un banchetto di vini eccellenti,<br>di cibi succulenti, di vini raffinati.<br>Egli strapperà su questo monte<br>il velo che copriva la faccia di tutti i popoli<br>e la coltre distesa su tutte le nazioni.<br>Eliminerà la morte per sempre.<br>Il Signore Dio asciugherà le lacrime su ogni volto,<br>l'ignominia del suo popolo<br>farà scomparire da tutta la terra,<br>poiché il Signore ha parlato.<br>E si dirà in quel giorno: «Ecco il nostro Dio;<br>in lui abbiamo sperato perché ci salvasse.<br>Questi è il Signore in cui abbiamo sperato;<br>rallegriamoci, esultiamo per la sua salvezza,<br>poiché la mano del Signore si poserà su questo monte».<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Sal 22 (23)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Abiterò nella casa del Signore tutti i giorni della mia vita.</strong><br>Il Signore è il mio pastore:<br>non manco di nulla.<br>Su pascoli erbosi mi fa riposare,<br>ad acque tranquille mi conduce.<br>Rinfranca l'anima mia. <span class=\"rosso\">R.</span><br><br>Mi guida per il giusto cammino<br>a motivo del suo nome.<br>Anche se vado per una valle oscura,<br>non temo alcun male, perché tu sei con me.<br>Il tuo bastone e il tuo vincastro<br>mi danno sicurezza. <span class=\"rosso\">R.</span><br><br>Davanti a me tu prepari una mensa<br>sotto gli occhi dei miei nemici.<br>Ungi di olio il mio capo;<br>il mio calice trabocca. <span class=\"rosso\">R.</span><br><br>Sì, bontà e fedeltà mi saranno compagne<br>tutti i giorni della mia vita,<br>abiterò ancora nella casa del Signore<br>per lunghi giorni. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Ecco, viene il Signore a salvare il suo popolo:<br>beati coloro che sono preparati all'incontro. (Is 55,6)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Gesù guarisce molti malati e moltiplica i pani.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 15,29-37<br><br>In quel tempo, Gesù giunse presso il mare di Galilea e, salito sul monte, lì si fermò. Attorno a lui si radunò molta folla, recando con sé zoppi, storpi, ciechi, sordi e molti altri malati; li deposero ai suoi piedi, ed egli li guarì, tanto che la folla era piena di stupore nel vedere i muti che parlavano, gli storpi guariti, gli zoppi che camminavano e i ciechi che vedevano. E lodava il Dio d’Israele.<br>Allora Gesù chiamò a sé i suoi discepoli e disse: «Sento compassione per la folla. Ormai da tre giorni stanno con me e non hanno da mangiare. Non voglio rimandarli digiuni, perché non vengano meno lungo il cammino». E i discepoli gli dissero: «Come possiamo trovare in un deserto tanti pani da sfamare una folla così grande?».<br>Gesù domandò loro: «Quanti pani avete?». Dissero: «Sette, e pochi pesciolini». Dopo aver ordinato alla folla di sedersi per terra, prese i sette pani e i pesci, rese grazie, li spezzò e li dava ai discepoli, e i discepoli alla folla.<br>Tutti mangiarono a sazietà. Portarono via i pezzi avanzati: sette sporte piene.<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Sempre si rinnovi, o Signore,<br>l’offerta di questo sacrificio<br>che attua il santo mistero da te istituito,<br>e con la sua divina potenza<br>renda efficace in noi l’opera della salvezza.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Guarda con bontà, o Signore,<br>l’offerta che presentiamo al tuo altare,<br>perché a noi ottenga il perdono e al tuo nome renda gloria.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Ecco, il Signore nostro viene con potenza,<br>perché si aprano gli occhi dei suoi servi. (Cf. Is 40,10; 35,5)<br><br><span class=\"rosso\">Oppure: </span><br><br>Sento compassione per la folla:<br>non voglio rimandarli digiuni,<br>perché non vengano meno lungo il cammino. (Mt 15,32)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Imploriamo, o Signore, la tua misericordia:<br>la forza divina di questo sacramento<br>ci purifichi dal peccato<br>e ci prepari alle feste del Natale.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Custodisci in noi il tuo dono, o Signore,<br>e il sacramento che abbiamo ricevuto dalla tua bontà<br>diventi per noi sorgente di salvezza e di pace.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261203": {
+   "data": "2026-12-03",
+   "dataLabel": "03 Dicembre 2026",
+   "giorno": "SAN FRANCESCO SAVERIO, PRESBITERO - MEMORIA",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261203",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Ti loderò, Signore, tra le genti,<br>e annuncerò il tuo nome ai miei fratelli. (Cf. Sal 17,50; 21,23)</p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Dio, che hai chiamato alla fede molti popoli<br>con la predicazione di san Francesco Saverio,<br>concedi che il cuore dei tuoi fedeli<br>arda dello stesso fervore missionario<br>e che la santa Chiesa si allieti su tutta la terra di nuovi figli.<br>Per il nostro Signore Gesù Cristo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Entri una nazione giusta che si mantiene fedele.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 26,1-6<br><br>In quel giorno si canterà questo canto nella terra di Giuda:<br>«Abbiamo una città forte;<br>mura e bastioni egli ha posto a salvezza.<br>Aprite le porte:<br>entri una nazione giusta,<br>che si mantiene fedele.<br>La sua volontà è salda;<br>tu le assicurerai la pace,<br>pace perché in te confida.<br>Confidate nel Signore sempre,<br>perché il Signore è una roccia eterna,<br>perché egli ha abbattuto<br>coloro che abitavano in alto,<br>ha rovesciato la città eccelsa,<br>l'ha rovesciata fino a terra,<br>l'ha rasa al suolo.<br>I piedi la calpestano:<br>sono i piedi degli oppressi,<br>i passi dei poveri».<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Dal Sal 117 (118)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Benedetto colui che viene nel nome del Signore.</strong><br>Rendete grazie al Signore perché è buono,<br>perché il suo amore è per sempre.<br>È meglio rifugiarsi nel Signore<br>che confidare nell'uomo.<br>È meglio rifugiarsi nel Signore<br>che confidare nei potenti. <span class=\"rosso\">R.</span><br><br>Apritemi le porte della giustizia:<br>vi entrerò per ringraziare il Signore.<br>È questa la porta del Signore:<br>per essa entrano i giusti.<br>Ti rendo grazie, perché mi hai risposto,<br>perché sei stato la mia salvezza. <span class=\"rosso\">R.</span><br><br>Ti preghiamo, Signore: dona la salvezza!<br>Ti preghiamo, Signore: dona la vittoria!<br>Benedetto colui che viene nel nome del Signore.<br>Vi benediciamo dalla casa del Signore.<br>Il Signore è Dio, egli ci illumina. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Cercate il Signore, mentre si fa trovare,<br>invocatelo, mentre è vicino. (Is 55,6)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Chi fa la volontà del Padre mio, entrerà nel regno dei cieli.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 7,21.24-27<br><br>In quel tempo, Gesù disse ai suoi discepoli:<br>«Non chiunque mi dice: \"Signore, Signore\", entrerà nel regno dei cieli, ma colui che fa la volontà del Padre mio che è nei cieli.<br>Perciò chiunque ascolta queste mie parole e le mette in pratica, sarà simile a un uomo saggio, che ha costruito la sua casa sulla roccia. Cadde la pioggia, strariparono i fiumi, soffiarono i venti e si abbatterono su quella casa, ma essa non cadde, perché era fondata sulla roccia.<br>Chiunque ascolta queste mie parole e non le mette in pratica, sarà simile a un uomo stolto, che ha costruito la sua casa sulla sabbia. Cadde la pioggia, strariparono i fiumi, soffiarono i venti e si abbatterono su quella casa, ed essa cadde e la sua rovina fu grande».<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Accogli, o Signore, i doni che ti presentiamo<br>nella memoria di san Francesco Saverio,<br>che raggiunse terre lontane sospinto<br>dallo zelo per la salvezza degli uomini,<br>e concedi anche a noi di essere efficaci testimoni del Vangelo,<br>per venire incontro a te con molti fratelli.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Quello che io vi dico nelle tenebre, ditelo nella luce,<br>quello che ascoltate all’orecchio, annunciatelo dalle terrazze. (Mt 10,27)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>I tuoi santi misteri, o Dio,<br>accendano in noi l’ardore di carità<br>che infiammò il cuore di san Francesco Saverio<br>per la salvezza delle anime,<br>perché, camminando più fedelmente nella nostra vocazione,<br>conseguiamo insieme a lui il premio<br>promesso ai buoni operai del Vangelo.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261204": {
+   "data": "2026-12-04",
+   "dataLabel": "04 Dicembre 2026",
+   "giorno": "SAN GIOVANNI DAMASCENO, PRESBITERO E DOTTORE DELLA CHIESA - MEMORIA FACOLTATIVA",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261204",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>In mezzo alla Chiesa gli ha aperto la bocca,<br>il Signore lo ha colmato dello spirito<br>di sapienza e d’intelligenza;<br>gli ha fatto indossare una veste di gloria. (Cf. Sir 15,5)<br><br><span class=\"rosso\">Oppure:</span><br><br>La bocca del giusto medita sapienza<br>e la sua lingua esprime verità;<br>la legge del suo Dio è nel suo cuore (Cf. Sal 36,30-31)</p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Concedi a noi, o Signore, di essere sostenuti dalle preghiere<br>del santo presbitero Giovanni <span class=\"rosso\">[</span>Damasceno<span class=\"rosso\">]</span>,<br>perché la vera fede,<br>che egli ha mirabilmente insegnato,<br>sia sempre nostra luce e nostra forza.<br>Per il nostro Signore Gesù Cristo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Il Signore invita tutti al suo banchetto e asciuga le lacrime su ogni volto.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 25,6-10a<br><br>In quel giorno,<br>preparerà il Signore degli eserciti<br>per tutti i popoli, su questo monte,<br>un banchetto di grasse vivande,<br>un banchetto di vini eccellenti,<br>di cibi succulenti, di vini raffinati.<br>Egli strapperà su questo monte<br>il velo che copriva la faccia di tutti i popoli<br>e la coltre distesa su tutte le nazioni.<br>Eliminerà la morte per sempre.<br>Il Signore Dio asciugherà le lacrime su ogni volto,<br>l'ignominia del suo popolo<br>farà scomparire da tutta la terra,<br>poiché il Signore ha parlato.<br>E si dirà in quel giorno: «Ecco il nostro Dio;<br>in lui abbiamo sperato perché ci salvasse.<br>Questi è il Signore in cui abbiamo sperato;<br>rallegriamoci, esultiamo per la sua salvezza,<br>poiché la mano del Signore si poserà su questo monte».<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Sal 22 (23)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Abiterò nella casa del Signore tutti i giorni della mia vita.</strong><br>Il Signore è il mio pastore:<br>non manco di nulla.<br>Su pascoli erbosi mi fa riposare,<br>ad acque tranquille mi conduce.<br>Rinfranca l'anima mia. <span class=\"rosso\">R.</span><br><br>Mi guida per il giusto cammino<br>a motivo del suo nome.<br>Anche se vado per una valle oscura,<br>non temo alcun male, perché tu sei con me.<br>Il tuo bastone e il tuo vincastro<br>mi danno sicurezza. <span class=\"rosso\">R.</span><br><br>Davanti a me tu prepari una mensa<br>sotto gli occhi dei miei nemici.<br>Ungi di olio il mio capo;<br>il mio calice trabocca. <span class=\"rosso\">R.</span><br><br>Sì, bontà e fedeltà mi saranno compagne<br>tutti i giorni della mia vita,<br>abiterò ancora nella casa del Signore<br>per lunghi giorni. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Ecco, viene il Signore a salvare il suo popolo:<br>beati coloro che sono preparati all'incontro. (Is 55,6)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Gesù guarisce molti malati e moltiplica i pani.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 15,29-37<br><br>In quel tempo, Gesù giunse presso il mare di Galilea e, salito sul monte, lì si fermò. Attorno a lui si radunò molta folla, recando con sé zoppi, storpi, ciechi, sordi e molti altri malati; li deposero ai suoi piedi, ed egli li guarì, tanto che la folla era piena di stupore nel vedere i muti che parlavano, gli storpi guariti, gli zoppi che camminavano e i ciechi che vedevano. E lodava il Dio d’Israele.<br>Allora Gesù chiamò a sé i suoi discepoli e disse: «Sento compassione per la folla. Ormai da tre giorni stanno con me e non hanno da mangiare. Non voglio rimandarli digiuni, perché non vengano meno lungo il cammino». E i discepoli gli dissero: «Come possiamo trovare in un deserto tanti pani da sfamare una folla così grande?».<br>Gesù domandò loro: «Quanti pani avete?». Dissero: «Sette, e pochi pesciolini». Dopo aver ordinato alla folla di sedersi per terra, prese i sette pani e i pesci, rese grazie, li spezzò e li dava ai discepoli, e i discepoli alla folla.<br>Tutti mangiarono a sazietà. Portarono via i pezzi avanzati: sette sporte piene.<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Sia a te gradito, o Dio, il sacrificio che ti offriamo con gioia<br>nella memoria di san Giovanni <span class=\"rosso\">[</span>Damasceno<span class=\"rosso\">]</span>,<br>che ci ha insegnato a offrirti tutta la nostra vita<br>in un unico canto di lode.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Ecco il servo fedele e prudente,<br>che il Signore ha messo a capo della sua famiglia,<br>per nutrirla al tempo opportuno. Alleluia. (Cf. Lc 12,42)<br><br><span class=\"rosso\">Oppure:</span><br><br>Chi medita giorno e notte la legge del Signore,<br>porterà frutto a suo tempo. Alleluia. (Cf. Sal 1,2-3)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Signore, che ci hai nutriti di Cristo, pane vivo,<br>nella memoria di san Giovanni <span class=\"rosso\">[</span>Damasceno<span class=\"rosso\">]</span>,<br>formaci alla scuola del Vangelo,<br>perché conosciamo la tua verità<br>e la viviamo nella carità fraterna.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261205": {
+   "data": "2026-12-05",
+   "dataLabel": "05 Dicembre 2026",
+   "giorno": "SABATO DELLA I SETTIMANA DI AVVENTO",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261205",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Vieni e fa' risplendere il tuo volto su di noi,<br>o Signore, che siedi nei cieli, e noi saremo salvi. (Cf. Sal 79,4.2)</p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Dio, che per liberare l’uomo dalla schiavitù del peccato<br>hai mandato il tuo Figlio unigenito in questo mondo,<br>concedi a noi, che attendiamo con fede<br>il dono della tua misericordia,<br>di giungere al premio della vera libertà.<br>Per il nostro Signore Gesù Cristo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "A un tuo grido di supplica il Signore ti farà grazia.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 30,19-21;23-26<br><br>Popolo di Sion, che abiti a Gerusalemme,<br>tu non dovrai più piangere.<br>A un tuo grido di supplica [il Signore] ti farà grazia;<br>appena udrà, ti darà risposta.<br>Anche se il Signore ti darà il pane dell'afflizione<br>e l'acqua della tribolazione,<br>non si terrà più nascosto il tuo maestro;<br>i tuoi occhi vedranno il tuo maestro,<br>i tuoi orecchi sentiranno questa parola dietro di te:<br>«Questa è la strada, percorretela»,<br>caso mai andiate a destra o a sinistra.<br>Allora egli concederà la pioggia per il seme<br>che avrai seminato nel terreno,<br>e anche il pane, prodotto della terra, sarà abbondante e sostanzioso;<br>in quel giorno il tuo bestiame pascolerà su un vasto prato.<br>I buoi e gli asini che lavorano la terra<br>mangeranno biada saporita,<br>ventilata con la pala e con il vaglio.<br>Su ogni monte e su ogni colle elevato<br>scorreranno canali e torrenti d'acqua<br>nel giorno della grande strage,<br>quando cadranno le torri.<br>La luce della luna sarà come la luce del sole<br>e la luce del sole sarà sette volte di più,<br>come la luce di sette giorni,<br>quando il Signore curerà la piaga del suo popolo<br>e guarirà le lividure prodotte dalle sue percosse.<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Dal Sal 146 (147)",
+       "html": "<p><strong><span class=\"rosso\">R. </span>Beati coloro che aspettano il Signore.</strong><br>È bello cantare inni al nostro Dio,<br>è dolce innalzare la lode.<br>Il Signore ricostruisce Gerusalemme,<br>raduna i dispersi d'Israele. <span class=\"rosso\">R.</span><br><br>Risana i cuori affranti<br>e fascia le loro ferite.<br>Egli conta il numero delle stelle<br>e chiama ciascuna per nome. <span class=\"rosso\">R.</span><br><br>Grande è il Signore nostro,<br>grande nella sua potenza;<br>la sua sapienza non si può calcolare.<br>Il Signore sostiene i poveri,<br>ma abbassa fino a terra i malvagi. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Il Signore è nostro giudice,<br>nostro legislatore, nostro re:<br>egli ci salverà. (Cf. Is 33,22)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Vedendo le folle, ne sentì compassione.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Matteo<br>Mt 9,35-38-10,1.6-8<br><br>In quel tempo, Gesù percorreva tutte le città e i villaggi, insegnando nelle loro sinagoghe, annunciando il vangelo del Regno e guarendo ogni malattia e ogni infermità.<br>Vedendo le folle, ne sentì compassione, perché erano stanche e sfinite come pecore che non hanno pastore. Allora disse ai suoi discepoli: «La messe è abbondante, ma sono pochi gli operai! Pregate dunque il signore della messe, perché mandi operai nella sua messe!».<br>Chiamati a sé i suoi dodici discepoli, diede loro potere sugli spiriti impuri per scacciarli e guarire ogni malattia e ogni infermità.<br>E li inviò ordinando loro: «Rivolgetevi alle pecore perdute della casa d'Israele. Strada facendo, predicate, dicendo che il regno dei cieli è vicino. Guarite gli infermi, risuscitate i morti, purificate i lebbrosi, scacciate i demòni. Gratuitamente avete ricevuto, gratuitamente date».<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Sempre si rinnovi, o Signore,<br>l’offerta di questo sacrificio<br>che attua il santo mistero da te istituito,<br>e con la sua divina potenza<br>renda efficace in noi l’opera della salvezza.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>L’offerta di questo sacrificio, o Signore,<br>ci liberi dall’antica schiavitù del peccato,<br>perché possiamo camminare in novità di vita.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>«Ecco, io vengo presto e ho con me il mio salario», dice il Signore,<br>«per rendere a ciascuno secondo le sue opere». (Ap 22,12)<br><br><span class=\"rosso\">Oppure:</span><br><br>Il regno dei cieli è vicino.<br>Gratuitamente avete ricevuto, gratuitamente date. (Mt 10,7.8)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Imploriamo, o Signore, la tua misericordia:<br>la forza divina di questo sacramento<br>ci purifichi dal peccato<br>e ci prepari alle feste del Natale.<br>Per Cristo nostro Signore.<br><br><span class=\"rosso\">Oppure:</span><br><br>Ci hai nutriti, Dio onnipotente, al tuo santo convito;<br>fa’ che ti onoriamo con fedele servizio<br>e ci prodighiamo verso tutti con carità instancabile.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261206": {
+   "data": "2026-12-06",
+   "dataLabel": "06 Dicembre 2026",
+   "giorno": "II DOMENICA DI AVVENTO - ANNO B",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261206",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Popolo di Sion, il Signore verrà a salvare le genti<br>e farà udire la sua voce maestosa<br>nella letizia del vostro cuore. (Cf. Is 30,19.30)<br><br><span class=\"rosso\">Non si dice il Gloria.</span></p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Dio grande e misericordioso,<br>fa’ che il nostro impegno nel mondo<br>non ci ostacoli nel cammino verso il tuo Figlio,<br>ma la sapienza che viene dal cielo<br>ci guidi alla comunione<br>con il Cristo, nostro Salvatore.<br>Egli è Dio, e vive e regna con te.<br><br><span class=\"rosso\">Oppure:</span><br><br>O Dio, Padre di ogni consolazione,<br>che all’umanità pellegrina nel tempo<br>hai promesso nuovi cieli e terra nuova,<br>parla oggi al cuore del tuo popolo,<br>perché, in purezza di fede e santità di vita,<br>possa camminare verso il giorno<br>in cui ti manifesterai pienamente<br>e ogni uomo vedrà la tua salvezza.<br>Per il nostro Signore Gesù Cristo.<br><br>Si dice il Credo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Preparate la via al Signore.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 40,1-5.9-11<br><br>«Consolate, consolate il mio popolo<br>- dice il vostro Dio -.<br>Parlate al cuore di Gerusalemme<br>e gridatele che la sua tribolazione è compiuta,<br>la sua colpa è scontata,<br>perché ha ricevuto dalla mano del Signore il doppio per tutti i suoi peccati».<br>Una voce grida:<br>«Nel deserto preparate la via al Signore,<br>spianate nella steppa la strada per il nostro Dio.<br>Ogni valle sia innalzata,<br>ogni monte e ogni colle siano abbassati;<br>il terreno accidentato si trasformi in piano<br>e quello scosceso in vallata.<br>Allora si rivelerà la gloria del Signore<br>e tutti gli uomini insieme la vedranno,<br>perché la bocca del Signore ha parlato».<br>Sali su un alto monte,<br>tu che annunci liete notizie a Sion!<br>Alza la tua voce con forza,<br>tu che annunci liete notizie a Gerusalemme.<br>Alza la voce, non temere;<br>annuncia alle città di Giuda:<br>«Ecco il vostro Dio!<br>Ecco, il Signore Dio viene con potenza,<br>il suo braccio esercita il dominio.<br>Ecco, egli ha con sé il premio<br>e la sua ricompensa lo precede.<br>Come un pastore egli fa pascolare il gregge<br>e con il suo braccio lo raduna;<br>porta gli agnellini sul petto<br>e conduce dolcemente le pecore madri».<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Dal Sal 84 (85)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Mostraci, Signore, la tua misericordia e donaci la tua salvezza.</strong><br>Ascolterò che cosa dice Dio, il Signore:<br>egli annuncia la pace<br>per il suo popolo, per i suoi fedeli.<br>Sì, la sua salvezza è vicina a chi lo teme,<br>perché la sua gloria abiti la nostra terra. <span class=\"rosso\">R.</span><br><br>Amore e verità s'incontreranno,<br>giustizia e pace si baceranno.<br>Verità germoglierà dalla terra<br>e giustizia si affaccerà dal cielo. <span class=\"rosso\">R.</span><br><br>Certo, il Signore donerà il suo bene<br>e la nostra terra darà il suo frutto;<br>giustizia camminerà davanti a lui:<br>i suoi passi tracceranno il cammino. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Seconda Lettura",
+       "sottotitolo": "Aspettiamo nuovi cieli e una terra nuova.",
+       "versetto": "",
+       "html": "<p>Dalla seconda lettera di san Pietro apostolo<br>2Pt 3,8-14<br><br>Una cosa non dovete perdere di vista, carissimi: davanti al Signore un solo giorno è come mille anni e mille anni come un solo giorno.<br>Il Signore non ritarda nel compiere la sua promessa, anche se alcuni parlano di lentezza. Egli invece è magnanimo con voi, perché non vuole che alcuno si perda, ma che tutti abbiano modo di pentirsi.<br>Il giorno del Signore verrà come un ladro; allora i cieli spariranno in un grande boato, gli elementi, consumati dal calore, si dissolveranno e la terra, con tutte le sue opere, sarà distrutta.<br>Dato che tutte queste cose dovranno finire in questo modo, quale deve essere la vostra vita nella santità della condotta e nelle preghiere, mentre aspettate e affrettate la venuta del giorno di Dio, nel quale i cieli in fiamme si dissolveranno e gli elementi incendiati fonderanno! Noi infatti, secondo la sua promessa, aspettiamo nuovi cieli e una terra nuova, nei quali abita la giustizia.<br>Perciò, carissimi, nell'attesa di questi eventi, fate di tutto perché Dio vi trovi in pace, senza colpa e senza macchia.<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Preparate la via del Signore,<br>raddrizzate i suoi sentieri!<br>Ogni uomo vedrà la salvezza di Dio! (Lc 3,4.6)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Raddrizzate le vie del Signore.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Marco<br>Mc 1,1-8<br><br>Inizio del vangelo di Gesù, Cristo, Figlio di Dio.<br>Come sta scritto nel profeta Isaìa:<br>«Ecco, dinanzi a te io mando il mio messaggero:<br>egli preparerà la tua via.<br>Voce di uno che grida nel deserto:<br>Preparate la via del Signore,<br>raddrizzate i suoi sentieri»,<br>vi fu Giovanni, che battezzava nel deserto e proclamava un battesimo di conversione per il perdono dei peccati. Accorrevano a lui tutta la regione della Giudea e tutti gli abitanti di Gerusalemme. E si facevano battezzare da lui nel fiume Giordano, confessando i loro peccati.<br>Giovanni era vestito di peli di cammello, con una cintura di pelle attorno ai fianchi, e mangiava cavallette e miele selvatico. E proclamava: «Viene dopo di me colui che è più forte di me: io non sono degno di chinarmi per slegare i lacci dei suoi sandali. Io vi ho battezzato con acqua, ma egli vi battezzerà in Spirito Santo».<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Guarda con benevolenza, o Signore,<br>alle preghiere e al sacrificio<br>che umilmente ti presentiamo:<br>all’estrema povertà dei nostri meriti<br>supplisca l’aiuto della tua misericordia.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Sorgi, o Gerusalemme, sta’ in piedi sull’altura,<br>osserva la gioia che ti viene da Dio. (Bar 5,5;  4,36)<br><br><span class=\"rosso\">Oppure:</span><br><br>Voce di uno che grida nel deserto:<br>Preparate la via del Signore,<br>raddrizzate i suoi sentieri! (Mt 3,3; Mc 1,3; Lc 3,4)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Saziati del cibo spirituale, o Signore,<br>a te innalziamo la nostra supplica:<br>per la partecipazione a questo sacramento,<br>insegnaci a valutare con sapienza i beni della terra<br>e a tenere fisso lo sguardo su quelli del cielo.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261207": {
+   "data": "2026-12-07",
+   "dataLabel": "07 Dicembre 2026",
+   "giorno": "SANT'AMBROGIO, VESCOVO E DOTTORE DELLA CHIESA - memoria",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261207",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>In mezzo alla Chiesa gli ha aperto la bocca,<br>il Signore lo ha colmato dello spirito di sapienza e d’intelligenza;<br>gli ha fatto indossare una veste di gloria. (Cf. Sir 15,5)</p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Dio, che nel vescovo sant’Ambrogio<br>ci hai dato un maestro della fede cattolica<br>e un esempio di apostolica fortezza,<br>suscita nella tua Chiesa uomini secondo il tuo cuore<br>che la governino con coraggio e sapienza.<br>Per il nostro Signore Gesù Cristo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Il nostro Dio viene a salvarci.",
+       "versetto": "",
+       "html": "<p>Dal libro del profeta Isaìa<br>Is 35,1-10<br><br>Si rallegrino il deserto e la terra arida,<br>esulti e fiorisca la steppa.<br>Come fiore di narciso fiorisca;<br>sì, canti con gioia e con giubilo.<br>Le è data la gloria del Libano,<br>lo splendore del Carmelo e di Saron.<br>Essi vedranno la gloria del Signore,<br>la magnificenza del nostro Dio.<br>Irrobustite le mani fiacche,<br>rendete salde le ginocchia vacillanti.<br>Dite agli smarriti di cuore:<br>«Coraggio, non temete!<br>Ecco il vostro Dio,<br>giunge la vendetta,<br>la ricompensa divina.<br>Egli viene a salvarvi».<br>Allora si apriranno gli occhi dei ciechi<br>e si schiuderanno gli orecchi dei sordi.<br>Allora lo zoppo salterà come un cervo,<br>griderà di gioia la lingua del muto,<br>perché scaturiranno acque nel deserto,<br>scorreranno torrenti nella steppa.<br>La terra bruciata diventerà una palude,<br>il suolo riarso sorgenti d'acqua.<br>I luoghi dove si sdraiavano gli sciacalli<br>diventeranno canneti e giuncaie.<br>Ci sarà un sentiero e una strada<br>e la chiameranno via santa;<br>nessun impuro la percorrerà.<br>Sarà una via che il suo popolo potrà percorrere<br>e gli ignoranti non si smarriranno.<br>Non ci sarà più il leone,<br>nessuna bestia feroce la percorrerà o vi sosterà.<br>Vi cammineranno i redenti.<br>Su di essa ritorneranno i riscattati dal Signore<br>e verranno in Sion con giubilo;<br>felicità perenne splenderà sul loro capo;<br>gioia e felicità li seguiranno<br>e fuggiranno tristezza e pianto.<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Dal Sal 84 (85)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Ecco il nostro Dio, egli viene a salvarci.</strong><br>Ascolterò che cosa dice Dio, il Signore:<br>egli annuncia la pace.<br>Sì, la sua salvezza è vicina a chi lo teme,<br>perché la sua gloria abiti la nostra terra. <span class=\"rosso\">R.</span><br><br>Amore e verità s'incontreranno,<br>giustizia e pace si baceranno.<br>Verità germoglierà dalla terra<br>e giustizia si affaccerà dal cielo. <span class=\"rosso\">R.</span><br><br>Certo, il Signore donerà il suo bene<br>e la nostra terra darà il suo frutto;<br>giustizia camminerà davanti a lui:<br>i suoi passi tracceranno il cammino. <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Ecco verrà il Signore,<br>strapperà via il giogo della nostra schiavitù.<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "Oggi abbiamo visto cose prodigiose.",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Luca<strong><br></strong>Lc 5,17-26<br><br>Un giorno Gesù stava insegnando. Sedevano là anche dei farisei e maestri della Legge, venuti da ogni villaggio della Galilea e della Giudea, e da Gerusalemme. E la potenza del Signore gli faceva operare guarigioni.<br>Ed ecco, alcuni uomini, portando su un letto un uomo che era paralizzato, cercavano di farlo entrare e di metterlo davanti a lui. Non trovando da quale parte farlo entrare a causa della folla, salirono sul tetto e, attraverso le tegole, lo calarono con il lettuccio davanti a Gesù nel mezzo della stanza.<br>Vedendo la loro fede, disse: «Uomo, ti sono perdonati i tuoi peccati». Gli scribi e i farisei cominciarono a discutere, dicendo: «Chi è costui che dice bestemmie? Chi può perdonare i peccati, se non Dio soltanto?».<br>Ma Gesù, conosciuti i loro ragionamenti, rispose: «Perché pensate così nel vostro cuore? Che cosa è più facile: dire \"Ti sono perdonati i tuoi peccati\", oppure dire \"Àlzati e cammina\"? Ora, perché sappiate che il Figlio dell'uomo ha il potere sulla terra di perdonare i peccati, dico a te - disse al paralitico -: àlzati, prendi il tuo lettuccio e torna a casa tua». Subito egli si alzò davanti a loro, prese il lettuccio su cui era disteso e andò a casa sua, glorificando Dio.<br>Tutti furono colti da stupore e davano gloria a Dio; pieni di timore dicevano: «Oggi abbiamo visto cose prodigiose».<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Signore, lo Spirito Santo infonda in noi,<br>che celebriamo i divini misteri,<br>la stessa luce di fede<br>che illuminò sempre sant’Ambrogio<br>per la diffusione della tua gloria.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Chi medita la legge del Signore giorno e notte, darà frutto<br>a suo tempo. (Cf. Sal 1,2.3)</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Dio,<br>che ci hai fortificati con la potenza di questo sacramento,<br>fa’ che progrediamo<br>sull’esempio di sant’Ambrogio,<br>per camminare forti nelle tue vie<br>e prepararci a gustare la dolcezza del banchetto eterno.<br>Per Cristo nostro Signore.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  "20261208": {
+   "data": "2026-12-08",
+   "dataLabel": "08 Dicembre 2026",
+   "giorno": "IMMACOLATA CONCEZIONE DELLA BEATA VERGINE MARIA - SOLENNITÀ",
+   "url": "https://www.chiesacattolica.it/liturgia-del-giorno/?data-liturgia=20261208",
+   "messe": [
+    {
+     "titolo": "",
+     "sezioni": [
+      {
+       "titolo": "Antifona",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Io gioisco pienamente nel Signore, la mia anima esulta nel mio Dio:<br>mi ha rivestito delle vesti di salvezza, mi ha avvolto con il manto della giustizia,<br>come una sposa si adorna di gioielli. (Is 61,10)<br><br><span class=\"rosso\">Si dice il Gloria.</span></p>"
+      },
+      {
+       "titolo": "Colletta",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>O Padre, che nell’Immacolata Concezione della Vergine<br>hai preparato una degna dimora per il tuo Figlio,<br>e in previsione della morte di lui<br>l’hai preservata da ogni macchia di peccato,<br>concedi anche a noi, per sua intercessione,<br>di venire incontro a te in santità e purezza di spirito.<br>Per il nostro Signore Gesù Cristo.</p>"
+      },
+      {
+       "titolo": "Prima Lettura",
+       "sottotitolo": "Porrò inimicizia tra la tua stirpe e la stirpe della donna.",
+       "versetto": "",
+       "html": "<p>Dal libro della Gènesi<br>Gen 3,9-15.20<br><br>[Dopo che l'uomo ebbe mangiato del frutto dell'albero,] il Signore Dio lo chiamò e gli disse: «Dove sei?». Rispose: «Ho udito la tua voce nel giardino: ho avuto paura, perché sono nudo, e mi sono nascosto». Riprese: «Chi ti ha fatto sapere che sei nudo? Hai forse mangiato dell'albero di cui ti avevo comandato di non mangiare?». Rispose l'uomo: «La donna che tu mi hai posto accanto mi ha dato dell'albero e io ne ho mangiato». Il Signore Dio disse alla donna: «Che hai fatto?». Rispose la donna: «Il serpente mi ha ingannata e io ho mangiato».<br>Allora il Signore Dio disse al serpente:<br>«Poiché hai fatto questo,<br>maledetto tu fra tutto il bestiame<br>e fra tutti gli animali selvatici!<br>Sul tuo ventre camminerai<br>e polvere mangerai<br>per tutti i giorni della tua vita.<br>Io porrò inimicizia fra te e la donna,<br>fra la tua stirpe e la sua stirpe:<br>questa ti schiaccerà la testa<br>e tu le insidierai il calcagno».<br>L'uomo chiamò sua moglie Eva, perché ella fu la madre di tutti i viventi.<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Salmo Responsoriale",
+       "sottotitolo": "",
+       "versetto": "Dal Sal 97 (98)",
+       "html": "<p><strong><span class=\"rosso\">R.</span> Cantate al Signore un canto nuovo, perché ha compiuto meraviglie.</strong><br>Cantate al Signore un canto nuovo,<br>perché ha compiuto meraviglie.<br>Gli ha dato vittoria la sua destra<br>e il suo braccio santo. <span class=\"rosso\">R.</span><br><br>Il Signore ha fatto conoscere la sua salvezza,<br>agli occhi delle genti ha rivelato la sua giustizia.<br>Egli si è ricordato del suo amore,<br>della sua fedeltà alla casa d'Israele. <span class=\"rosso\">R.</span><br><br>Tutti i confini della terra hanno veduto<br>la vittoria del nostro Dio.<br>Acclami il Signore tutta la terra,<br>gridate, esultate, cantate inni! <span class=\"rosso\">R.</span></p>"
+      },
+      {
+       "titolo": "Seconda Lettura",
+       "sottotitolo": "In Cristo Dio ci ha scelti prima della creazione del mondo.",
+       "versetto": "",
+       "html": "<p>Dalla lettera di san Paolo apostolo agli Efesìni<br>Ef 1,3-6.11-12<br><br>Benedetto Dio, Padre del Signore nostro Gesù Cristo,<br>che ci ha benedetti con ogni benedizione spirituale nei cieli in Cristo.<br>In lui ci ha scelti prima della creazione del mondo<br>per essere santi e immacolati di fronte a lui nella carità,<br>predestinandoci a essere per lui figli adottivi<br>mediante Gesù Cristo,<br>secondo il disegno d'amore della sua volontà,<br>a lode dello splendore della sua grazia,<br>di cui ci ha gratificati nel Figlio amato.<br>In lui siamo stati fatti anche eredi,<br>predestinati - secondo il progetto di colui<br>che tutto opera secondo la sua volontà -<br>a essere lode della sua gloria,<br>noi, che già prima abbiamo sperato nel Cristo.<br><br>Parola di Dio.</p>"
+      },
+      {
+       "titolo": "Acclamazione al Vangelo",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Alleluia, alleluia.<br><br>Rallégrati, piena di grazia,<br>il Signore è con te,<br>benedetta tu fra le donne. (Cf. Lc 1,28.42)<br><br>Alleluia.</p>"
+      },
+      {
+       "titolo": "Vangelo",
+       "sottotitolo": "«Rallégrati, piena di grazia: il Signore è con te».",
+       "versetto": "",
+       "html": "<p>Dal Vangelo secondo Luca<br>Lc 1,26-38<br><br>In quel tempo, l'angelo Gabriele fu mandato da Dio in una città della Galilea, chiamata Nàzaret, a una vergine, promessa sposa di un uomo della casa di Davide, di nome Giuseppe. La vergine si chiamava Maria. Entrando da lei, disse: «Rallégrati, piena di grazia: il Signore è con te».<br>A queste parole ella fu molto turbata e si domandava che senso avesse un saluto come questo. L'angelo le disse: «Non temere, Maria, perché hai trovato grazia presso Dio. Ed ecco, concepirai un figlio, lo darai alla luce e lo chiamerai Gesù.<br>Sarà grande e verrà chiamato Figlio dell'Altissimo; il Signore Dio gli darà il trono di Davide suo padre e regnerà per sempre sulla casa di Giacobbe e il suo regno non avrà fine».<br>Allora Maria disse all'angelo: «Come avverrà questo, poiché non conosco uomo?». Le rispose l'angelo: «Lo Spirito Santo scenderà su di te e la potenza dell'Altissimo ti coprirà con la sua ombra. Perciò colui che nascerà sarà santo e sarà chiamato Figlio di Dio. Ed ecco, Elisabetta, tua parente, nella sua vecchiaia ha concepito anch'essa un figlio e questo è il sesto mese per lei, che era detta sterile: nulla è impossibile a Dio».<br>Allora Maria disse: «Ecco la serva del Signore: avvenga per me secondo la tua parola». E l'angelo si allontanò da lei.<br><br>Parola del Signore.</p>"
+      },
+      {
+       "titolo": "",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p><span class=\"rosso\">Si dice il Credo.</span></p>"
+      },
+      {
+       "titolo": "Sulle offerte",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Accetta con benevolenza, o Signore, il sacrificio di salvezza<br>che ti offriamo nella solennità dell’Immacolata Concezione<br>della beata Vergine Maria,<br>e come noi la riconosciamo preservata per tua grazia<br>da ogni macchia di peccato, così, per sua intercessione,<br>fa’ che siamo liberati da ogni colpa.<br>Per Cristo nostro Signore.</p>"
+      },
+      {
+       "titolo": "Antifona alla comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>Grandi cose di te si cantano, o Maria:<br>da te è nato il sole di giustizia, Cristo, nostro Dio.</p>"
+      },
+      {
+       "titolo": "Dopo la comunione",
+       "sottotitolo": "",
+       "versetto": "",
+       "html": "<p>I sacramenti che abbiamo ricevuto, Signore Dio nostro,<br>guariscano in noi le ferite di quella colpa<br>da cui, in modo singolare,<br>hai preservato la beata Vergine Maria<br>nella sua Immacolata Concezione.<br>Per Cristo nostro Signore.</p>"
       }
      ]
     }
